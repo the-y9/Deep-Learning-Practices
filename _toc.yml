@@ -1,7 +1,5 @@
 format: jb-book
 root: README
 chapters:
-  - file: notebooks/Day1_DL_pytorch
-  - file: notebooks/Day2_DL_Workshop
-  - file: notebooks/Day3_DL_Workshop
-  - file: notebooks/Day4_DL_Workshop
+  - file: notebooks/DLP_Week_1
+  - file: notebooks/DLP_Week_1

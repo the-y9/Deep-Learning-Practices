@@ -1,5 +1,1 @@
 jupyter-book
-numpy
-pandas
-matplotlib
-torch
