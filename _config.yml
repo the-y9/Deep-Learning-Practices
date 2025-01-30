@@ -1,0 +1,14 @@
+title: "Deep Learning Using PyTorch"
+author: "Yash Mishra"
+copyright: "2024"
+logo: ""
+language: "en"
+execute:
+  execute_notebooks: "auto"
+  
+repository:
+  url: https://github.com/the-y9/Deep-Learning-using-PyTorch
+
+html:
+  use_issues_button: true
+  use_repository_button: true
