@@ -2,4 +2,4 @@ format: jb-book
 root: README
 chapters:
   - file: notebooks/DLP_Week_1
-  - file: notebooks/DLP_Week_1
+  - file: notebooks/DLP_Week_2
