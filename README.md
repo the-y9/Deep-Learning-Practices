@@ -1,4 +1,4 @@
-# Deep-Learning-using-PyTorch Notes
+# Deep-Learning-Practices Notes
 Workshop conducted by IIT Madras
 ### Day 1 Summary
 
