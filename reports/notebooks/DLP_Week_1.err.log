@@ -1,17 +1,4 @@
 Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/nbclient/client.py", line 782, in _async_poll_for_reply
-    msg = await ensure_async(self.kc.shell_channel.get_msg(timeout=new_timeout))
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 198, in ensure_async
-    result = await obj
-             ^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/jupyter_client/channels.py", line 313, in get_msg
-    raise Empty
-_queue.Empty
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
     ~~~~~~~~~^
@@ -35,24 +22,122 @@ Traceback (most recent call last):
     await self.async_execute_cell(
         cell, index, execution_count=self.code_cells_executed + 1
     )
-  File "/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/nbclient/client.py", line 1005, in async_execute_cell
-    exec_reply = await self.task_poll_for_reply
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/nbclient/client.py", line 806, in _async_poll_for_reply
-    error_on_timeout_execute_reply = await self._async_handle_timeout(timeout, cell)
-                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/nbclient/client.py", line 856, in _async_handle_timeout
-    raise CellTimeoutError.error_from_timeout_and_cell(
-        "Cell execution timed out", timeout, cell
-    )
-nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 30 seconds.
-The message was: Cell execution timed out.
-Here is a preview of the cell contents:
--------------------
-def modi(sample):
-  sample['text'] = " ".join(sample['tokens'])
-  return sample
-ds = ds.map(modi)
-ds
--------------------
+  File "/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+ta = datasets.load_dataset("ai4bharat/naamapadam", "ta", disable_progress_bar=True)
+ta
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mValueError[0m                                Traceback (most recent call last)
+Cell [0;32mIn[6], line 1[0m
+[0;32m----> 1[0m ta [38;5;241m=[39m [43mdatasets[49m[38;5;241;43m.[39;49m[43mload_dataset[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mai4bharat/naamapadam[39;49m[38;5;124;43m"[39;49m[43m,[49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43mta[39;49m[38;5;124;43m"[39;49m[43m,[49m[43m [49m[43mdisable_progress_bar[49m[38;5;241;43m=[39;49m[38;5;28;43;01mTrue[39;49;00m[43m)[49m
+[1;32m      2[0m ta
+
+File [0;32m/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/datasets/load.py:2129[0m, in [0;36mload_dataset[0;34m(path, name, data_dir, data_files, split, cache_dir, features, download_config, download_mode, verification_mode, keep_in_memory, save_infos, revision, token, streaming, num_proc, storage_options, trust_remote_code, **config_kwargs)[0m
+[1;32m   2124[0m verification_mode [38;5;241m=[39m VerificationMode(
+[1;32m   2125[0m     (verification_mode [38;5;129;01mor[39;00m VerificationMode[38;5;241m.[39mBASIC_CHECKS) [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m save_infos [38;5;28;01melse[39;00m VerificationMode[38;5;241m.[39mALL_CHECKS
+[1;32m   2126[0m )
+[1;32m   2128[0m [38;5;66;03m# Create a dataset builder[39;00m
+[0;32m-> 2129[0m builder_instance [38;5;241m=[39m [43mload_dataset_builder[49m[43m([49m
+[1;32m   2130[0m [43m    [49m[43mpath[49m[38;5;241;43m=[39;49m[43mpath[49m[43m,[49m
+[1;32m   2131[0m [43m    [49m[43mname[49m[38;5;241;43m=[39;49m[43mname[49m[43m,[49m
+[1;32m   2132[0m [43m    [49m[43mdata_dir[49m[38;5;241;43m=[39;49m[43mdata_dir[49m[43m,[49m
+[1;32m   2133[0m [43m    [49m[43mdata_files[49m[38;5;241;43m=[39;49m[43mdata_files[49m[43m,[49m
+[1;32m   2134[0m [43m    [49m[43mcache_dir[49m[38;5;241;43m=[39;49m[43mcache_dir[49m[43m,[49m
+[1;32m   2135[0m [43m    [49m[43mfeatures[49m[38;5;241;43m=[39;49m[43mfeatures[49m[43m,[49m
+[1;32m   2136[0m [43m    [49m[43mdownload_config[49m[38;5;241;43m=[39;49m[43mdownload_config[49m[43m,[49m
+[1;32m   2137[0m [43m    [49m[43mdownload_mode[49m[38;5;241;43m=[39;49m[43mdownload_mode[49m[43m,[49m
+[1;32m   2138[0m [43m    [49m[43mrevision[49m[38;5;241;43m=[39;49m[43mrevision[49m[43m,[49m
+[1;32m   2139[0m [43m    [49m[43mtoken[49m[38;5;241;43m=[39;49m[43mtoken[49m[43m,[49m
+[1;32m   2140[0m [43m    [49m[43mstorage_options[49m[38;5;241;43m=[39;49m[43mstorage_options[49m[43m,[49m
+[1;32m   2141[0m [43m    [49m[43mtrust_remote_code[49m[38;5;241;43m=[39;49m[43mtrust_remote_code[49m[43m,[49m
+[1;32m   2142[0m [43m    [49m[43m_require_default_config_name[49m[38;5;241;43m=[39;49m[43mname[49m[43m [49m[38;5;129;43;01mis[39;49;00m[43m [49m[38;5;28;43;01mNone[39;49;00m[43m,[49m
+[1;32m   2143[0m [43m    [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mconfig_kwargs[49m[43m,[49m
+[1;32m   2144[0m [43m[49m[43m)[49m
+[1;32m   2146[0m [38;5;66;03m# Return iterable dataset in case of streaming[39;00m
+[1;32m   2147[0m [38;5;28;01mif[39;00m streaming:
+
+File [0;32m/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/datasets/load.py:1849[0m, in [0;36mload_dataset_builder[0;34m(path, name, data_dir, data_files, cache_dir, features, download_config, download_mode, revision, token, storage_options, trust_remote_code, _require_default_config_name, **config_kwargs)[0m
+[1;32m   1847[0m     download_config [38;5;241m=[39m download_config[38;5;241m.[39mcopy() [38;5;28;01mif[39;00m download_config [38;5;28;01melse[39;00m DownloadConfig()
+[1;32m   1848[0m     download_config[38;5;241m.[39mstorage_options[38;5;241m.[39mupdate(storage_options)
+[0;32m-> 1849[0m dataset_module [38;5;241m=[39m [43mdataset_module_factory[49m[43m([49m
+[1;32m   1850[0m [43m    [49m[43mpath[49m[43m,[49m
+[1;32m   1851[0m [43m    [49m[43mrevision[49m[38;5;241;43m=[39;49m[43mrevision[49m[43m,[49m
+[1;32m   1852[0m [43m    [49m[43mdownload_config[49m[38;5;241;43m=[39;49m[43mdownload_config[49m[43m,[49m
+[1;32m   1853[0m [43m    [49m[43mdownload_mode[49m[38;5;241;43m=[39;49m[43mdownload_mode[49m[43m,[49m
+[1;32m   1854[0m [43m    [49m[43mdata_dir[49m[38;5;241;43m=[39;49m[43mdata_dir[49m[43m,[49m
+[1;32m   1855[0m [43m    [49m[43mdata_files[49m[38;5;241;43m=[39;49m[43mdata_files[49m[43m,[49m
+[1;32m   1856[0m [43m    [49m[43mcache_dir[49m[38;5;241;43m=[39;49m[43mcache_dir[49m[43m,[49m
+[1;32m   1857[0m [43m    [49m[43mtrust_remote_code[49m[38;5;241;43m=[39;49m[43mtrust_remote_code[49m[43m,[49m
+[1;32m   1858[0m [43m    [49m[43m_require_default_config_name[49m[38;5;241;43m=[39;49m[43m_require_default_config_name[49m[43m,[49m
+[1;32m   1859[0m [43m    [49m[43m_require_custom_configs[49m[38;5;241;43m=[39;49m[38;5;28;43mbool[39;49m[43m([49m[43mconfig_kwargs[49m[43m)[49m[43m,[49m
+[1;32m   1860[0m [43m[49m[43m)[49m
+[1;32m   1861[0m [38;5;66;03m# Get dataset builder class from the processing script[39;00m
+[1;32m   1862[0m builder_kwargs [38;5;241m=[39m dataset_module[38;5;241m.[39mbuilder_kwargs
+
+File [0;32m/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/datasets/load.py:1731[0m, in [0;36mdataset_module_factory[0;34m(path, revision, download_config, download_mode, dynamic_modules_path, data_dir, data_files, cache_dir, trust_remote_code, _require_default_config_name, _require_custom_configs, **download_kwargs)[0m
+[1;32m   1726[0m                 [38;5;28;01melse[39;00m:
+[1;32m   1727[0m                     [38;5;28;01mraise[39;00m [38;5;167;01mFileNotFoundError[39;00m(
+[1;32m   1728[0m                         [38;5;124mf[39m[38;5;124m"[39m[38;5;124mCouldn[39m[38;5;124m'[39m[38;5;124mt find any data file at [39m[38;5;132;01m{[39;00mrelative_to_absolute_path(path)[38;5;132;01m}[39;00m[38;5;124m. [39m[38;5;124m"[39m
+[1;32m   1729[0m                         [38;5;124mf[39m[38;5;124m"[39m[38;5;124mCouldn[39m[38;5;124m'[39m[38;5;124mt find [39m[38;5;124m'[39m[38;5;132;01m{[39;00mpath[38;5;132;01m}[39;00m[38;5;124m'[39m[38;5;124m on the Hugging Face Hub either: [39m[38;5;132;01m{[39;00m[38;5;28mtype[39m(e1)[38;5;241m.[39m[38;5;18m__name__[39m[38;5;132;01m}[39;00m[38;5;124m: [39m[38;5;132;01m{[39;00me1[38;5;132;01m}[39;00m[38;5;124m"[39m
+[1;32m   1730[0m                     ) [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;28;01mNone[39;00m
+[0;32m-> 1731[0m             [38;5;28;01mraise[39;00m e1 [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;28;01mNone[39;00m
+[1;32m   1732[0m [38;5;28;01melif[39;00m trust_remote_code:
+[1;32m   1733[0m     [38;5;28;01mraise[39;00m [38;5;167;01mFileNotFoundError[39;00m(
+[1;32m   1734[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;124mCouldn[39m[38;5;124m'[39m[38;5;124mt find a dataset script at [39m[38;5;132;01m{[39;00mrelative_to_absolute_path(combined_path)[38;5;132;01m}[39;00m[38;5;124m or any data file in the same directory.[39m[38;5;124m"[39m
+[1;32m   1735[0m     )
+
+File [0;32m/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/datasets/load.py:1681[0m, in [0;36mdataset_module_factory[0;34m(path, revision, download_config, download_mode, dynamic_modules_path, data_dir, data_files, cache_dir, trust_remote_code, _require_default_config_name, _require_custom_configs, **download_kwargs)[0m
+[1;32m   1672[0m             [38;5;28;01mpass[39;00m
+[1;32m   1673[0m     [38;5;66;03m# Otherwise we must use the dataset script if the user trusts it[39;00m
+[1;32m   1674[0m     [38;5;28;01mreturn[39;00m [43mHubDatasetModuleFactoryWithScript[49m[43m([49m
+[1;32m   1675[0m [43m        [49m[43mpath[49m[43m,[49m
+[1;32m   1676[0m [43m        [49m[43mcommit_hash[49m[38;5;241;43m=[39;49m[43mcommit_hash[49m[43m,[49m
+[1;32m   1677[0m [43m        [49m[43mdownload_config[49m[38;5;241;43m=[39;49m[43mdownload_config[49m[43m,[49m
+[1;32m   1678[0m [43m        [49m[43mdownload_mode[49m[38;5;241;43m=[39;49m[43mdownload_mode[49m[43m,[49m
+[1;32m   1679[0m [43m        [49m[43mdynamic_modules_path[49m[38;5;241;43m=[39;49m[43mdynamic_modules_path[49m[43m,[49m
+[1;32m   1680[0m [43m        [49m[43mtrust_remote_code[49m[38;5;241;43m=[39;49m[43mtrust_remote_code[49m[43m,[49m
+[0;32m-> 1681[0m [43m    [49m[43m)[49m[38;5;241;43m.[39;49m[43mget_module[49m[43m([49m[43m)[49m
+[1;32m   1682[0m [38;5;28;01mexcept[39;00m EntryNotFoundError:
+[1;32m   1683[0m     [38;5;66;03m# Use the infos from the parquet export except in some cases:[39;00m
+[1;32m   1684[0m     [38;5;28;01mif[39;00m data_dir [38;5;129;01mor[39;00m data_files [38;5;129;01mor[39;00m (revision [38;5;129;01mand[39;00m revision [38;5;241m!=[39m [38;5;124m"[39m[38;5;124mmain[39m[38;5;124m"[39m):
+
+File [0;32m/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/datasets/load.py:1331[0m, in [0;36mHubDatasetModuleFactoryWithScript.get_module[0;34m(self)[0m
+[1;32m   1324[0m importable_file_path [38;5;241m=[39m _get_importable_file_path(
+[1;32m   1325[0m     dynamic_modules_path[38;5;241m=[39mdynamic_modules_path,
+[1;32m   1326[0m     module_namespace[38;5;241m=[39m[38;5;124m"[39m[38;5;124mdatasets[39m[38;5;124m"[39m,
+[1;32m   1327[0m     subdirectory_name[38;5;241m=[39m[38;5;28mhash[39m,
+[1;32m   1328[0m     name[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39mname,
+[1;32m   1329[0m )
+[1;32m   1330[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m os[38;5;241m.[39mpath[38;5;241m.[39mexists(importable_file_path):
+[0;32m-> 1331[0m     trust_remote_code [38;5;241m=[39m [43mresolve_trust_remote_code[49m[43m([49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mtrust_remote_code[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mname[49m[43m)[49m
+[1;32m   1332[0m     [38;5;28;01mif[39;00m trust_remote_code:
+[1;32m   1333[0m         _create_importable_file(
+[1;32m   1334[0m             local_path[38;5;241m=[39mlocal_path,
+[1;32m   1335[0m             local_imports[38;5;241m=[39mlocal_imports,
+[0;32m   (...)[0m
+[1;32m   1341[0m             download_mode[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39mdownload_mode,
+[1;32m   1342[0m         )
+
+File [0;32m/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/datasets/load.py:138[0m, in [0;36mresolve_trust_remote_code[0;34m(trust_remote_code, repo_id)[0m
+[1;32m    135[0m         signal[38;5;241m.[39malarm([38;5;241m0[39m)
+[1;32m    136[0m     [38;5;28;01mexcept[39;00m [38;5;167;01mException[39;00m:
+[1;32m    137[0m         [38;5;66;03m# OS which does not support signal.SIGALRM[39;00m
+[0;32m--> 138[0m         [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
+[1;32m    139[0m             [38;5;124mf[39m[38;5;124m"[39m[38;5;124mThe repository for [39m[38;5;132;01m{[39;00mrepo_id[38;5;132;01m}[39;00m[38;5;124m contains custom code which must be executed to correctly [39m[38;5;124m"[39m
+[1;32m    140[0m             [38;5;124mf[39m[38;5;124m"[39m[38;5;124mload the dataset. You can inspect the repository content at https://hf.co/datasets/[39m[38;5;132;01m{[39;00mrepo_id[38;5;132;01m}[39;00m[38;5;124m.[39m[38;5;130;01m\n[39;00m[38;5;124m"[39m
+[1;32m    141[0m             [38;5;124mf[39m[38;5;124m"[39m[38;5;124mPlease pass the argument `trust_remote_code=True` to allow custom code to be run.[39m[38;5;124m"[39m
+[1;32m    142[0m         )
+[1;32m    143[0m [38;5;28;01melse[39;00m:
+[1;32m    144[0m     [38;5;66;03m# For the CI which might put the timeout at 0[39;00m
+[1;32m    145[0m     _raise_timeout_error([38;5;28;01mNone[39;00m, [38;5;28;01mNone[39;00m)
+
+[0;31mValueError[0m: The repository for ai4bharat/naamapadam contains custom code which must be executed to correctly load the dataset. You can inspect the repository content at https://hf.co/datasets/ai4bharat/naamapadam.
+Please pass the argument `trust_remote_code=True` to allow custom code to be run.
 
