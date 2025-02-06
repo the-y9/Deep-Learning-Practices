@@ -49,10 +49,9 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-def modi(sample):
-  sample['text'] = " ".join(sample['tokens'])
-  return sample
-ds = ds.map(modi)
-ds
+ds = load_dataset('bookcorpus',split='all', trust_remote_code=True)
+print(ds)
+for idx,sample in enumerate(ds[0:6]['text']):
+    print(f'{idx} : {sample}')
 -------------------
 

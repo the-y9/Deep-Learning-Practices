@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>&lt;no title&gt; &#8212; Deep Learning Practices</title>
+    <title>Week 1 &#8212; Deep Learning Practices</title>
   
   
   
@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/DLP_Week_1';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="DLP_Week_2.html" />
+    <link rel="next" title="Week 2" href="DLP_Week_2.html" />
     <link rel="prev" title="Deep-Learning-Practices Notes" href="../README.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -162,7 +162,11 @@
                 </a>
             </li>
         </ul>
-        
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Week 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DLP_Week_2.html">Week 2</a></li>
+</ul>
+
     </div>
 </nav></div>
     </div>
@@ -330,9 +334,7 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -343,19 +345,11 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Week 1</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -365,7 +359,9 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="cell docutils container">
+  <section class="tex2jax_ignore mathjax_ignore" id="week-1">
+<h1>Week 1<a class="headerlink" href="#week-1" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> show datasets || pip install datasets;
 <span class="o">%</span><span class="k">pip</span> show transformers || pip install transformers;
@@ -385,34 +381,28 @@
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting filelock (from datasets)
   Downloading filelock-3.17.0-py3-none-any.whl.metadata (2.9 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting numpy&gt;=1.17 (from datasets)
-  Downloading numpy-2.2.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (62 kB)
+Requirement already satisfied: numpy&gt;=1.17 in /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages (from datasets) (2.2.2)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pyarrow&gt;=15.0.0 (from datasets)
   Downloading pyarrow-19.0.0-cp313-cp313-manylinux_2_28_x86_64.whl.metadata (3.3 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting dill&lt;0.3.9,&gt;=0.3.0 (from datasets)
+Collecting dill&lt;0.3.9,&gt;=0.3.0 (from datasets)
   Downloading dill-0.3.8-py3-none-any.whl.metadata (10 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pandas (from datasets)
-  Downloading pandas-2.2.3-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (89 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pandas in /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages (from datasets) (2.2.3)
+Requirement already satisfied: requests&gt;=2.32.2 in /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages (from datasets) (2.32.3)
+Collecting tqdm&gt;=4.66.3 (from datasets)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: requests&gt;=2.32.2 in /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages (from datasets) (2.32.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting tqdm&gt;=4.66.3 (from datasets)
-  Downloading tqdm-4.67.1-py3-none-any.whl.metadata (57 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading tqdm-4.67.1-py3-none-any.whl.metadata (57 kB)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting xxhash (from datasets)
   Downloading xxhash-3.5.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (12 kB)
-Collecting multiprocess&lt;0.70.17 (from datasets)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting multiprocess&lt;0.70.17 (from datasets)
   Downloading multiprocess-0.70.16-py312-none-any.whl.metadata (7.2 kB)
 </pre></div>
 </div>
@@ -421,101 +411,91 @@ Collecting multiprocess&lt;0.70.17 (from datasets)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting aiohttp (from datasets)
-  Downloading aiohttp-3.11.11-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.7 kB)
+  Downloading aiohttp-3.11.12-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.7 kB)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting huggingface-hub&gt;=0.23.0 (from datasets)
-  Downloading huggingface_hub-0.28.0-py3-none-any.whl.metadata (13 kB)
+  Downloading huggingface_hub-0.28.1-py3-none-any.whl.metadata (13 kB)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: packaging in /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages (from datasets) (24.2)
 Requirement already satisfied: pyyaml&gt;=5.1 in /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages (from datasets) (6.0.2)
 Collecting aiohappyeyeballs&gt;=2.3.0 (from aiohttp-&gt;datasets)
-  Downloading aiohappyeyeballs-2.4.4-py3-none-any.whl.metadata (6.1 kB)
-Collecting aiosignal&gt;=1.1.2 (from aiohttp-&gt;datasets)
-  Downloading aiosignal-1.3.2-py2.py3-none-any.whl.metadata (3.8 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: attrs&gt;=17.3.0 in /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages (from aiohttp-&gt;datasets) (25.1.0)
-Collecting frozenlist&gt;=1.1.1 (from aiohttp-&gt;datasets)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading aiohappyeyeballs-2.4.4-py3-none-any.whl.metadata (6.1 kB)
+Collecting aiosignal&gt;=1.1.2 (from aiohttp-&gt;datasets)
+  Downloading aiosignal-1.3.2-py2.py3-none-any.whl.metadata (3.8 kB)
+Requirement already satisfied: attrs&gt;=17.3.0 in /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages (from aiohttp-&gt;datasets) (25.1.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting frozenlist&gt;=1.1.1 (from aiohttp-&gt;datasets)
   Downloading frozenlist-1.5.0-cp313-cp313-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (13 kB)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting multidict&lt;7.0,&gt;=4.5 (from aiohttp-&gt;datasets)
+  Downloading multidict-6.1.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.0 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading multidict-6.1.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.0 kB)
-Collecting propcache&gt;=0.2.0 (from aiohttp-&gt;datasets)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting propcache&gt;=0.2.0 (from aiohttp-&gt;datasets)
   Downloading propcache-0.2.1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.2 kB)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting yarl&lt;2.0,&gt;=1.17.0 (from aiohttp-&gt;datasets)
-  Downloading yarl-1.18.3-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (69 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading yarl-1.18.3-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (69 kB)
 Requirement already satisfied: typing-extensions&gt;=3.7.4.3 in /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages (from huggingface-hub&gt;=0.23.0-&gt;datasets) (4.12.2)
 Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages (from requests&gt;=2.32.2-&gt;datasets) (3.4.1)
 Requirement already satisfied: idna&lt;4,&gt;=2.5 in /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages (from requests&gt;=2.32.2-&gt;datasets) (3.10)
 Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages (from requests&gt;=2.32.2-&gt;datasets) (2.3.0)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages (from requests&gt;=2.32.2-&gt;datasets) (2024.12.14)
-Requirement already satisfied: python-dateutil&gt;=2.8.2 in /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages (from pandas-&gt;datasets) (2.9.0.post0)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages (from requests&gt;=2.32.2-&gt;datasets) (2025.1.31)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pytz&gt;=2020.1 (from pandas-&gt;datasets)
-  Downloading pytz-2024.2-py2.py3-none-any.whl.metadata (22 kB)
-Collecting tzdata&gt;=2022.7 (from pandas-&gt;datasets)
-  Downloading tzdata-2025.1-py2.py3-none-any.whl.metadata (1.4 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas-&gt;datasets) (1.17.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: python-dateutil&gt;=2.8.2 in /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages (from pandas-&gt;datasets) (2.9.0.post0)
+Requirement already satisfied: pytz&gt;=2020.1 in /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages (from pandas-&gt;datasets) (2025.1)
+Requirement already satisfied: tzdata&gt;=2022.7 in /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages (from pandas-&gt;datasets) (2025.1)
+Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas-&gt;datasets) (1.17.0)
 Downloading datasets-3.2.0-py3-none-any.whl (480 kB)
-Downloading dill-0.3.8-py3-none-any.whl (116 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading fsspec-2024.9.0-py3-none-any.whl (179 kB)
-Downloading aiohttp-3.11.11-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.7 MB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading dill-0.3.8-py3-none-any.whl (116 kB)
+Downloading fsspec-2024.9.0-py3-none-any.whl (179 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading aiohttp-3.11.12-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.7 MB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/1.7 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.7/1.7 MB</span> <span class=" -Color -Color-Red">81.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading huggingface_hub-0.28.0-py3-none-any.whl (464 kB)
-Downloading multiprocess-0.70.16-py312-none-any.whl (146 kB)
-Downloading numpy-2.2.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.1 MB)
-?25l
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.7/1.7 MB</span> <span class=" -Color -Color-Red">73.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading huggingface_hub-0.28.1-py3-none-any.whl (464 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/16.1 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">16.1/16.1 MB</span> <span class=" -Color -Color-Red">138.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading pyarrow-19.0.0-cp313-cp313-manylinux_2_28_x86_64.whl (42.1 MB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading multiprocess-0.70.16-py312-none-any.whl (146 kB)
+Downloading pyarrow-19.0.0-cp313-cp313-manylinux_2_28_x86_64.whl (42.1 MB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/42.1 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━ <span class=" -Color -Color-Green">29.6/42.1 MB</span> <span class=" -Color -Color-Red">148.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">42.1/42.1 MB</span> <span class=" -Color -Color-Red">122.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">42.1/42.1 MB</span> <span class=" -Color -Color-Red">213.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25hDownloading tqdm-4.67.1-py3-none-any.whl (78 kB)
-Downloading filelock-3.17.0-py3-none-any.whl (16 kB)
-Downloading pandas-2.2.3-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.7 MB)
-?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/12.7 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">12.7/12.7 MB</span> <span class=" -Color -Color-Red">154.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading xxhash-3.5.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (194 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading filelock-3.17.0-py3-none-any.whl (16 kB)
+Downloading xxhash-3.5.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (194 kB)
 Downloading aiohappyeyeballs-2.4.4-py3-none-any.whl (14 kB)
-Downloading aiosignal-1.3.2-py2.py3-none-any.whl (7.6 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading aiosignal-1.3.2-py2.py3-none-any.whl (7.6 kB)
 Downloading frozenlist-1.5.0-cp313-cp313-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (267 kB)
 Downloading multidict-6.1.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (131 kB)
+Downloading propcache-0.2.1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (227 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading propcache-0.2.1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (227 kB)
-Downloading pytz-2024.2-py2.py3-none-any.whl (508 kB)
-Downloading tzdata-2025.1-py2.py3-none-any.whl (346 kB)
-Downloading yarl-1.18.3-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (339 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading yarl-1.18.3-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (339 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: pytz, xxhash, tzdata, tqdm, pyarrow, propcache, numpy, multidict, fsspec, frozenlist, filelock, dill, aiohappyeyeballs, yarl, pandas, multiprocess, huggingface-hub, aiosignal, aiohttp, datasets
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: xxhash, tqdm, pyarrow, propcache, multidict, fsspec, frozenlist, filelock, dill, aiohappyeyeballs, yarl, multiprocess, huggingface-hub, aiosignal, aiohttp, datasets
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed aiohappyeyeballs-2.4.4 aiohttp-3.11.11 aiosignal-1.3.2 datasets-3.2.0 dill-0.3.8 filelock-3.17.0 frozenlist-1.5.0 fsspec-2024.9.0 huggingface-hub-0.28.0 multidict-6.1.0 multiprocess-0.70.16 numpy-2.2.2 pandas-2.2.3 propcache-0.2.1 pyarrow-19.0.0 pytz-2024.2 tqdm-4.67.1 tzdata-2025.1 xxhash-3.5.0 yarl-1.18.3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed aiohappyeyeballs-2.4.4 aiohttp-3.11.12 aiosignal-1.3.2 datasets-3.2.0 dill-0.3.8 filelock-3.17.0 frozenlist-1.5.0 fsspec-2024.9.0 huggingface-hub-0.28.1 multidict-6.1.0 multiprocess-0.70.16 propcache-0.2.1 pyarrow-19.0.0 tqdm-4.67.1 xxhash-3.5.0 yarl-1.18.3
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
@@ -528,18 +508,20 @@ Downloading yarl-1.18.3-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.w
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting transformers
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading transformers-4.48.1-py3-none-any.whl.metadata (44 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading transformers-4.48.2-py3-none-any.whl.metadata (44 kB)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: filelock in /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages (from transformers) (3.17.0)
-Requirement already satisfied: huggingface-hub&lt;1.0,&gt;=0.24.0 in /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages (from transformers) (0.28.0)
+Requirement already satisfied: huggingface-hub&lt;1.0,&gt;=0.24.0 in /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages (from transformers) (0.28.1)
 Requirement already satisfied: numpy&gt;=1.17 in /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages (from transformers) (2.2.2)
 Requirement already satisfied: packaging&gt;=20.0 in /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages (from transformers) (24.2)
 Requirement already satisfied: pyyaml&gt;=5.1 in /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages (from transformers) (6.0.2)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting regex!=2019.12.17 (from transformers)
-  Downloading regex-2024.11.6-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (40 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading regex-2024.11.6-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (40 kB)
 Requirement already satisfied: requests in /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages (from transformers) (2.32.3)
 </pre></div>
 </div>
@@ -549,37 +531,38 @@ Requirement already satisfied: requests in /opt/hostedtoolcache/Python/3.13.1/x6
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting safetensors&gt;=0.4.1 (from transformers)
   Downloading safetensors-0.5.2-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.8 kB)
-Requirement already satisfied: tqdm&gt;=4.27 in /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages (from transformers) (4.67.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: tqdm&gt;=4.27 in /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages (from transformers) (4.67.1)
 Requirement already satisfied: fsspec&gt;=2023.5.0 in /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages (from huggingface-hub&lt;1.0,&gt;=0.24.0-&gt;transformers) (2024.9.0)
 Requirement already satisfied: typing-extensions&gt;=3.7.4.3 in /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages (from huggingface-hub&lt;1.0,&gt;=0.24.0-&gt;transformers) (4.12.2)
 Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages (from requests-&gt;transformers) (3.4.1)
 Requirement already satisfied: idna&lt;4,&gt;=2.5 in /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages (from requests-&gt;transformers) (3.10)
 Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages (from requests-&gt;transformers) (2.3.0)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages (from requests-&gt;transformers) (2024.12.14)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages (from requests-&gt;transformers) (2025.1.31)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading transformers-4.48.1-py3-none-any.whl (9.7 MB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading transformers-4.48.2-py3-none-any.whl (9.7 MB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/9.7 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">9.7/9.7 MB</span> <span class=" -Color -Color-Red">73.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">9.7/9.7 MB</span> <span class=" -Color -Color-Red">118.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading regex-2024.11.6-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (796 kB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/796.9 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">796.9/796.9 kB</span> <span class=" -Color -Color-Red">110.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading safetensors-0.5.2-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (461 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading regex-2024.11.6-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (796 kB)
-?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/796.9 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">796.9/796.9 kB</span> <span class=" -Color -Color-Red">102.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading safetensors-0.5.2-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (461 kB)
-Downloading tokenizers-0.21.0-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading tokenizers-0.21.0-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/3.0 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.0/3.0 MB</span> <span class=" -Color -Color-Red">147.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.0/3.0 MB</span> <span class=" -Color -Color-Red">179.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25h
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: safetensors, regex, tokenizers, transformers
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed regex-2024.11.6 safetensors-0.5.2 tokenizers-0.21.0 transformers-4.48.1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed regex-2024.11.6 safetensors-0.5.2 tokenizers-0.21.0 transformers-4.48.2
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
@@ -587,6 +570,8 @@ Downloading tokenizers-0.21.0-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_
 </div>
 </div>
 </div>
+<p><strong>Q1.</strong> Download the dataset <a class="reference external" href="https://huggingface.co/datasets/ai4bharat/naamapadam">https://huggingface.co/datasets/ai4bharat/naamapadam</a> from the hub and choose all the correct statements about the dataset. <br>
+Note: You could answer some of the questions by directly visiting the given link. However, we strongly recommend you to use the suitable functions in datasets modules to get the info about the dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">datasets</span>
@@ -617,71 +602,8 @@ Downloading tokenizers-0.21.0-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ConnectionError</span><span class="g g-Whitespace">                           </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">10</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Names of configs - </span><span class="si">{</span><span class="n">configs</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># Print configuration names</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="c1"># Call the function with the dataset name</span>
-<span class="ne">---&gt; </span><span class="mi">10</span> <span class="n">configs</span><span class="p">(</span><span class="s2">&quot;ai4bharat/naamapadam&quot;</span><span class="p">)</span>
-
-<span class="nn">Cell In[3], line 5,</span> in <span class="ni">configs</span><span class="nt">(dataset_name)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">def</span><span class="w"> </span><span class="nf">configs</span><span class="p">(</span><span class="n">dataset_name</span><span class="p">):</span>
-<span class="ne">----&gt; </span><span class="mi">5</span>     <span class="n">configs</span> <span class="o">=</span> <span class="n">get_dataset_config_names</span><span class="p">(</span><span class="n">dataset_name</span><span class="p">)</span>  <span class="c1"># Fetch configurations</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No. of configs - </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">configs</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># Print number of configurations</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Names of configs - </span><span class="si">{</span><span class="n">configs</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/datasets/inspect.py:164,</span> in <span class="ni">get_dataset_config_names</span><span class="nt">(path, revision, download_config, download_mode, dynamic_modules_path, data_files, **download_kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">108</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_dataset_config_names</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">109</span>     <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">110</span>     <span class="n">revision</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Version</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">115</span>     <span class="o">**</span><span class="n">download_kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">116</span> <span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">117</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Get the list of available config names for a particular dataset.</span>
-<span class="g g-Whitespace">    </span><span class="mi">118</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">119</span><span class="sd">     Args:</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">162</span><span class="sd">     ```</span>
-<span class="g g-Whitespace">    </span><span class="mi">163</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">164</span>     <span class="n">dataset_module</span> <span class="o">=</span> <span class="n">dataset_module_factory</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">165</span>         <span class="n">path</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">166</span>         <span class="n">revision</span><span class="o">=</span><span class="n">revision</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">167</span>         <span class="n">download_config</span><span class="o">=</span><span class="n">download_config</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">168</span>         <span class="n">download_mode</span><span class="o">=</span><span class="n">download_mode</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">169</span>         <span class="n">dynamic_modules_path</span><span class="o">=</span><span class="n">dynamic_modules_path</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">170</span>         <span class="n">data_files</span><span class="o">=</span><span class="n">data_files</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">171</span>         <span class="o">**</span><span class="n">download_kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">172</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">173</span>     <span class="n">builder_cls</span> <span class="o">=</span> <span class="n">get_dataset_builder_class</span><span class="p">(</span><span class="n">dataset_module</span><span class="p">,</span> <span class="n">dataset_name</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">174</span>     <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">builder_cls</span><span class="o">.</span><span class="n">builder_configs</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="ow">or</span> <span class="p">[</span>
-<span class="g g-Whitespace">    </span><span class="mi">175</span>         <span class="n">dataset_module</span><span class="o">.</span><span class="n">builder_kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;config_name&quot;</span><span class="p">,</span> <span class="n">builder_cls</span><span class="o">.</span><span class="n">DEFAULT_CONFIG_NAME</span> <span class="ow">or</span> <span class="s2">&quot;default&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">176</span>     <span class="p">]</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/datasets/load.py:1731,</span> in <span class="ni">dataset_module_factory</span><span class="nt">(path, revision, download_config, download_mode, dynamic_modules_path, data_dir, data_files, cache_dir, trust_remote_code, _require_default_config_name, _require_custom_configs, **download_kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1726</span>                 <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1727</span>                     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1728</span>                         <span class="sa">f</span><span class="s2">&quot;Couldn&#39;t find any data file at </span><span class="si">{</span><span class="n">relative_to_absolute_path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="si">}</span><span class="s2">. &quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1729</span>                         <span class="sa">f</span><span class="s2">&quot;Couldn&#39;t find &#39;</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">&#39; on the Hugging Face Hub either: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">e1</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e1</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1730</span>                     <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
-<span class="ne">-&gt; </span><span class="mi">1731</span>             <span class="k">raise</span> <span class="n">e1</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
-<span class="g g-Whitespace">   </span><span class="mi">1732</span> <span class="k">elif</span> <span class="n">trust_remote_code</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1733</span>     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1734</span>         <span class="sa">f</span><span class="s2">&quot;Couldn&#39;t find a dataset script at </span><span class="si">{</span><span class="n">relative_to_absolute_path</span><span class="p">(</span><span class="n">combined_path</span><span class="p">)</span><span class="si">}</span><span class="s2"> or any data file in the same directory.&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1735</span>     <span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/datasets/load.py:1618,</span> in <span class="ni">dataset_module_factory</span><span class="nt">(path, revision, download_config, download_mode, dynamic_modules_path, data_dir, data_files, cache_dir, trust_remote_code, _require_default_config_name, _require_custom_configs, **download_kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1609</span> <span class="k">except</span> <span class="n">LocalEntryNotFoundError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1610</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1611</span>         <span class="n">e</span><span class="o">.</span><span class="n">__cause__</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1612</span>         <span class="p">(</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1616</span>         <span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1617</span>     <span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1618</span>         <span class="k">raise</span> <span class="ne">ConnectionError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Couldn&#39;t reach &#39;</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">&#39; on the Hub (</span><span class="si">{</span><span class="n">e</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
-<span class="g g-Whitespace">   </span><span class="mi">1619</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1620</span>         <span class="k">raise</span>
-
-<span class="ne">ConnectionError</span>: Couldn&#39;t reach &#39;ai4bharat/naamapadam&#39; on the Hub (LocalEntryNotFoundError)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No. of configs - 11
+Names of configs - [&#39;as&#39;, &#39;bn&#39;, &#39;gu&#39;, &#39;hi&#39;, &#39;kn&#39;, &#39;ml&#39;, &#39;mr&#39;, &#39;or&#39;, &#39;pa&#39;, &#39;ta&#39;, &#39;te&#39;]
 </pre></div>
 </div>
 </div>
@@ -702,6 +624,45 @@ Downloading tokenizers-0.21.0-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generating train split:   0%|          | 0/497882 [00:00&lt;?, ? examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generating train split:  20%|██        | 101000/497882 [00:00&lt;00:00, 997451.66 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generating train split:  44%|████▍     | 219000/497882 [00:00&lt;00:00, 1099109.25 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generating train split:  68%|██████▊   | 339000/497882 [00:00&lt;00:00, 1138827.69 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generating train split:  91%|█████████ | 454000/497882 [00:00&lt;00:00, 1142884.27 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generating train split: 100%|██████████| 497882/497882 [00:00&lt;00:00, 1134211.62 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generating test split:   0%|          | 0/758 [00:00&lt;?, ? examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generating test split: 100%|██████████| 758/758 [00:00&lt;00:00, 287249.95 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generating validation split:   0%|          | 0/2795 [00:00&lt;?, ? examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generating validation split: 100%|██████████| 2795/2795 [00:00&lt;00:00, 698301.15 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DatasetDict({
     train: Dataset({
         features: [&#39;tokens&#39;, &#39;ner_tags&#39;],
@@ -741,6 +702,7 @@ Downloading tokenizers-0.21.0-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_
 </div>
 </div>
 </div>
+<p><strong>Q2</strong>:Download the <strong>training split</strong> of the tamil (ta) subset of the dataset and store in a variable named “ds”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">ta</span>
@@ -751,6 +713,7 @@ Downloading tokenizers-0.21.0-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span>
+<span class="c1"># ds.cache_files</span>
 </pre></div>
 </div>
 </div>
@@ -786,8 +749,8 @@ Downloading tokenizers-0.21.0-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;ta&#39;]
 [&#39;1.0.0&#39;]
-[&#39;9d4f21ac57d11ed4f9ea64854fdc9f5618e61acc&#39;]
-[&#39;cache-08edb42976601831.arrow&#39;, &#39;cache-276b6910d3e0f022.arrow&#39;, &#39;cache-3bcf291f0fdd77f0.arrow&#39;, &#39;cache-af0655c4e265bf0e.arrow&#39;, &#39;cache-d1d2e51c76ec6b21.arrow&#39;, &#39;dataset_info.json&#39;, &#39;LICENSE&#39;, &#39;naamapadam-test.arrow&#39;, &#39;naamapadam-train.arrow&#39;, &#39;naamapadam-validation.arrow&#39;]
+[&#39;9d4f21ac57d11ed4f9ea64854fdc9f5618e61acc.incomplete_info.lock&#39;, &#39;9d4f21ac57d11ed4f9ea64854fdc9f5618e61acc_builder.lock&#39;, &#39;9d4f21ac57d11ed4f9ea64854fdc9f5618e61acc&#39;]
+[&#39;LICENSE&#39;, &#39;naamapadam-train.arrow&#39;, &#39;naamapadam-test.arrow&#39;, &#39;naamapadam-validation.arrow&#39;, &#39;dataset_info.json&#39;]
 </pre></div>
 </div>
 </div>
@@ -814,11 +777,13 @@ Downloading tokenizers-0.21.0-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset size: 662.2727317810059 MB
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset size: 179.29018783569336 MB
 </pre></div>
 </div>
 </div>
 </div>
+<p><strong>Q6: Count number of tokens:</strong> <br>
+Create a new column named ``num_tokens”. Compute the number of tokens (words) in each sample and keep it in the newly created column. How many tokens (in millions) are there in the entire dataset?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">cnot</span><span class="p">(</span><span class="n">example</span><span class="p">):</span>
@@ -831,6 +796,675 @@ Downloading tokenizers-0.21.0-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   0%|          | 0/497882 [00:00&lt;?, ? examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   0%|          | 2000/497882 [00:00&lt;00:27, 17942.82 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   1%|          | 4658/497882 [00:00&lt;00:27, 17784.97 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   1%|▏         | 7386/497882 [00:00&lt;00:27, 17975.94 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   2%|▏         | 9256/497882 [00:00&lt;00:26, 18201.19 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   2%|▏         | 11226/497882 [00:00&lt;00:26, 18666.26 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   3%|▎         | 13160/497882 [00:00&lt;00:25, 18872.75 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   3%|▎         | 15092/497882 [00:00&lt;00:25, 19005.08 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   3%|▎         | 17016/497882 [00:00&lt;00:25, 19074.88 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   4%|▍         | 19007/497882 [00:01&lt;00:24, 19325.79 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   4%|▍         | 21943/497882 [00:01&lt;00:24, 19421.56 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   5%|▍         | 23953/497882 [00:01&lt;00:24, 19603.48 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   5%|▌         | 26855/497882 [00:01&lt;00:24, 19505.71 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   6%|▌         | 29720/497882 [00:01&lt;00:24, 19363.01 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   7%|▋         | 32623/497882 [00:01&lt;00:24, 19357.56 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   7%|▋         | 35486/497882 [00:01&lt;00:23, 19269.27 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   8%|▊         | 38344/497882 [00:02&lt;00:23, 19197.56 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   8%|▊         | 41000/497882 [00:02&lt;00:24, 18660.37 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   9%|▊         | 42932/497882 [00:02&lt;00:24, 18807.72 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   9%|▉         | 44851/497882 [00:02&lt;00:23, 18896.33 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   9%|▉         | 46781/497882 [00:02&lt;00:23, 18997.38 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  10%|▉         | 48706/497882 [00:02&lt;00:23, 19063.34 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  10%|█         | 50618/497882 [00:02&lt;00:23, 19077.57 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  11%|█         | 52546/497882 [00:02&lt;00:23, 19131.10 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  11%|█         | 54515/497882 [00:02&lt;00:22, 19290.17 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  11%|█▏        | 56502/497882 [00:02&lt;00:22, 19457.94 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  12%|█▏        | 59342/497882 [00:03&lt;00:22, 19252.67 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  12%|█▏        | 62000/497882 [00:03&lt;00:23, 18518.27 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  13%|█▎        | 64856/497882 [00:03&lt;00:23, 18689.49 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  13%|█▎        | 66740/497882 [00:03&lt;00:23, 18724.06 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  14%|█▍        | 68712/497882 [00:03&lt;00:22, 18966.19 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  14%|█▍        | 70635/497882 [00:03&lt;00:22, 19033.73 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  15%|█▍        | 72598/497882 [00:03&lt;00:22, 19193.21 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  15%|█▌        | 75271/497882 [00:03&lt;00:22, 18679.54 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  15%|█▌        | 77154/497882 [00:04&lt;00:22, 18716.74 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  16%|█▌        | 79962/497882 [00:04&lt;00:22, 18715.55 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  16%|█▋        | 81863/497882 [00:04&lt;00:22, 18789.47 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  17%|█▋        | 84682/497882 [00:04&lt;00:21, 18787.25 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  17%|█▋        | 87125/497882 [00:04&lt;00:22, 17946.31 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  18%|█▊        | 89000/497882 [00:04&lt;00:22, 18001.98 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  18%|█▊        | 90949/497882 [00:04&lt;00:22, 18378.24 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  19%|█▊        | 92883/497882 [00:04&lt;00:21, 18633.48 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  19%|█▉        | 94803/497882 [00:05&lt;00:21, 18787.75 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  19%|█▉        | 96753/497882 [00:05&lt;00:21, 18984.95 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  20%|█▉        | 98699/497882 [00:05&lt;00:20, 19120.65 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  20%|██        | 101506/497882 [00:05&lt;00:20, 18960.59 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  21%|██        | 104387/497882 [00:05&lt;00:20, 19044.12 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  22%|██▏       | 107218/497882 [00:05&lt;00:20, 18982.96 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  22%|██▏       | 109167/497882 [00:05&lt;00:20, 19103.32 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  22%|██▏       | 111134/497882 [00:05&lt;00:20, 19247.50 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  23%|██▎       | 114000/497882 [00:06&lt;00:20, 19182.28 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  23%|██▎       | 116828/497882 [00:06&lt;00:19, 19070.41 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  24%|██▍       | 119695/497882 [00:06&lt;00:19, 19081.40 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  25%|██▍       | 122317/497882 [00:06&lt;00:20, 18571.94 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  25%|██▌       | 124636/497882 [00:06&lt;00:22, 16954.19 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  25%|██▌       | 126552/497882 [00:06&lt;00:21, 17440.96 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  26%|██▌       | 128461/497882 [00:06&lt;00:20, 17834.29 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  26%|██▋       | 131175/497882 [00:06&lt;00:20, 17920.56 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  27%|██▋       | 133693/497882 [00:07&lt;00:20, 17545.66 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  27%|██▋       | 136391/497882 [00:07&lt;00:20, 17682.96 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  28%|██▊       | 138271/497882 [00:07&lt;00:20, 17941.78 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  28%|██▊       | 140128/497882 [00:07&lt;00:19, 18097.19 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  29%|██▊       | 142014/497882 [00:07&lt;00:19, 18293.74 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  29%|██▉       | 143980/497882 [00:07&lt;00:18, 18660.85 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  29%|██▉       | 146810/497882 [00:07&lt;00:18, 18730.37 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  30%|███       | 149654/497882 [00:07&lt;00:18, 18805.65 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  31%|███       | 152387/497882 [00:08&lt;00:18, 18609.77 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  31%|███       | 155049/497882 [00:08&lt;00:18, 18330.38 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  32%|███▏      | 157689/497882 [00:08&lt;00:18, 18095.87 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  32%|███▏      | 159585/497882 [00:08&lt;00:18, 18294.34 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  32%|███▏      | 161532/497882 [00:08&lt;00:18, 18581.36 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  33%|███▎      | 163460/497882 [00:08&lt;00:17, 18762.13 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  33%|███▎      | 166221/497882 [00:08&lt;00:17, 18629.67 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  34%|███▍      | 169000/497882 [00:09&lt;00:17, 18384.73 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  34%|███▍      | 171031/497882 [00:09&lt;00:17, 18779.12 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  35%|███▍      | 173000/497882 [00:09&lt;00:17, 18760.79 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  35%|███▌      | 175000/497882 [00:09&lt;00:17, 18909.40 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  36%|███▌      | 176984/497882 [00:09&lt;00:16, 19162.25 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  36%|███▌      | 178989/497882 [00:09&lt;00:16, 19408.41 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  36%|███▋      | 180965/497882 [00:09&lt;00:16, 19504.60 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  37%|███▋      | 183874/497882 [00:09&lt;00:16, 19458.49 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  38%|███▊      | 186764/497882 [00:09&lt;00:16, 19388.01 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  38%|███▊      | 189695/497882 [00:10&lt;00:15, 19436.92 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  39%|███▊      | 192547/497882 [00:10&lt;00:15, 19299.35 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  39%|███▉      | 195431/497882 [00:10&lt;00:15, 19275.14 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  40%|███▉      | 198209/497882 [00:10&lt;00:15, 19037.30 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  40%|████      | 201086/497882 [00:10&lt;00:15, 19078.30 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  41%|████      | 203000/497882 [00:10&lt;00:15, 19018.13 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  41%|████      | 205000/497882 [00:10&lt;00:15, 19163.23 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  42%|████▏     | 207000/497882 [00:11&lt;00:15, 19272.01 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  42%|████▏     | 209001/497882 [00:11&lt;00:14, 19417.88 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  42%|████▏     | 211000/497882 [00:11&lt;00:14, 19266.43 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  43%|████▎     | 213000/497882 [00:11&lt;00:14, 19419.62 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  43%|████▎     | 215000/497882 [00:11&lt;00:14, 19408.48 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  44%|████▎     | 217000/497882 [00:11&lt;00:14, 18959.25 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  44%|████▍     | 219805/497882 [00:11&lt;00:14, 18858.04 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  45%|████▍     | 221700/497882 [00:11&lt;00:14, 18873.31 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  45%|████▍     | 223602/497882 [00:11&lt;00:14, 18908.76 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  45%|████▌     | 226447/497882 [00:12&lt;00:14, 18924.79 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  46%|████▌     | 228344/497882 [00:12&lt;00:14, 18934.44 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  46%|████▋     | 231103/497882 [00:12&lt;00:14, 18735.45 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  47%|████▋     | 233000/497882 [00:12&lt;00:14, 18768.00 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  47%|████▋     | 235004/497882 [00:12&lt;00:13, 18954.62 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  48%|████▊     | 237000/497882 [00:12&lt;00:13, 19140.53 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  48%|████▊     | 239000/497882 [00:12&lt;00:13, 19293.52 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  48%|████▊     | 241000/497882 [00:12&lt;00:13, 19408.58 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  49%|████▉     | 243896/497882 [00:12&lt;00:13, 19365.97 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  49%|████▉     | 245837/497882 [00:13&lt;00:13, 19374.38 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  50%|████▉     | 247869/497882 [00:13&lt;00:12, 19631.64 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  50%|█████     | 249846/497882 [00:13&lt;00:12, 19666.88 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  51%|█████     | 252733/497882 [00:13&lt;00:12, 19506.87 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  51%|█████     | 254721/497882 [00:13&lt;00:12, 19601.64 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  52%|█████▏    | 257614/497882 [00:13&lt;00:12, 19484.10 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  52%|█████▏    | 260514/497882 [00:13&lt;00:12, 19431.07 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  53%|█████▎    | 263331/497882 [00:13&lt;00:12, 19214.23 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  53%|█████▎    | 266219/497882 [00:14&lt;00:12, 19223.58 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  54%|█████▍    | 269021/497882 [00:14&lt;00:12, 19051.49 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  54%|█████▍    | 270936/497882 [00:14&lt;00:11, 19071.63 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  55%|█████▍    | 273799/497882 [00:14&lt;00:11, 19074.59 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  56%|█████▌    | 276667/497882 [00:14&lt;00:11, 19085.17 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  56%|█████▌    | 279478/497882 [00:14&lt;00:11, 18972.56 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  57%|█████▋    | 282356/497882 [00:14&lt;00:11, 19036.97 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  57%|█████▋    | 284286/497882 [00:15&lt;00:11, 19094.66 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  57%|█████▋    | 286221/497882 [00:15&lt;00:11, 19152.59 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  58%|█████▊    | 289047/497882 [00:15&lt;00:10, 19041.90 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  59%|█████▊    | 291687/497882 [00:15&lt;00:11, 17643.21 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  59%|█████▉    | 293481/497882 [00:15&lt;00:11, 17708.40 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  59%|█████▉    | 295417/497882 [00:15&lt;00:11, 18115.08 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  60%|█████▉    | 298132/497882 [00:15&lt;00:11, 18103.69 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  60%|██████    | 299974/497882 [00:15&lt;00:10, 18180.02 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  61%|██████    | 301919/497882 [00:16&lt;00:10, 18511.73 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  61%|██████    | 303862/497882 [00:16&lt;00:10, 18757.93 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  61%|██████▏   | 305761/497882 [00:16&lt;00:10, 18820.15 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  62%|██████▏   | 307685/497882 [00:16&lt;00:10, 18937.88 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  62%|██████▏   | 310483/497882 [00:16&lt;00:09, 18825.72 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  63%|██████▎   | 312409/497882 [00:16&lt;00:09, 18940.48 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  63%|██████▎   | 314384/497882 [00:16&lt;00:09, 19161.24 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  64%|██████▎   | 317106/497882 [00:16&lt;00:09, 18782.22 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  64%|██████▍   | 319046/497882 [00:16&lt;00:09, 18940.08 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  65%|██████▍   | 321926/497882 [00:17&lt;00:09, 19029.62 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  65%|██████▌   | 323894/497882 [00:17&lt;00:09, 19192.64 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  66%|██████▌   | 326571/497882 [00:17&lt;00:09, 18714.11 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  66%|██████▌   | 329209/497882 [00:17&lt;00:09, 18332.61 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  67%|██████▋   | 332000/497882 [00:17&lt;00:09, 18284.91 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  67%|██████▋   | 334004/497882 [00:17&lt;00:08, 18625.99 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  68%|██████▊   | 336762/497882 [00:17&lt;00:08, 18542.99 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  68%|██████▊   | 339460/497882 [00:18&lt;00:08, 18360.85 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  69%|██████▊   | 342262/497882 [00:18&lt;00:08, 18458.95 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  69%|██████▉   | 344193/497882 [00:18&lt;00:08, 18653.86 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  70%|██████▉   | 347000/497882 [00:18&lt;00:08, 18496.62 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  70%|███████   | 349000/497882 [00:18&lt;00:07, 18682.53 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  70%|███████   | 351000/497882 [00:18&lt;00:07, 18967.31 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  71%|███████   | 353003/497882 [00:18&lt;00:07, 19099.46 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  71%|███████▏  | 355000/497882 [00:18&lt;00:07, 19308.88 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  72%|███████▏  | 357918/497882 [00:18&lt;00:07, 19357.35 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  72%|███████▏  | 360846/497882 [00:19&lt;00:07, 19410.92 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  73%|███████▎  | 362794/497882 [00:19&lt;00:06, 19426.35 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  73%|███████▎  | 364745/497882 [00:19&lt;00:06, 19444.62 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  74%|███████▎  | 366715/497882 [00:19&lt;00:06, 19510.78 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  74%|███████▍  | 369624/497882 [00:19&lt;00:06, 19463.68 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  75%|███████▍  | 372503/497882 [00:19&lt;00:06, 19368.75 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  75%|███████▌  | 375378/497882 [00:19&lt;00:06, 19299.82 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  76%|███████▌  | 377335/497882 [00:19&lt;00:06, 19363.00 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  76%|███████▋  | 380201/497882 [00:20&lt;00:06, 19273.35 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  77%|███████▋  | 383000/497882 [00:20&lt;00:06, 19048.36 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  77%|███████▋  | 385000/497882 [00:20&lt;00:05, 19207.51 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  78%|███████▊  | 386972/497882 [00:20&lt;00:05, 19334.09 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  78%|███████▊  | 388928/497882 [00:20&lt;00:05, 19391.05 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  79%|███████▊  | 391813/497882 [00:20&lt;00:05, 19327.89 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  79%|███████▉  | 394708/497882 [00:20&lt;00:05, 19316.46 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  80%|███████▉  | 397556/497882 [00:21&lt;00:05, 19203.73 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  80%|████████  | 400415/497882 [00:21&lt;00:05, 19154.93 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  81%|████████  | 403130/497882 [00:21&lt;00:05, 18822.51 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  82%|████████▏ | 406000/497882 [00:21&lt;00:04, 18629.95 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  82%|████████▏ | 408001/497882 [00:21&lt;00:04, 18826.44 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  83%|████████▎ | 410794/497882 [00:21&lt;00:04, 18756.26 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  83%|████████▎ | 413434/497882 [00:21&lt;00:04, 18386.57 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  84%|████████▎ | 416257/497882 [00:22&lt;00:04, 18519.30 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  84%|████████▍ | 418122/497882 [00:22&lt;00:04, 18546.54 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  84%|████████▍ | 420110/497882 [00:22&lt;00:04, 18873.24 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  85%|████████▍ | 422035/497882 [00:22&lt;00:03, 18969.14 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  85%|████████▌ | 424000/497882 [00:22&lt;00:03, 18763.30 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  86%|████████▌ | 426812/497882 [00:22&lt;00:03, 18754.23 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  86%|████████▋ | 429678/497882 [00:22&lt;00:03, 18871.40 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  87%|████████▋ | 432465/497882 [00:22&lt;00:03, 18774.24 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  87%|████████▋ | 435148/497882 [00:23&lt;00:03, 18488.87 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  88%|████████▊ | 437000/497882 [00:23&lt;00:03, 18232.47 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  88%|████████▊ | 439000/497882 [00:23&lt;00:03, 18440.55 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  89%|████████▊ | 441762/497882 [00:23&lt;00:03, 18428.76 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  89%|████████▉ | 443619/497882 [00:23&lt;00:02, 18461.61 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  90%|████████▉ | 446149/497882 [00:23&lt;00:02, 17907.77 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  90%|█████████ | 448930/497882 [00:23&lt;00:02, 18113.00 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  91%|█████████ | 450856/497882 [00:23&lt;00:02, 18385.11 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  91%|█████████ | 452770/497882 [00:24&lt;00:02, 18576.74 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  91%|█████████▏| 454722/497882 [00:24&lt;00:02, 18825.98 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  92%|█████████▏| 457465/497882 [00:24&lt;00:02, 18626.18 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  92%|█████████▏| 459681/497882 [00:24&lt;00:02, 16862.98 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  93%|█████████▎| 461572/497882 [00:24&lt;00:02, 17353.42 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  93%|█████████▎| 463512/497882 [00:24&lt;00:01, 17874.90 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  94%|█████████▎| 466210/497882 [00:24&lt;00:01, 17912.15 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  94%|█████████▍| 468089/497882 [00:24&lt;00:01, 18131.99 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  94%|█████████▍| 470000/497882 [00:24&lt;00:01, 18109.94 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  95%|█████████▍| 472000/497882 [00:25&lt;00:01, 18355.09 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  95%|█████████▌| 474000/497882 [00:25&lt;00:01, 18535.45 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  96%|█████████▌| 476000/497882 [00:25&lt;00:01, 18798.62 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  96%|█████████▌| 478864/497882 [00:25&lt;00:01, 18904.61 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  97%|█████████▋| 481709/497882 [00:25&lt;00:00, 18921.07 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  97%|█████████▋| 484556/497882 [00:25&lt;00:00, 18936.12 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  98%|█████████▊| 487365/497882 [00:25&lt;00:00, 18866.83 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  98%|█████████▊| 489266/497882 [00:26&lt;00:00, 18897.34 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  99%|█████████▉| 492018/497882 [00:26&lt;00:00, 18605.84 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  99%|█████████▉| 494009/497882 [00:26&lt;00:00, 18798.09 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map: 100%|█████████▉| 496000/497882 [00:26&lt;00:00, 18736.55 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map: 100%|██████████| 497882/497882 [00:26&lt;00:00, 13081.14 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map: 100%|██████████| 497882/497882 [00:26&lt;00:00, 18686.65 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   0%|          | 0/758 [00:00&lt;?, ? examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map: 100%|██████████| 758/758 [00:00&lt;00:00, 15177.82 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   0%|          | 0/2795 [00:00&lt;?, ? examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  72%|███████▏  | 2001/2795 [00:00&lt;00:00, 19408.96 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map: 100%|██████████| 2795/2795 [00:00&lt;00:00, 18467.85 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DatasetDict({
     train: Dataset({
         features: [&#39;tokens&#39;, &#39;ner_tags&#39;, &#39;num_tokens&#39;],
@@ -889,7 +1523,7 @@ Total number of tokens (in millions): 6.00
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset size: 662.2727317810059 MB
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset size: 362.42800521850586 MB
 </pre></div>
 </div>
 </div>
@@ -951,10 +1585,768 @@ Total number of tokens (in millions): 6.00
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset({
-    features: [&#39;tokens&#39;, &#39;ner_tags&#39;, &#39;num_tokens&#39;, &#39;text&#39;],
-    num_rows: 501435
-})
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   0%|          | 0/501435 [00:00&lt;?, ? examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   0%|          | 1736/501435 [00:00&lt;00:29, 17140.73 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   1%|          | 4027/501435 [00:00&lt;00:31, 15866.73 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   1%|          | 5999/501435 [00:00&lt;00:29, 16826.19 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   2%|▏         | 8348/501435 [00:00&lt;00:30, 16298.94 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   2%|▏         | 10000/501435 [00:00&lt;00:30, 16217.02 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   2%|▏         | 11698/501435 [00:00&lt;00:29, 16442.58 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   3%|▎         | 14079/501435 [00:00&lt;00:30, 16218.49 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   3%|▎         | 15979/501435 [00:00&lt;00:29, 16668.94 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   4%|▎         | 18283/501435 [00:01&lt;00:29, 16191.09 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   4%|▍         | 19966/501435 [00:01&lt;00:29, 16334.63 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   4%|▍         | 22225/501435 [00:01&lt;00:30, 15879.65 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   5%|▍         | 23959/501435 [00:01&lt;00:29, 16237.12 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   5%|▌         | 26336/501435 [00:01&lt;00:29, 16090.43 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   6%|▌         | 28000/501435 [00:01&lt;00:29, 15875.13 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   6%|▌         | 30358/501435 [00:01&lt;00:29, 15818.43 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   6%|▋         | 32000/501435 [00:01&lt;00:29, 15801.66 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   7%|▋         | 33760/501435 [00:02&lt;00:28, 16263.57 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   7%|▋         | 36000/501435 [00:02&lt;00:29, 15735.21 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   8%|▊         | 37708/501435 [00:02&lt;00:28, 16073.85 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   8%|▊         | 40000/501435 [00:02&lt;00:29, 15744.72 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   8%|▊         | 41737/501435 [00:02&lt;00:28, 16150.91 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   9%|▊         | 43539/501435 [00:02&lt;00:32, 14098.75 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   9%|▉         | 45048/501435 [00:02&lt;00:31, 14337.01 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:   9%|▉         | 46766/501435 [00:02&lt;00:30, 15065.38 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  10%|▉         | 49048/501435 [00:03&lt;00:29, 15116.69 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  10%|█         | 50804/501435 [00:03&lt;00:28, 15732.53 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  11%|█         | 53130/501435 [00:03&lt;00:28, 15650.36 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  11%|█         | 54986/501435 [00:03&lt;00:27, 16201.38 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  11%|█▏        | 57389/501435 [00:03&lt;00:27, 16135.52 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  12%|█▏        | 59983/501435 [00:03&lt;00:26, 16360.93 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  12%|█▏        | 62353/501435 [00:03&lt;00:27, 16180.04 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  13%|█▎        | 64000/501435 [00:04&lt;00:27, 16171.74 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  13%|█▎        | 65632/501435 [00:04&lt;00:26, 16204.99 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  13%|█▎        | 67267/501435 [00:04&lt;00:26, 16242.00 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  14%|█▍        | 69000/501435 [00:04&lt;00:26, 16195.39 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  14%|█▍        | 70784/501435 [00:04&lt;00:25, 16647.51 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  15%|█▍        | 73118/501435 [00:04&lt;00:26, 16240.70 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  15%|█▍        | 74988/501435 [00:04&lt;00:25, 16520.60 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  15%|█▌        | 77400/501435 [00:04&lt;00:25, 16361.36 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  16%|█▌        | 79970/501435 [00:04&lt;00:25, 16604.55 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  16%|█▋        | 82250/501435 [00:05&lt;00:25, 16146.89 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  17%|█▋        | 83967/501435 [00:05&lt;00:25, 16242.51 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  17%|█▋        | 86206/501435 [00:05&lt;00:26, 15801.42 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  18%|█▊        | 87898/501435 [00:05&lt;00:25, 16069.82 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  18%|█▊        | 89524/501435 [00:05&lt;00:25, 16116.88 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  18%|█▊        | 92000/501435 [00:05&lt;00:25, 16072.08 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  19%|█▊        | 93749/501435 [00:05&lt;00:24, 16424.36 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  19%|█▉        | 96121/501435 [00:05&lt;00:25, 16209.71 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  20%|█▉        | 97997/501435 [00:06&lt;00:24, 16641.03 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  20%|██        | 100363/501435 [00:06&lt;00:24, 16337.24 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  21%|██        | 102965/501435 [00:06&lt;00:24, 16592.34 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  21%|██        | 105246/501435 [00:06&lt;00:24, 16147.34 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  21%|██▏       | 106953/501435 [00:06&lt;00:24, 16354.79 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  22%|██▏       | 109309/501435 [00:06&lt;00:24, 16137.29 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  22%|██▏       | 111000/501435 [00:06&lt;00:24, 16063.55 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  22%|██▏       | 112785/501435 [00:07&lt;00:23, 16514.38 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  23%|██▎       | 115173/501435 [00:07&lt;00:23, 16302.71 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  23%|██▎       | 116979/501435 [00:07&lt;00:23, 16635.40 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  24%|██▍       | 119286/501435 [00:07&lt;00:23, 16196.06 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  24%|██▍       | 121000/501435 [00:07&lt;00:23, 16135.74 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  24%|██▍       | 122735/501435 [00:07&lt;00:23, 16447.38 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  25%|██▍       | 125000/501435 [00:07&lt;00:23, 15886.90 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  25%|██▌       | 126731/501435 [00:07&lt;00:23, 16244.58 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  26%|██▌       | 129103/501435 [00:08&lt;00:23, 16090.00 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  26%|██▌       | 131000/501435 [00:08&lt;00:22, 16234.94 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  26%|██▋       | 132759/501435 [00:08&lt;00:22, 16580.39 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  27%|██▋       | 134965/501435 [00:08&lt;00:24, 15054.24 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  27%|██▋       | 136526/501435 [00:08&lt;00:24, 15186.19 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  28%|██▊       | 138995/501435 [00:08&lt;00:23, 15618.67 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  28%|██▊       | 141371/501435 [00:08&lt;00:22, 15688.54 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  29%|██▊       | 143000/501435 [00:08&lt;00:23, 15565.10 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  29%|██▉       | 144731/501435 [00:09&lt;00:22, 16001.09 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  29%|██▉       | 147047/501435 [00:09&lt;00:22, 15801.55 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  30%|██▉       | 148741/501435 [00:09&lt;00:21, 16082.36 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  30%|███       | 151000/501435 [00:09&lt;00:22, 15720.38 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  30%|███       | 152737/501435 [00:09&lt;00:21, 16128.03 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  31%|███       | 155095/501435 [00:09&lt;00:21, 15983.81 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  31%|███▏      | 156964/501435 [00:09&lt;00:20, 16437.75 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  32%|███▏      | 159283/501435 [00:09&lt;00:21, 16099.61 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  32%|███▏      | 161000/501435 [00:10&lt;00:21, 16103.29 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  32%|███▏      | 162709/501435 [00:10&lt;00:20, 16354.41 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  33%|███▎      | 165000/501435 [00:10&lt;00:21, 15787.59 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  33%|███▎      | 166708/501435 [00:10&lt;00:20, 16110.10 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  34%|███▎      | 169000/501435 [00:10&lt;00:21, 15747.64 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  34%|███▍      | 170689/501435 [00:10&lt;00:20, 16030.50 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  35%|███▍      | 173086/501435 [00:10&lt;00:20, 16010.03 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  35%|███▍      | 174978/501435 [00:10&lt;00:19, 16517.91 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  35%|███▌      | 177382/501435 [00:11&lt;00:19, 16344.66 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  36%|███▌      | 179797/501435 [00:11&lt;00:19, 16260.65 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  36%|███▋      | 182119/501435 [00:11&lt;00:19, 16006.90 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  37%|███▋      | 183980/501435 [00:11&lt;00:19, 16374.23 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  37%|███▋      | 186340/501435 [00:11&lt;00:19, 16159.47 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  37%|███▋      | 188000/501435 [00:11&lt;00:19, 16065.11 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  38%|███▊      | 189730/501435 [00:11&lt;00:19, 16375.62 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  38%|███▊      | 192130/501435 [00:11&lt;00:19, 16240.14 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  39%|███▊      | 193765/501435 [00:12&lt;00:18, 16267.05 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  39%|███▉      | 196091/501435 [00:12&lt;00:19, 15997.52 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  39%|███▉      | 197989/501435 [00:12&lt;00:18, 16475.16 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  40%|███▉      | 200346/501435 [00:12&lt;00:18, 16210.04 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  40%|████      | 202110/501435 [00:12&lt;00:20, 14686.71 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  41%|████      | 203974/501435 [00:12&lt;00:19, 15417.46 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  41%|████      | 205568/501435 [00:12&lt;00:19, 15546.74 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  41%|████▏     | 207167/501435 [00:12&lt;00:18, 15663.15 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  42%|████▏     | 208969/501435 [00:13&lt;00:18, 16216.31 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  42%|████▏     | 211383/501435 [00:13&lt;00:17, 16166.71 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  43%|████▎     | 213983/501435 [00:13&lt;00:17, 16390.43 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  43%|████▎     | 216339/501435 [00:13&lt;00:17, 16162.97 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  43%|████▎     | 218000/501435 [00:13&lt;00:17, 16024.59 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  44%|████▍     | 219781/501435 [00:13&lt;00:17, 16469.93 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  44%|████▍     | 222170/501435 [00:13&lt;00:17, 16278.25 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  45%|████▍     | 223966/501435 [00:13&lt;00:16, 16559.26 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  45%|████▌     | 226357/501435 [00:14&lt;00:16, 16342.32 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  46%|████▌     | 228972/501435 [00:14&lt;00:16, 16464.70 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  46%|████▌     | 231325/501435 [00:14&lt;00:16, 16209.12 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  47%|████▋     | 233533/501435 [00:14&lt;00:17, 15742.42 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  47%|████▋     | 235966/501435 [00:14&lt;00:16, 15647.05 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  47%|████▋     | 237539/501435 [00:14&lt;00:16, 15663.81 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  48%|████▊     | 239979/501435 [00:14&lt;00:16, 15626.35 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  48%|████▊     | 242330/501435 [00:15&lt;00:16, 15638.85 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  49%|████▊     | 243948/501435 [00:15&lt;00:16, 15760.52 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  49%|████▉     | 246291/501435 [00:15&lt;00:16, 15711.71 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  50%|████▉     | 248463/501435 [00:15&lt;00:16, 15313.60 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  50%|█████     | 250768/501435 [00:15&lt;00:16, 15325.47 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  50%|█████     | 252358/501435 [00:15&lt;00:16, 15456.49 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  51%|█████     | 254000/501435 [00:15&lt;00:15, 15629.86 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  51%|█████     | 255731/501435 [00:15&lt;00:15, 16065.09 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  51%|█████▏    | 258116/501435 [00:16&lt;00:15, 16002.78 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  52%|█████▏    | 259968/501435 [00:16&lt;00:14, 16411.33 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  52%|█████▏    | 262340/501435 [00:16&lt;00:14, 16201.12 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  53%|█████▎    | 264000/501435 [00:16&lt;00:15, 15721.84 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  53%|█████▎    | 265786/501435 [00:16&lt;00:14, 16268.11 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  53%|█████▎    | 268165/501435 [00:16&lt;00:14, 16121.22 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  54%|█████▍    | 269989/501435 [00:16&lt;00:14, 16520.73 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  54%|█████▍    | 272378/501435 [00:16&lt;00:14, 16309.78 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  55%|█████▍    | 274783/501435 [00:17&lt;00:14, 16140.78 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  55%|█████▌    | 277150/501435 [00:17&lt;00:14, 16018.75 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  56%|█████▌    | 278963/501435 [00:17&lt;00:13, 16398.21 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  56%|█████▌    | 281164/501435 [00:17&lt;00:13, 15822.67 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  56%|█████▋    | 282953/501435 [00:17&lt;00:13, 16233.77 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  57%|█████▋    | 285345/501435 [00:17&lt;00:13, 16132.59 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  57%|█████▋    | 287000/501435 [00:17&lt;00:13, 15982.46 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  58%|█████▊    | 288794/501435 [00:17&lt;00:12, 16478.92 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  58%|█████▊    | 291000/501435 [00:18&lt;00:14, 14711.11 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  58%|█████▊    | 292753/501435 [00:18&lt;00:13, 15380.15 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  59%|█████▉    | 295134/501435 [00:18&lt;00:13, 15544.18 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  59%|█████▉    | 296792/501435 [00:18&lt;00:12, 15794.39 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  60%|█████▉    | 299103/501435 [00:18&lt;00:12, 15655.54 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  60%|██████    | 300998/501435 [00:18&lt;00:12, 16266.94 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  61%|██████    | 303429/501435 [00:18&lt;00:12, 16244.39 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  61%|██████    | 306000/501435 [00:19&lt;00:11, 16301.03 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  61%|██████▏   | 307811/501435 [00:19&lt;00:11, 16724.81 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  62%|██████▏   | 310090/501435 [00:19&lt;00:11, 16205.54 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  62%|██████▏   | 312512/501435 [00:19&lt;00:11, 16182.36 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  63%|██████▎   | 314964/501435 [00:19&lt;00:11, 16121.70 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  63%|██████▎   | 317343/501435 [00:19&lt;00:11, 16039.20 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  64%|██████▎   | 319000/501435 [00:19&lt;00:11, 15956.81 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  64%|██████▍   | 320728/501435 [00:19&lt;00:11, 16276.71 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  64%|██████▍   | 323037/501435 [00:20&lt;00:11, 15972.25 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  65%|██████▍   | 324987/501435 [00:20&lt;00:10, 16486.71 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  65%|██████▌   | 327396/501435 [00:20&lt;00:10, 16338.17 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  66%|██████▌   | 329992/501435 [00:20&lt;00:10, 16416.37 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  66%|██████▌   | 332112/501435 [00:20&lt;00:10, 15693.14 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  67%|██████▋   | 334000/501435 [00:20&lt;00:10, 15947.28 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  67%|██████▋   | 335647/501435 [00:20&lt;00:10, 16070.01 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  67%|██████▋   | 338074/501435 [00:21&lt;00:10, 16106.16 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  68%|██████▊   | 339993/501435 [00:21&lt;00:09, 16605.54 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  68%|██████▊   | 342415/501435 [00:21&lt;00:09, 16441.79 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  69%|██████▉   | 344994/501435 [00:21&lt;00:09, 16559.70 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  69%|██████▉   | 347329/501435 [00:21&lt;00:09, 16242.97 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  70%|██████▉   | 348972/501435 [00:21&lt;00:09, 16285.49 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  70%|███████   | 351307/501435 [00:21&lt;00:09, 16043.90 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  70%|███████   | 352939/501435 [00:21&lt;00:09, 16109.53 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  71%|███████   | 354573/501435 [00:22&lt;00:09, 16166.30 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  71%|███████   | 356196/501435 [00:22&lt;00:08, 16178.84 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  71%|███████▏  | 358328/501435 [00:22&lt;00:09, 14718.02 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  72%|███████▏  | 360000/501435 [00:22&lt;00:09, 15043.63 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  72%|███████▏  | 361681/501435 [00:22&lt;00:09, 15498.98 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  72%|███████▏  | 363262/501435 [00:22&lt;00:08, 15578.84 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  73%|███████▎  | 365000/501435 [00:22&lt;00:08, 15832.11 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  73%|███████▎  | 366770/501435 [00:22&lt;00:08, 16354.93 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  74%|███████▎  | 369156/501435 [00:23&lt;00:08, 16184.40 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  74%|███████▍  | 370987/501435 [00:23&lt;00:07, 16652.48 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  74%|███████▍  | 373359/501435 [00:23&lt;00:07, 16346.67 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  75%|███████▍  | 375980/501435 [00:23&lt;00:07, 16502.78 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  75%|███████▌  | 378392/501435 [00:23&lt;00:07, 16363.72 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  76%|███████▌  | 380997/501435 [00:23&lt;00:07, 16590.61 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  76%|███████▋  | 383378/501435 [00:23&lt;00:07, 16364.32 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  77%|███████▋  | 385988/501435 [00:24&lt;00:06, 16536.78 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  77%|███████▋  | 388386/501435 [00:24&lt;00:06, 16367.36 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  78%|███████▊  | 390990/501435 [00:24&lt;00:06, 16404.63 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  78%|███████▊  | 393385/501435 [00:24&lt;00:06, 16272.81 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  79%|███████▉  | 395978/501435 [00:24&lt;00:06, 16357.35 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  79%|███████▉  | 398284/501435 [00:24&lt;00:06, 16062.38 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  80%|███████▉  | 399962/501435 [00:24&lt;00:06, 16217.68 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  80%|████████  | 402327/501435 [00:25&lt;00:06, 16071.13 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  81%|████████  | 404000/501435 [00:25&lt;00:06, 15780.28 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  81%|████████  | 405627/501435 [00:25&lt;00:06, 15897.72 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  81%|████████  | 407222/501435 [00:25&lt;00:05, 15908.33 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  82%|████████▏ | 408972/501435 [00:25&lt;00:05, 16225.22 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  82%|████████▏ | 411260/501435 [00:25&lt;00:05, 15863.20 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  82%|████████▏ | 412978/501435 [00:25&lt;00:05, 15988.83 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  83%|████████▎ | 415402/501435 [00:25&lt;00:05, 16046.40 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  83%|████████▎ | 417747/501435 [00:26&lt;00:05, 15903.05 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  84%|████████▍ | 420000/501435 [00:26&lt;00:05, 15615.61 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  84%|████████▍ | 421641/501435 [00:26&lt;00:05, 15801.92 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  85%|████████▍ | 424038/501435 [00:26&lt;00:04, 15859.17 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  85%|████████▍ | 426000/501435 [00:26&lt;00:04, 16155.93 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  85%|████████▌ | 427964/501435 [00:26&lt;00:04, 16684.52 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  86%|████████▌ | 430361/501435 [00:26&lt;00:04, 16439.89 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  86%|████████▋ | 432983/501435 [00:26&lt;00:04, 16495.18 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  87%|████████▋ | 435441/501435 [00:27&lt;00:04, 16459.44 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  87%|████████▋ | 437991/501435 [00:27&lt;00:03, 16411.95 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  88%|████████▊ | 440397/501435 [00:27&lt;00:03, 16296.20 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  88%|████████▊ | 442970/501435 [00:27&lt;00:03, 16296.29 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  89%|████████▉ | 445199/501435 [00:27&lt;00:03, 15863.23 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  89%|████████▉ | 447594/501435 [00:27&lt;00:03, 15891.64 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  90%|████████▉ | 449756/501435 [00:28&lt;00:03, 14668.58 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  90%|████████▉ | 451241/501435 [00:28&lt;00:03, 14705.80 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  90%|█████████ | 452996/501435 [00:28&lt;00:03, 15367.65 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  91%|█████████ | 454595/501435 [00:28&lt;00:03, 15522.94 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  91%|█████████ | 456205/501435 [00:28&lt;00:02, 15674.09 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  91%|█████████▏| 457979/501435 [00:28&lt;00:02, 16118.41 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  92%|█████████▏| 460171/501435 [00:28&lt;00:02, 15559.24 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  92%|█████████▏| 461992/501435 [00:28&lt;00:02, 16140.62 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  93%|█████████▎| 464407/501435 [00:28&lt;00:02, 16123.38 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  93%|█████████▎| 466785/501435 [00:29&lt;00:02, 15815.81 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  94%|█████████▎| 469087/501435 [00:29&lt;00:02, 15655.29 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  94%|█████████▍| 470732/501435 [00:29&lt;00:01, 15840.20 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  94%|█████████▍| 472353/501435 [00:29&lt;00:01, 15931.96 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  95%|█████████▍| 474000/501435 [00:29&lt;00:01, 15797.42 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  95%|█████████▍| 475703/501435 [00:29&lt;00:01, 16128.68 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  95%|█████████▌| 477333/501435 [00:29&lt;00:01, 16173.36 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  96%|█████████▌| 479000/501435 [00:29&lt;00:01, 15996.04 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  96%|█████████▌| 480742/501435 [00:29&lt;00:01, 16399.43 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map:  96%|█████████▌| 481123/501435 [00:30&lt;00:01, 15795.93 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">18</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>   <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;tokens&#39;</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>   <span class="k">return</span> <span class="n">sample</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">modi</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">ds</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/datasets/arrow_dataset.py:560,</span> in <span class="ni">transmit_format.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">553</span> <span class="n">self_format</span> <span class="o">=</span> <span class="p">{</span>
+<span class="g g-Whitespace">    </span><span class="mi">554</span>     <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format_type</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">555</span>     <span class="s2">&quot;format_kwargs&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format_kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">556</span>     <span class="s2">&quot;columns&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format_columns</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">557</span>     <span class="s2">&quot;output_all_columns&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_output_all_columns</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">558</span> <span class="p">}</span>
+<span class="g g-Whitespace">    </span><span class="mi">559</span> <span class="c1"># apply actual function</span>
+<span class="ne">--&gt; </span><span class="mi">560</span> <span class="n">out</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="s2">&quot;Dataset&quot;</span><span class="p">,</span> <span class="s2">&quot;DatasetDict&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">561</span> <span class="n">datasets</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="s2">&quot;Dataset&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">out</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="k">else</span> <span class="p">[</span><span class="n">out</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">562</span> <span class="c1"># re-apply format to the output</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/datasets/arrow_dataset.py:3073,</span> in <span class="ni">Dataset.map</span><span class="nt">(self, function, with_indices, with_rank, input_columns, batched, batch_size, drop_last_batch, remove_columns, keep_in_memory, load_from_cache_file, cache_file_name, writer_batch_size, features, disable_nullable, fn_kwargs, num_proc, suffix_template, new_fingerprint, desc)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3067</span> <span class="k">if</span> <span class="n">transformed_dataset</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">3068</span>     <span class="k">with</span> <span class="n">hf_tqdm</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">3069</span>         <span class="n">unit</span><span class="o">=</span><span class="s2">&quot; examples&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3070</span>         <span class="n">total</span><span class="o">=</span><span class="n">pbar_total</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3071</span>         <span class="n">desc</span><span class="o">=</span><span class="n">desc</span> <span class="ow">or</span> <span class="s2">&quot;Map&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3072</span>     <span class="p">)</span> <span class="k">as</span> <span class="n">pbar</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">3073</span>         <span class="k">for</span> <span class="n">rank</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">content</span> <span class="ow">in</span> <span class="n">Dataset</span><span class="o">.</span><span class="n">_map_single</span><span class="p">(</span><span class="o">**</span><span class="n">dataset_kwargs</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">3074</span>             <span class="k">if</span> <span class="n">done</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">3075</span>                 <span class="n">shards_done</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/datasets/arrow_dataset.py:3445,</span> in <span class="ni">Dataset._map_single</span><span class="nt">(shard, function, with_indices, with_rank, input_columns, batched, batch_size, drop_last_batch, remove_columns, keep_in_memory, cache_file_name, writer_batch_size, features, disable_nullable, fn_kwargs, new_fingerprint, rank, offset)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3443</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">batched</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">3444</span>     <span class="n">_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="ne">-&gt; </span><span class="mi">3445</span>     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">example</span> <span class="ow">in</span> <span class="n">shard_iterable</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">3446</span>         <span class="n">example</span> <span class="o">=</span> <span class="n">apply_function_on_filtered_inputs</span><span class="p">(</span><span class="n">example</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="n">offset</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3447</span>         <span class="k">if</span> <span class="n">update_data</span><span class="p">:</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/datasets/arrow_dataset.py:2389,</span> in <span class="ni">Dataset.__iter__</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2387</span> <span class="k">for</span> <span class="n">pa_subtable</span> <span class="ow">in</span> <span class="n">table_iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">2388</span>     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">pa_subtable</span><span class="o">.</span><span class="n">num_rows</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">2389</span>         <span class="n">pa_subtable_ex</span> <span class="o">=</span> <span class="n">pa_subtable</span><span class="o">.</span><span class="n">slice</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2390</span>         <span class="n">formatted_output</span> <span class="o">=</span> <span class="n">format_table</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">2391</span>             <span class="n">pa_subtable_ex</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2392</span>             <span class="mi">0</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2395</span>             <span class="n">output_all_columns</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_output_all_columns</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2396</span>         <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2397</span>         <span class="k">yield</span> <span class="n">formatted_output</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
@@ -1050,8 +2442,11 @@ Note: Set the value of the seed argument to 42.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No. of configs - 61
-Names of configs - [&#39;actsa-sc.te&#39;, &#39;bbca.hi&#39;, &#39;copa.en&#39;, &#39;copa.gu&#39;, &#39;copa.hi&#39;, &#39;copa.mr&#39;, &#39;csqa.as&#39;, &#39;csqa.bn&#39;, &#39;csqa.gu&#39;, &#39;csqa.hi&#39;, &#39;csqa.kn&#39;, &#39;csqa.ml&#39;, &#39;csqa.mr&#39;, &#39;csqa.or&#39;, &#39;csqa.pa&#39;, &#39;csqa.ta&#39;, &#39;csqa.te&#39;, &#39;cvit-mkb-clsr.en-bn&#39;, &#39;cvit-mkb-clsr.en-gu&#39;, &#39;cvit-mkb-clsr.en-hi&#39;, &#39;cvit-mkb-clsr.en-ml&#39;, &#39;cvit-mkb-clsr.en-mr&#39;, &#39;cvit-mkb-clsr.en-or&#39;, &#39;cvit-mkb-clsr.en-ta&#39;, &#39;cvit-mkb-clsr.en-te&#39;, &#39;cvit-mkb-clsr.en-ur&#39;, &#39;iitp-mr.hi&#39;, &#39;iitp-pr.hi&#39;, &#39;inltkh.gu&#39;, &#39;inltkh.ml&#39;, &#39;inltkh.mr&#39;, &#39;inltkh.ta&#39;, &#39;inltkh.te&#39;, &#39;md.hi&#39;, &#39;sna.bn&#39;, &#39;wiki-ner.as&#39;, &#39;wiki-ner.bn&#39;, &#39;wiki-ner.gu&#39;, &#39;wiki-ner.hi&#39;, &#39;wiki-ner.kn&#39;, &#39;wiki-ner.ml&#39;, &#39;wiki-ner.mr&#39;, &#39;wiki-ner.or&#39;, &#39;wiki-ner.pa&#39;, &#39;wiki-ner.ta&#39;, &#39;wiki-ner.te&#39;, &#39;wnli.en&#39;, &#39;wnli.gu&#39;, &#39;wnli.hi&#39;, &#39;wnli.mr&#39;, &#39;wstp.as&#39;, &#39;wstp.bn&#39;, &#39;wstp.gu&#39;, &#39;wstp.hi&#39;, &#39;wstp.kn&#39;, &#39;wstp.ml&#39;, &#39;wstp.mr&#39;, &#39;wstp.or&#39;, &#39;wstp.pa&#39;, &#39;wstp.ta&#39;, &#39;wstp.te&#39;]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using the latest cached version of the dataset since ai4bharat/indic_glue couldn&#39;t be found on the Hugging Face Hub
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No. of configs - 1
+Names of configs - [&#39;default&#39;]
 </pre></div>
 </div>
 </div>
@@ -1067,6 +2462,10 @@ Names of configs - [&#39;actsa-sc.te&#39;, &#39;bbca.hi&#39;, &#39;copa.en&#39;,
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using the latest cached version of the dataset since ai4bharat/indic_glue couldn&#39;t be found on the Hugging Face Hub
+Found the latest cached dataset configuration &#39;inltkh.ta&#39; at C:\Users\dell\.cache\huggingface\datasets\ai4bharat___indic_glue\inltkh.ta\0.0.0\6dcbebd49d6b12965d433bffcd07e9a786211703 (last modified on Thu Jan 23 21:12:24 2025).
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset({
     features: [&#39;text&#39;, &#39;label&#39;],
     num_rows: 6684
@@ -1094,15 +2493,18 @@ Names of configs - [&#39;actsa-sc.te&#39;, &#39;bbca.hi&#39;, &#39;copa.en&#39;,
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fil_ds2</span> <span class="o">=</span> <span class="n">ds2</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">example</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">example</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">())</span> <span class="o">&gt;=</span> <span class="mi">6</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fil_ds2</span> <span class="o">=</span> <span class="n">ds2</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">example</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">example</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">))</span> <span class="o">&gt;=</span><span class="mi">6</span> <span class="p">)</span>
 <span class="n">fil_ds2</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filter: 100%|██████████| 6684/6684 [00:00&lt;00:00, 110277.43 examples/s]
+</pre></div>
+</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset({
     features: [&#39;text&#39;, &#39;label&#39;],
-    num_rows: 6416
+    num_rows: 6428
 })
 </pre></div>
 </div>
@@ -1120,12 +2522,13 @@ Names of configs - [&#39;actsa-sc.te&#39;, &#39;bbca.hi&#39;, &#39;copa.en&#39;,
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset({
     features: [&#39;num_tokens&#39;, &#39;text&#39;, &#39;label&#39;],
-    num_rows: 32290
+    num_rows: 32354
 })
 </pre></div>
 </div>
 </div>
 </div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1171,7 +2574,7 @@ Names of configs - [&#39;actsa-sc.te&#39;, &#39;bbca.hi&#39;, &#39;copa.en&#39;,
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title">Week 2</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1181,22 +2584,6 @@ Names of configs - [&#39;actsa-sc.te&#39;, &#39;bbca.hi&#39;, &#39;copa.en&#39;,
             </div>
             
             
-              
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-  </nav></div>
-
-</div></div>
               
             
           </div>

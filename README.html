@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'README';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="notebooks/DLP_Week_1.html" />
+    <link rel="next" title="Week 1" href="notebooks/DLP_Week_1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -163,7 +163,11 @@
                 </a>
             </li>
         </ul>
-        
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="notebooks/DLP_Week_1.html">Week 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/DLP_Week_2.html">Week 2</a></li>
+</ul>
+
     </div>
 </nav></div>
     </div>
@@ -354,10 +358,8 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day-1-summary">Day 1 Summary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day-2-summary">Day 2 Summary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day-3-summary-cnns">Day 3 Summary: CNNs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day-4-summary-rnns">Day 4 Summary: RNNs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#week-1-summary">Week 1 Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#week-2-summary">Week 2 Summary</a></li>
 </ul>
             </nav>
         </div>
@@ -371,44 +373,27 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="deep-learning-practices-notes">
 <h1>Deep-Learning-Practices Notes<a class="headerlink" href="#deep-learning-practices-notes" title="Link to this heading">#</a></h1>
-<p>Workshop conducted by IIT Madras</p>
-<section id="day-1-summary">
-<h2>Day 1 Summary<a class="headerlink" href="#day-1-summary" title="Link to this heading">#</a></h2>
+<p>DA5013 - Jan 2025, IIT Madras</p>
+<section id="week-1-summary">
+<h2>Week 1 Summary<a class="headerlink" href="#week-1-summary" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>Tensor Basics</strong>: Creation (<code class="docutils literal notranslate"><span class="pre">torch.tensor()</span></code>, <code class="docutils literal notranslate"><span class="pre">torch.ones()</span></code>, <code class="docutils literal notranslate"><span class="pre">torch.rand()</span></code>), attributes (dimensions, data types), and device management (CPU/GPU).</p></li>
-<li><p><strong>Operations</strong>: Element access, slicing, broadcasting, basic operations (<code class="docutils literal notranslate"><span class="pre">sum()</span></code>, <code class="docutils literal notranslate"><span class="pre">max()</span></code>, <code class="docutils literal notranslate"><span class="pre">mul()</span></code>, <code class="docutils literal notranslate"><span class="pre">matmul</span></code>), and saving/loading tensors (<code class="docutils literal notranslate"><span class="pre">torch.save()</span></code>, <code class="docutils literal notranslate"><span class="pre">torch.load()</span></code>).</p></li>
-<li><p><strong>Autograd</strong>: Gradient computation (<code class="docutils literal notranslate"><span class="pre">.backward()</span></code>), leaf vs. intermediate tensors.</p></li>
-<li><p><strong>Activation Functions</strong>: Use functions like <code class="docutils literal notranslate"><span class="pre">torch.relu()</span></code> and <code class="docutils literal notranslate"><span class="pre">torch.sigmoid()</span></code>.</p></li>
-<li><p><strong>Loss Functions</strong>: Implement <code class="docutils literal notranslate"><span class="pre">nn.MSELoss()</span></code>, <code class="docutils literal notranslate"><span class="pre">nn.CrossEntropyLoss()</span></code>, …</p></li>
+<li><p>HuggingFace: datasets module, loading datasets</p></li>
+<li><p>Accessing samples</p></li>
+<li><p>Common Methods</p></li>
 </ul>
 </section>
-<section id="day-2-summary">
-<h2>Day 2 Summary<a class="headerlink" href="#day-2-summary" title="Link to this heading">#</a></h2>
+<section id="week-2-summary">
+<h2>Week 2 Summary<a class="headerlink" href="#week-2-summary" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>Optimization Algorithms</strong>: SGD, Adagrad, RMSProp, Adam for model training.</p></li>
-<li><p><strong>ANN Basics</strong>: Layers (<code class="docutils literal notranslate"><span class="pre">nn.Linear</span></code>), model creation (<code class="docutils literal notranslate"><span class="pre">nn.Module</span></code>), and sequential models (<code class="docutils literal notranslate"><span class="pre">nn.Sequential</span></code>).</p></li>
-<li><p><strong>Training Steps</strong>: Forward pass, loss computation, backward pass, and parameter update.</p></li>
-<li><p><strong>Example</strong>: Train a model with California housing data using PyTorch.</p></li>
+<li><p>Tokenization</p></li>
+<li><p>Byte Pair Encoding</p></li>
+<li><p>Word-Piece tokenizer</p></li>
+<li><p>Sentence-Piece Tokenizer</p></li>
+<li><p>HF Tokenizer</p></li>
+<li><p>Building adn Training a Tokenizer</p></li>
+<li><p>Encoder and Decoder</p></li>
+<li><p>Wrap it with PreTrainedTokenizer</p></li>
 </ul>
-</section>
-<section id="day-3-summary-cnns">
-<h2>Day 3 Summary: CNNs<a class="headerlink" href="#day-3-summary-cnns" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><strong>Data Handling</strong>: Loaded FashionMNIST dataset and applied transformations for normalization; utilized <code class="docutils literal notranslate"><span class="pre">DataLoader</span></code> for batching.</p></li>
-<li><p><strong>CNN Model</strong>: Built a custom CNN with two convolutional layers and three fully connected layers for 10-class classification.</p></li>
-<li><p><strong>Training</strong>: Used <code class="docutils literal notranslate"><span class="pre">nn.CrossEntropyLoss()</span></code> and SGD for optimization; implemented a training loop to update parameters and track accuracy.</p></li>
-<li><p><strong>Evaluation</strong>: Tested the model on a separate dataset and calculated accuracy.</p></li>
-</ul>
-</section>
-<section id="day-4-summary-rnns">
-<h2>Day 4 Summary: RNNs<a class="headerlink" href="#day-4-summary-rnns" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p><strong>RNN Introduction</strong>: Explored RNNs with an example using <code class="docutils literal notranslate"><span class="pre">nn.RNN</span></code>, focusing on sequence length and input dimensions.</p></li>
-<li><p><strong>Model Definition</strong>: Created a <code class="docutils literal notranslate"><span class="pre">simplernn</span></code> class with RNN and linear layers.</p></li>
-<li><p><strong>Training</strong>: Implemented training with <code class="docutils literal notranslate"><span class="pre">CrossEntropyLoss</span></code> and Adam optimizer, tracking loss over epochs.</p></li>
-<li><p><strong>Text Preprocessing</strong>: Worked with the IMDB dataset for tokenization, vocabulary creation, and padding sequences.</p></li>
-<li><p><strong>Final RNN Model</strong>: Built an RNN model for text classification with embedding and output layers.</p></li>
-</ol>
 </section>
 <div class="toctree-wrapper compound">
 </div>
@@ -449,7 +434,7 @@
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title">Week 1</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -470,10 +455,8 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day-1-summary">Day 1 Summary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day-2-summary">Day 2 Summary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day-3-summary-cnns">Day 3 Summary: CNNs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day-4-summary-rnns">Day 4 Summary: RNNs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#week-1-summary">Week 1 Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#week-2-summary">Week 2 Summary</a></li>
 </ul>
   </nav></div>
 
