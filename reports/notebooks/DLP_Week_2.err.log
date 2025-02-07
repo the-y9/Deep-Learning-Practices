@@ -1,17 +1,4 @@
 Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/nbclient/client.py", line 782, in _async_poll_for_reply
-    msg = await ensure_async(self.kc.shell_channel.get_msg(timeout=new_timeout))
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 198, in ensure_async
-    result = await obj
-             ^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/jupyter_client/channels.py", line 313, in get_msg
-    raise Empty
-_queue.Empty
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
     ~~~~~~~~~^
@@ -35,23 +22,89 @@ Traceback (most recent call last):
     await self.async_execute_cell(
         cell, index, execution_count=self.code_cells_executed + 1
     )
-  File "/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/nbclient/client.py", line 1005, in async_execute_cell
-    exec_reply = await self.task_poll_for_reply
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/nbclient/client.py", line 806, in _async_poll_for_reply
-    error_on_timeout_execute_reply = await self._async_handle_timeout(timeout, cell)
-                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/nbclient/client.py", line 856, in _async_handle_timeout
-    raise CellTimeoutError.error_from_timeout_and_cell(
-        "Cell execution timed out", timeout, cell
-    )
-nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 30 seconds.
-The message was: Cell execution timed out.
-Here is a preview of the cell contents:
--------------------
-ds = load_dataset('bookcorpus',split='all', trust_remote_code=True)
+  File "/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+ds = load_dataset('bookcorpus',split='all', trust_remote_code=True, disable_progress_bar=True)
 print(ds)
 for idx,sample in enumerate(ds[0:6]['text']):
     print(f'{idx} : {sample}')
--------------------
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mValueError[0m                                Traceback (most recent call last)
+Cell [0;32mIn[2], line 1[0m
+[0;32m----> 1[0m ds [38;5;241m=[39m [43mload_dataset[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mbookcorpus[39;49m[38;5;124;43m'[39;49m[43m,[49m[43msplit[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43mall[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[43mtrust_remote_code[49m[38;5;241;43m=[39;49m[38;5;28;43;01mTrue[39;49;00m[43m,[49m[43m [49m[43mdisable_progress_bar[49m[38;5;241;43m=[39;49m[38;5;28;43;01mTrue[39;49;00m[43m)[49m
+[1;32m      2[0m [38;5;28mprint[39m(ds)
+[1;32m      3[0m [38;5;28;01mfor[39;00m idx,sample [38;5;129;01min[39;00m [38;5;28menumerate[39m(ds[[38;5;241m0[39m:[38;5;241m6[39m][[38;5;124m'[39m[38;5;124mtext[39m[38;5;124m'[39m]):
+
+File [0;32m/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/datasets/load.py:2129[0m, in [0;36mload_dataset[0;34m(path, name, data_dir, data_files, split, cache_dir, features, download_config, download_mode, verification_mode, keep_in_memory, save_infos, revision, token, streaming, num_proc, storage_options, trust_remote_code, **config_kwargs)[0m
+[1;32m   2124[0m verification_mode [38;5;241m=[39m VerificationMode(
+[1;32m   2125[0m     (verification_mode [38;5;129;01mor[39;00m VerificationMode[38;5;241m.[39mBASIC_CHECKS) [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m save_infos [38;5;28;01melse[39;00m VerificationMode[38;5;241m.[39mALL_CHECKS
+[1;32m   2126[0m )
+[1;32m   2128[0m [38;5;66;03m# Create a dataset builder[39;00m
+[0;32m-> 2129[0m builder_instance [38;5;241m=[39m [43mload_dataset_builder[49m[43m([49m
+[1;32m   2130[0m [43m    [49m[43mpath[49m[38;5;241;43m=[39;49m[43mpath[49m[43m,[49m
+[1;32m   2131[0m [43m    [49m[43mname[49m[38;5;241;43m=[39;49m[43mname[49m[43m,[49m
+[1;32m   2132[0m [43m    [49m[43mdata_dir[49m[38;5;241;43m=[39;49m[43mdata_dir[49m[43m,[49m
+[1;32m   2133[0m [43m    [49m[43mdata_files[49m[38;5;241;43m=[39;49m[43mdata_files[49m[43m,[49m
+[1;32m   2134[0m [43m    [49m[43mcache_dir[49m[38;5;241;43m=[39;49m[43mcache_dir[49m[43m,[49m
+[1;32m   2135[0m [43m    [49m[43mfeatures[49m[38;5;241;43m=[39;49m[43mfeatures[49m[43m,[49m
+[1;32m   2136[0m [43m    [49m[43mdownload_config[49m[38;5;241;43m=[39;49m[43mdownload_config[49m[43m,[49m
+[1;32m   2137[0m [43m    [49m[43mdownload_mode[49m[38;5;241;43m=[39;49m[43mdownload_mode[49m[43m,[49m
+[1;32m   2138[0m [43m    [49m[43mrevision[49m[38;5;241;43m=[39;49m[43mrevision[49m[43m,[49m
+[1;32m   2139[0m [43m    [49m[43mtoken[49m[38;5;241;43m=[39;49m[43mtoken[49m[43m,[49m
+[1;32m   2140[0m [43m    [49m[43mstorage_options[49m[38;5;241;43m=[39;49m[43mstorage_options[49m[43m,[49m
+[1;32m   2141[0m [43m    [49m[43mtrust_remote_code[49m[38;5;241;43m=[39;49m[43mtrust_remote_code[49m[43m,[49m
+[1;32m   2142[0m [43m    [49m[43m_require_default_config_name[49m[38;5;241;43m=[39;49m[43mname[49m[43m [49m[38;5;129;43;01mis[39;49;00m[43m [49m[38;5;28;43;01mNone[39;49;00m[43m,[49m
+[1;32m   2143[0m [43m    [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mconfig_kwargs[49m[43m,[49m
+[1;32m   2144[0m [43m[49m[43m)[49m
+[1;32m   2146[0m [38;5;66;03m# Return iterable dataset in case of streaming[39;00m
+[1;32m   2147[0m [38;5;28;01mif[39;00m streaming:
+
+File [0;32m/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/datasets/load.py:1886[0m, in [0;36mload_dataset_builder[0;34m(path, name, data_dir, data_files, cache_dir, features, download_config, download_mode, revision, token, storage_options, trust_remote_code, _require_default_config_name, **config_kwargs)[0m
+[1;32m   1884[0m builder_cls [38;5;241m=[39m get_dataset_builder_class(dataset_module, dataset_name[38;5;241m=[39mdataset_name)
+[1;32m   1885[0m [38;5;66;03m# Instantiate the dataset builder[39;00m
+[0;32m-> 1886[0m builder_instance: DatasetBuilder [38;5;241m=[39m [43mbuilder_cls[49m[43m([49m
+[1;32m   1887[0m [43m    [49m[43mcache_dir[49m[38;5;241;43m=[39;49m[43mcache_dir[49m[43m,[49m
+[1;32m   1888[0m [43m    [49m[43mdataset_name[49m[38;5;241;43m=[39;49m[43mdataset_name[49m[43m,[49m
+[1;32m   1889[0m [43m    [49m[43mconfig_name[49m[38;5;241;43m=[39;49m[43mconfig_name[49m[43m,[49m
+[1;32m   1890[0m [43m    [49m[43mdata_dir[49m[38;5;241;43m=[39;49m[43mdata_dir[49m[43m,[49m
+[1;32m   1891[0m [43m    [49m[43mdata_files[49m[38;5;241;43m=[39;49m[43mdata_files[49m[43m,[49m
+[1;32m   1892[0m [43m    [49m[38;5;28;43mhash[39;49m[38;5;241;43m=[39;49m[43mdataset_module[49m[38;5;241;43m.[39;49m[43mhash[49m[43m,[49m
+[1;32m   1893[0m [43m    [49m[43minfo[49m[38;5;241;43m=[39;49m[43minfo[49m[43m,[49m
+[1;32m   1894[0m [43m    [49m[43mfeatures[49m[38;5;241;43m=[39;49m[43mfeatures[49m[43m,[49m
+[1;32m   1895[0m [43m    [49m[43mtoken[49m[38;5;241;43m=[39;49m[43mtoken[49m[43m,[49m
+[1;32m   1896[0m [43m    [49m[43mstorage_options[49m[38;5;241;43m=[39;49m[43mstorage_options[49m[43m,[49m
+[1;32m   1897[0m [43m    [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mbuilder_kwargs[49m[43m,[49m
+[1;32m   1898[0m [43m    [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mconfig_kwargs[49m[43m,[49m
+[1;32m   1899[0m [43m[49m[43m)[49m
+[1;32m   1900[0m builder_instance[38;5;241m.[39m_use_legacy_cache_dir_if_possible(dataset_module)
+[1;32m   1902[0m [38;5;28;01mreturn[39;00m builder_instance
+
+File [0;32m/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/datasets/builder.py:342[0m, in [0;36mDatasetBuilder.__init__[0;34m(self, cache_dir, dataset_name, config_name, hash, base_path, info, features, token, repo_id, data_files, data_dir, storage_options, writer_batch_size, **config_kwargs)[0m
+[1;32m    340[0m     config_kwargs[[38;5;124m"[39m[38;5;124mdata_dir[39m[38;5;124m"[39m] [38;5;241m=[39m data_dir
+[1;32m    341[0m [38;5;28mself[39m[38;5;241m.[39mconfig_kwargs [38;5;241m=[39m config_kwargs
+[0;32m--> 342[0m [38;5;28mself[39m[38;5;241m.[39mconfig, [38;5;28mself[39m[38;5;241m.[39mconfig_id [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_create_builder_config[49m[43m([49m
+[1;32m    343[0m [43m    [49m[43mconfig_name[49m[38;5;241;43m=[39;49m[43mconfig_name[49m[43m,[49m
+[1;32m    344[0m [43m    [49m[43mcustom_features[49m[38;5;241;43m=[39;49m[43mfeatures[49m[43m,[49m
+[1;32m    345[0m [43m    [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mconfig_kwargs[49m[43m,[49m
+[1;32m    346[0m [43m[49m[43m)[49m
+[1;32m    348[0m [38;5;66;03m# prepare info: DatasetInfo are a standardized dataclass across all datasets[39;00m
+[1;32m    349[0m [38;5;66;03m# Prefill datasetinfo[39;00m
+[1;32m    350[0m [38;5;28;01mif[39;00m info [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[1;32m    351[0m     [38;5;66;03m# TODO FOR PACKAGED MODULES IT IMPORTS DATA FROM src/packaged_modules which doesn't make sense[39;00m
+
+File [0;32m/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/datasets/builder.py:590[0m, in [0;36mDatasetBuilder._create_builder_config[0;34m(self, config_name, custom_features, **config_kwargs)[0m
+[1;32m    588[0m         [38;5;28;01mif[39;00m value [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[1;32m    589[0m             [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mhasattr[39m(builder_config, key):
+[0;32m--> 590[0m                 [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mBuilderConfig [39m[38;5;132;01m{[39;00mbuilder_config[38;5;132;01m}[39;00m[38;5;124m doesn[39m[38;5;124m'[39m[38;5;124mt have a [39m[38;5;124m'[39m[38;5;132;01m{[39;00mkey[38;5;132;01m}[39;00m[38;5;124m'[39m[38;5;124m key.[39m[38;5;124m"[39m)
+[1;32m    591[0m             [38;5;28msetattr[39m(builder_config, key, value)
+[1;32m    593[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m builder_config[38;5;241m.[39mname:
+
+[0;31mValueError[0m: BuilderConfig BookcorpusConfig(name='plain_text', version=1.0.0, data_dir=None, data_files=None, description='Plain text') doesn't have a 'disable_progress_bar' key.
 

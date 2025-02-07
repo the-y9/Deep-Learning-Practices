@@ -1,0 +1,831 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Week 3 - Large Language Models &#8212; Deep Learning Practices</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/DLP_Week_3';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Deep Learning Practices</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    Deep-Learning-Practices Notes
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="DLP_Week_1.html">Week 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DLP_Week_2.html">Week 2</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/the-y9/Deep-Learning-Practices" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/the-y9/Deep-Learning-Practices/issues/new?title=Issue%20on%20page%20%2Fnotebooks/DLP_Week_3.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/DLP_Week_3.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Week 3 - Large Language Models</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">5</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="week-3-large-language-models">
+<h1>Week 3 - Large Language Models<a class="headerlink" href="#week-3-large-language-models" title="Link to this heading">#</a></h1>
+<section id="id1">
+<h2>1<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p><b>Download the Yelp review dataset “Yelp/yelp_review_full”. Split each sample by calling the string method “.split()” and choose the correct statements about the dataset.</p>
+<ul class="simple">
+<li><p>A. The dataset contains close to 99 million words</p></li>
+<li><p>B. There are more than 300 samples that contain a single word</p></li>
+<li><p>C. There are less than 300 samples that contain only a single word</p></li>
+<li><p>D. “Cheesy-melty-roasted-cauliflower-with-fresh-bread-crumbs-on top.\nTo-die-for.” is one of the single words in the dataset</p></li>
+<li><p>E. The average length of a sample is 134.1</p></li>
+<li><p>F. The distribution of the length of the samples is right skewed
+<b></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dataset</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;Yelp/yelp_review_full&quot;</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ERROR:&quot;</span><span class="p">,</span><span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c:\Users\dell\AppData\Local\Programs\Python\Python311\Lib\site-packages\tqdm\auto.py:21: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
+  from .autonotebook import tqdm as notebook_tqdm
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset({
+    features: [&#39;label&#39;, &#39;text&#39;],
+    num_rows: 700000
+})
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="n">procs</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">cpu_count</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No. of processors =&quot;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">cpu_count</span><span class="p">())</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">modify</span><span class="p">(</span><span class="n">sample</span><span class="p">):</span>
+    <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;num_word&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">sample</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">modify</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">7000</span><span class="p">,</span> <span class="n">num_proc</span><span class="o">=</span><span class="n">procs</span><span class="p">)</span>    
+<span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No. of processors = 12
+Dataset({
+    features: [&#39;label&#39;, &#39;text&#39;, &#39;num_word&#39;],
+    num_rows: 700000
+})
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">num_words</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;num_word&#39;</span><span class="p">]</span>
+    <span class="n">total_words</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">num_words</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;total = </span><span class="si">{</span><span class="n">total_words</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;samples &gt; 1 word = </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">num_words</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;average sample length = </span><span class="si">{</span><span class="n">total_words</span><span class="o">/</span><span class="n">ds</span><span class="o">.</span><span class="n">num_rows</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">st</span> <span class="o">=</span> <span class="s1">&#39;Cheesy-melty-roasted-cauliflower-with-fresh-bread-crumbs-on-top.</span><span class="se">\\</span><span class="s1">nTo-die-for.&#39;</span>
+    <span class="n">fil_ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">sample</span><span class="p">,</span> <span class="n">st</span><span class="o">=</span><span class="n">st</span><span class="p">:</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">st</span><span class="p">,</span> <span class="n">num_proc</span><span class="o">=</span><span class="n">procs</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;has </span><span class="si">{</span><span class="n">st</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">fil_ds</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">num_words</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ERROR:&quot;</span><span class="p">,</span><span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>total = 93878307
+samples &gt; 1 word = 355
+average sample length = 134.11186714285714
+has Cheesy-melty-roasted-cauliflower-with-fresh-bread-crumbs-on-top.\nTo-die-for. = 1
+</pre></div>
+</div>
+<img alt="../_images/48dd6197c9ae881cbdda64cebd8ef25959a17f312260d3c1f74ec05003221bb9.png" src="../_images/48dd6197c9ae881cbdda64cebd8ef25959a17f312260d3c1f74ec05003221bb9.png" />
+</div>
+</div>
+</section>
+<section id="id2">
+<h2>2<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p><b>Load the “bert-base-uncased” pre-trained tokenizer and choose the correct statements about the tokenizer.</p>
+<ul class="simple">
+<li><p>A. The tokenizer is used for the BERT model with the context length of 512</p></li>
+<li><p>B. The tokenizer has 5 special tokens</p></li>
+<li><p>C. Tokenizing a sample that contains more than 512 words would result in truncation of all tokens beyond the length 512</p></li>
+<li><p>D. Tokenizer inserts all the special tokens when it processes a single sample as an input</p></li>
+<li><p>E. Tokenizer inserts [CLS] and [SEP] special tokens when it processes a single sample as an input</p></li>
+<li><p>F. Tokenizer inserts only [CLS]special token when it processes a single sample as an input
+<b></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoTokenizer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">bert_tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s1">&#39;bert-base-uncased&#39;</span><span class="p">)</span>
+    <span class="n">pprint</span><span class="p">(</span><span class="n">bert_tokenizer</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;B. </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">bert_tokenizer</span><span class="o">.</span><span class="n">all_special_tokens</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">5</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ERROR:&quot;</span><span class="p">,</span><span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BertTokenizerFast(name_or_path=&#39;bert-base-uncased&#39;, vocab_size=30522, model_max_length=512, is_fast=True, padding_side=&#39;right&#39;, truncation_side=&#39;right&#39;, special_tokens={&#39;unk_token&#39;: &#39;[UNK]&#39;, &#39;sep_token&#39;: &#39;[SEP]&#39;, &#39;pad_token&#39;: &#39;[PAD]&#39;, &#39;cls_token&#39;: &#39;[CLS]&#39;, &#39;mask_token&#39;: &#39;[MASK]&#39;}, clean_up_tokenization_spaces=False, added_tokens_decoder={
+	0: AddedToken(&quot;[PAD]&quot;, rstrip=False, lstrip=False, single_word=False, normalized=False, special=True),
+	100: AddedToken(&quot;[UNK]&quot;, rstrip=False, lstrip=False, single_word=False, normalized=False, special=True),
+	101: AddedToken(&quot;[CLS]&quot;, rstrip=False, lstrip=False, single_word=False, normalized=False, special=True),
+	102: AddedToken(&quot;[SEP]&quot;, rstrip=False, lstrip=False, single_word=False, normalized=False, special=True),
+	103: AddedToken(&quot;[MASK]&quot;, rstrip=False, lstrip=False, single_word=False, normalized=False, special=True),
+}
+)
+B. True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s_ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">sample</span><span class="p">:</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;num_word&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">512</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s_ds</span><span class="p">)</span>
+
+<span class="n">example</span> <span class="o">=</span> <span class="n">s_ds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">example</span><span class="p">)</span>
+
+<span class="n">tokenized_sample</span> <span class="o">=</span> <span class="n">bert_tokenizer</span><span class="p">(</span><span class="n">example</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tokenized_sample</span><span class="p">[</span><span class="s1">&#39;input_ids&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Token indices sequence length is longer than the specified maximum sequence length for this model (1019 &gt; 512). Running this sequence through the model will result in indexing errors
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset({
+    features: [&#39;label&#39;, &#39;text&#39;, &#39;num_word&#39;],
+    num_rows: 12441
+})
+{&#39;label&#39;: 4, &#39;text&#39;: &quot;After a morning of Thrift Store hunting, a friend and I were thinking of lunch, and he suggested Emil&#39;s after he&#39;d seen Chris Sebak do a bit on it and had tried it a time or two before, and I had not. He said they had a decent Reuben, but to be prepared to step back in time.\\n\\nWell, seeing as how I&#39;m kind of addicted to late 40&#39;s and early 50&#39;s, and the whole Rat Pack scene, stepping back in time is a welcomed change in da burgh...as long as it doesn&#39;t involve 1979, which I can see all around me every day.\\n\\nAnd yet another shot at finding a decent Reuben in da burgh...well, that&#39;s like hunting the Holy Grail. So looking under one more bush certainly wouldn&#39;t hurt.\\n\\nSo off we go right at lunchtime in the middle of...where exactly were we? At first I thought we were lost, driving around a handful of very rather dismal looking blocks in what looked like a neighborhood that had been blighted by the building of a highway. And then...AHA! Here it is! And yep, there it was. This little unassuming building with an add-on entrance with what looked like a very old hand painted sign stating quite simply &#39;Emil&#39;s. \\n\\nWe walked in the front door, and entered another world. Another time, and another place. Oh, and any Big Burrito/Sousa foodies might as well stop reading now. I wouldn&#39;t want to see you walk in, roll your eyes and say &#39;Reaaaaaalllly?&#39;\\n\\nThis is about as old world bar/lounge/restaurant as it gets. Plain, with a dark wood bar on one side, plain white walls with no yinzer pics, good sturdy chairs and actual white linens on the tables. This is the kind of neighborhood dive that I could see Frank and Dino pulling a few tables together for some poker, a fish sammich, and some cheap scotch. And THAT is exactly what I love.\\n\\nOh...but good food counts too. \\n\\nWe each had a Reuben, and my friend had a side of fries. The Reubens were decent, but not NY awesome. A little too thick on the bread, but overall, tasty and definitely filling. Not too skimpy on the meat. I seriously CRAVE a true, good NY Reuben, but since I can&#39;t afford to travel right now, what I find in da burgh will have to do. But as we sat and ate, burgers came out to an adjoining table. Those were some big thick burgers. A steak went past for the table behind us. That was HUGE! And when we asked about it, the waitress said &#39;Yeah, it&#39;s huge and really good, and he only charges $12.99 for it, ain&#39;t that nuts?&#39; Another table of five came in, and wham. Fish sandwiches PILED with breaded fish that looked amazing. Yeah, I want that, that, that and THAT!\\n\\nMy friend also mentioned that they have a Chicken Parm special one day of the week that is only served UNTIL 4 pm, and that it is fantastic. If only I could GET there on that week day before 4...\\n\\nThe waitress did a good job, especially since there was quite a growing crowd at lunchtime on a Saturday, and only one of her. She kept up and was very friendly. \\n\\nThey only have Pepsi products, so I had a brewed iced tea, which was very fresh, and she did pop by to ask about refills as often as she could. As the lunch hour went on, they were getting busy.\\n\\nEmil&#39;s is no frills, good portions, very reasonable prices, VERY comfortable neighborhood hole in the wall...kind of like Cheers, but in a blue collar neighborhood in the 1950&#39;s. Fan-freakin-tastic! I could feel at home here.\\n\\nYou definitely want to hit Mapquest or plug in your GPS though. I am not sure that I could find it again on my own...it really is a hidden gem. I will be making my friend take me back until I can memorize where the heck it is.\\n\\nAddendum: 2nd visit for the fish sandwich. Excellent. Truly. A pound of fish on a fish-shaped bun (as opposed to da burgh&#39;s seemingly popular hamburger bun). The fish was flavorful, the batter excellent, and for just $8. This may have been the best fish sandwich I&#39;ve yet to have in da burgh.&quot;, &#39;num_word&#39;: 712}
+1019
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">example</span> <span class="o">=</span> <span class="s2">&quot;single sample&quot;</span>
+<span class="n">tokens</span> <span class="o">=</span> <span class="n">bert_tokenizer</span><span class="o">.</span><span class="n">convert_ids_to_tokens</span><span class="p">(</span><span class="n">bert_tokenizer</span><span class="p">(</span><span class="n">example</span><span class="p">)[</span><span class="s1">&#39;input_ids&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>                                         
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;[CLS]&#39;, &#39;single&#39;, &#39;sample&#39;, &#39;[SEP]&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h2>3<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p><b>Use “BertConfig” and “BertForMaskedLM” to construct the default (original) BERT model. Choose the correct statements</p>
+<ul class="simple">
+<li><p>A. The model has 12 Bert layers</p></li>
+<li><p>B. The model has 6 Bert layers</p></li>
+<li><p>C. The model uses absolute position embeddings</p></li>
+<li><p>D. The word embedding (token embedding) layer has about 23 million learnable parameters</p></li>
+<li><p>E. The total number of parameters in the model is close to 110 million<b></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">BertConfig</span><span class="p">,</span> <span class="n">BertForMaskedLM</span>
+<span class="n">config</span> <span class="o">=</span> <span class="n">BertConfig</span><span class="p">()</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">BertForMaskedLM</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BertConfig {
+  &quot;attention_probs_dropout_prob&quot;: 0.1,
+  &quot;classifier_dropout&quot;: null,
+  &quot;hidden_act&quot;: &quot;gelu&quot;,
+  &quot;hidden_dropout_prob&quot;: 0.1,
+  &quot;hidden_size&quot;: 768,
+  &quot;initializer_range&quot;: 0.02,
+  &quot;intermediate_size&quot;: 3072,
+  &quot;layer_norm_eps&quot;: 1e-12,
+  &quot;max_position_embeddings&quot;: 512,
+  &quot;model_type&quot;: &quot;bert&quot;,
+  &quot;num_attention_heads&quot;: 12,
+  &quot;num_hidden_layers&quot;: 12,
+  &quot;pad_token_id&quot;: 0,
+  &quot;position_embedding_type&quot;: &quot;absolute&quot;,
+  &quot;transformers_version&quot;: &quot;4.48.1&quot;,
+  &quot;type_vocab_size&quot;: 2,
+  &quot;use_cache&quot;: true,
+  &quot;vocab_size&quot;: 30522
+}
+
+----------------------------------------------------------------------------------------------------
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BertForMaskedLM has generative capabilities, as `prepare_inputs_for_generation` is explicitly overwritten. However, it doesn&#39;t directly inherit from `GenerationMixin`. From 👉v4.50👈 onwards, `PreTrainedModel` will NOT inherit from `GenerationMixin`, and this model will lose the ability to call `generate` and other related functions.
+  - If you&#39;re using `trust_remote_code=True`, you can get rid of this warning by loading the model with an auto class. See https://huggingface.co/docs/transformers/en/model_doc/auto#auto-classes
+  - If you are the owner of the model architecture code, please modify your model class such that it inherits from `GenerationMixin` (after `PreTrainedModel`, otherwise you&#39;ll get an exception).
+  - If you are not the owner of the model architecture class, please contact the model code owner to update it.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BertForMaskedLM(
+  (bert): BertModel(
+    (embeddings): BertEmbeddings(
+      (word_embeddings): Embedding(30522, 768, padding_idx=0)
+      (position_embeddings): Embedding(512, 768)
+      (token_type_embeddings): Embedding(2, 768)
+      (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+    (encoder): BertEncoder(
+      (layer): ModuleList(
+        (0-11): 12 x BertLayer(
+          (attention): BertAttention(
+            (self): BertSdpaSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+      )
+    )
+  )
+  (cls): BertOnlyMLMHead(
+    (predictions): BertLMPredictionHead(
+      (transform): BertPredictionHeadTransform(
+        (dense): Linear(in_features=768, out_features=768, bias=True)
+        (transform_act_fn): GELUActivation()
+        (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+      )
+      (decoder): Linear(in_features=768, out_features=30522, bias=True)
+    )
+  )
+)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">params</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">():</span>
+    <span class="n">params</span> <span class="o">+=</span> <span class="n">param</span><span class="o">.</span><span class="n">numel</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>109514298
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">30522</span><span class="o">*</span><span class="mi">768</span> <span class="o">+</span> <span class="mi">512</span><span class="o">*</span><span class="mi">768</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="mi">768</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="mi">768</span><span class="o">*</span><span class="mi">768</span> <span class="o">+</span> <span class="mi">768</span><span class="o">*</span><span class="mi">768</span> <span class="o">+</span> <span class="mi">768</span><span class="o">*</span><span class="mi">3072</span> <span class="o">+</span> <span class="mi">3072</span><span class="o">*</span><span class="mi">768</span><span class="p">)</span><span class="o">*</span><span class="mi">12</span> <span class="o">+</span> <span class="p">(</span><span class="mi">768</span><span class="o">*</span><span class="mi">768</span> <span class="o">+</span> <span class="mi">768</span><span class="o">*</span><span class="mi">30522</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>132801024
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id4">
+<h2>4<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p><b>Double the context length from 512 to 1024 (you can change it in the configuration). Count the number of parameters and enter the change in the number of parameters (in millions) compared to the default configuration.<b></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">config2</span> <span class="o">=</span> <span class="n">BertConfig</span><span class="p">(</span><span class="n">max_position_embeddings</span><span class="o">=</span><span class="mi">1024</span><span class="p">)</span>
+<span class="n">model2</span> <span class="o">=</span> <span class="n">BertForMaskedLM</span><span class="p">(</span><span class="n">config2</span><span class="p">)</span>
+<span class="n">params2</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">model2</span><span class="o">.</span><span class="n">parameters</span><span class="p">():</span>
+    <span class="n">params2</span> <span class="o">+=</span> <span class="n">param</span><span class="o">.</span><span class="n">numel</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">params2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">((</span><span class="n">params2</span><span class="o">-</span><span class="n">params</span><span class="p">)</span><span class="o">/</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>109907514
+0.393216
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id5">
+<h2>5<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<p><b>Pack (chunk) the samples such that the length of all the samples in the dataset is 512 (for efficient training). Define a mapping function that implements the following procedure</p>
+<ol class="arabic simple">
+<li><p>Take a batch of 1000 samples</p></li>
+<li><p>Tokenize it to get input IDs and attention mask</p></li>
+<li><p>Concatenate all the input IDs</p></li>
+<li><p>Chunk the concatenated IDs into a size of 512</p></li>
+<li><p>Drop the last chunk if its length is less than 512</p></li>
+<li><p>Pack all the chunks</p></li>
+<li><p>Iterate over all the batches in the dataset</p></li>
+</ol>
+<p>Store the resulting dataset in the variable “ds_chunked”. Enter the total number of samples in the new dataset.
+Note: the batch size should be kept at 1000 while calling “ds.map()” for theanswer to match.
+<b></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">5</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yash Mishra
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
