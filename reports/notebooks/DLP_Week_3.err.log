@@ -1,17 +1,4 @@
 Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/nbclient/client.py", line 782, in _async_poll_for_reply
-    msg = await ensure_async(self.kc.shell_channel.get_msg(timeout=new_timeout))
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 198, in ensure_async
-    result = await obj
-             ^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/jupyter_client/channels.py", line 313, in get_msg
-    raise Empty
-_queue.Empty
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
     ~~~~~~~~~^
@@ -35,22 +22,34 @@ Traceback (most recent call last):
     await self.async_execute_cell(
         cell, index, execution_count=self.code_cells_executed + 1
     )
-  File "/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/nbclient/client.py", line 1005, in async_execute_cell
-    exec_reply = await self.task_poll_for_reply
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/nbclient/client.py", line 806, in _async_poll_for_reply
-    error_on_timeout_execute_reply = await self._async_handle_timeout(timeout, cell)
-                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/nbclient/client.py", line 856, in _async_handle_timeout
-    raise CellTimeoutError.error_from_timeout_and_cell(
-        "Cell execution timed out", timeout, cell
-    )
-nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 30 seconds.
-The message was: Cell execution timed out.
-Here is a preview of the cell contents:
--------------------
-['def chunk(samples, tokenizer = bert_tokenizer):', "    samples = tokenizer(samples['text'])", "    concat_inps = sum([seq for seq in samples['input_ids']],[])", '    total_tokens = len(concat_inps)', '    num_contx_samples = total_tokens // 512']
-...
-['ds_chunked = ds.map(chunk,', '    batch_size=1000,', '    batched = True,', '    num_proc = procs,', "    remove_columns = ['label', 'text', 'num_word'])"]
--------------------
+  File "/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import os
+procs = os.cpu_count()
+print("No. of processors =", os.cpu_count())
+
+def modify(sample):
+    sample['num_word'] = len(sample['text'].split())
+    return sample
+ds = ds.map(modify, batch_size=7000, num_proc=procs, disable_progress_bar=True)    
+print(ds)
+------------------
+
+----- stdout -----
+No. of processors = 4
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn[2], line 8[0m
+[1;32m      6[0m     sample[[38;5;124m'[39m[38;5;124mnum_word[39m[38;5;124m'[39m] [38;5;241m=[39m [38;5;28mlen[39m(sample[[38;5;124m'[39m[38;5;124mtext[39m[38;5;124m'[39m][38;5;241m.[39msplit())
+[1;32m      7[0m     [38;5;28;01mreturn[39;00m sample
+[0;32m----> 8[0m ds [38;5;241m=[39m [43mds[49m[38;5;241m.[39mmap(modify, batch_size[38;5;241m=[39m[38;5;241m7000[39m, num_proc[38;5;241m=[39mprocs, disable_progress_bar[38;5;241m=[39m[38;5;28;01mTrue[39;00m)    
+[1;32m      9[0m [38;5;28mprint[39m(ds)
+
+[0;31mNameError[0m: name 'ds' is not defined
 
