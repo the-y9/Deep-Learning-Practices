@@ -63,6 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/DLP_Week_3';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Week 2" href="DLP_Week_2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -114,8 +115,6 @@
       
       
       
-        
-      
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
@@ -162,9 +161,10 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="DLP_Week_1.html">Week 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DLP_Week_2.html">Week 2</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Week 3 - Large Language Models</a></li>
 </ul>
 
     </div>
@@ -362,6 +362,8 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">7</a></li>
 </ul>
             </nav>
         </div>
@@ -399,14 +401,59 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c:\Users\dell\AppData\Local\Programs\Python\Python311\Lib\site-packages\tqdm\auto.py:21: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/tqdm/auto.py:21: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
   from .autonotebook import tqdm as notebook_tqdm
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generating train split:   0%|          | 0/650000 [00:00&lt;?, ? examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generating train split:   8%|▊         | 53000/650000 [00:00&lt;00:01, 519729.34 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generating train split:  17%|█▋        | 113000/650000 [00:00&lt;00:00, 562012.36 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generating train split:  30%|██▉       | 193000/650000 [00:00&lt;00:00, 540671.38 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generating train split:  39%|███▉      | 252000/650000 [00:00&lt;00:00, 553159.14 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generating train split:  48%|████▊     | 313000/650000 [00:00&lt;00:00, 566455.27 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generating train split:  62%|██████▏   | 400000/650000 [00:00&lt;00:00, 569450.26 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generating train split:  75%|███████▌  | 489000/650000 [00:00&lt;00:00, 573702.75 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generating train split:  84%|████████▍ | 547000/650000 [00:00&lt;00:00, 571375.65 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generating train split:  97%|█████████▋| 631000/650000 [00:01&lt;00:00, 565079.92 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generating train split: 100%|██████████| 650000/650000 [00:01&lt;00:00, 561628.40 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generating test split:   0%|          | 0/50000 [00:00&lt;?, ? examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generating test split: 100%|██████████| 50000/50000 [00:00&lt;00:00, 513701.89 examples/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset({
     features: [&#39;label&#39;, &#39;text&#39;],
     num_rows: 700000
 })
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -426,11 +473,397 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No. of processors = 12
-Dataset({
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No. of processors = 4
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   0%|          | 0/700000 [00:00&lt;?, ? examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   0%|          | 2759/700000 [00:00&lt;00:26, 26752.93 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   1%|          | 7871/700000 [00:00&lt;00:17, 40395.99 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   2%|▏         | 12977/700000 [00:00&lt;00:15, 45174.49 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   3%|▎         | 18479/700000 [00:00&lt;00:14, 48560.02 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   3%|▎         | 24386/700000 [00:00&lt;00:14, 45943.32 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   4%|▍         | 29749/700000 [00:00&lt;00:13, 48304.05 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   5%|▌         | 35155/700000 [00:00&lt;00:13, 50036.23 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   6%|▌         | 40373/700000 [00:00&lt;00:13, 50684.88 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   7%|▋         | 45755/700000 [00:00&lt;00:12, 51617.22 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   7%|▋         | 51012/700000 [00:01&lt;00:12, 51894.25 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   8%|▊         | 57049/700000 [00:01&lt;00:12, 53225.20 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   9%|▉         | 62849/700000 [00:01&lt;00:11, 54454.06 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  10%|▉         | 68673/700000 [00:01&lt;00:11, 54788.47 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  11%|█         | 74236/700000 [00:01&lt;00:11, 54562.65 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  11%|█▏        | 80227/700000 [00:01&lt;00:12, 50573.39 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  12%|█▏        | 85619/700000 [00:01&lt;00:11, 51417.88 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  13%|█▎        | 91021/700000 [00:01&lt;00:11, 51980.98 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  14%|█▍        | 96361/700000 [00:01&lt;00:11, 52378.02 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  15%|█▍        | 102214/700000 [00:02&lt;00:11, 53323.57 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  15%|█▌        | 108110/700000 [00:02&lt;00:10, 53928.23 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  16%|█▌        | 113569/700000 [00:02&lt;00:10, 54093.36 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  17%|█▋        | 119610/700000 [00:02&lt;00:10, 55128.89 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  18%|█▊        | 125561/700000 [00:02&lt;00:11, 51443.87 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  19%|█▊        | 131033/700000 [00:02&lt;00:10, 52334.39 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  19%|█▉        | 136438/700000 [00:02&lt;00:10, 52808.21 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  20%|██        | 142282/700000 [00:02&lt;00:10, 53488.67 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  21%|██        | 148273/700000 [00:02&lt;00:10, 53920.10 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  22%|██▏       | 153810/700000 [00:02&lt;00:10, 53619.19 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  23%|██▎       | 159667/700000 [00:03&lt;00:09, 54235.21 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  24%|██▎       | 165624/700000 [00:03&lt;00:10, 51983.57 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  24%|██▍       | 171229/700000 [00:03&lt;00:10, 51804.74 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  25%|██▌       | 177164/700000 [00:03&lt;00:09, 52566.10 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  26%|██▌       | 182458/700000 [00:03&lt;00:09, 52660.47 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  27%|██▋       | 187859/700000 [00:03&lt;00:09, 52793.08 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  28%|██▊       | 193173/700000 [00:03&lt;00:09, 52877.32 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  28%|██▊       | 198574/700000 [00:03&lt;00:09, 53102.29 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  29%|██▉       | 204042/700000 [00:03&lt;00:09, 53558.83 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  30%|███       | 210025/700000 [00:04&lt;00:08, 54697.61 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  31%|███       | 215517/700000 [00:04&lt;00:08, 54760.99 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  32%|███▏      | 221460/700000 [00:04&lt;00:09, 52066.16 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  32%|███▏      | 226820/700000 [00:04&lt;00:09, 52484.25 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  33%|███▎      | 232221/700000 [00:04&lt;00:08, 52821.07 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  34%|███▍      | 238011/700000 [00:04&lt;00:08, 53406.55 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  35%|███▍      | 243551/700000 [00:04&lt;00:08, 53854.06 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  36%|███▌      | 249418/700000 [00:04&lt;00:08, 52867.45 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  36%|███▋      | 254737/700000 [00:04&lt;00:08, 52908.90 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  37%|███▋      | 260169/700000 [00:04&lt;00:08, 53172.88 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  38%|███▊      | 266086/700000 [00:05&lt;00:07, 54813.34 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  39%|███▉      | 272181/700000 [00:05&lt;00:08, 51724.85 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  40%|███▉      | 277581/700000 [00:05&lt;00:08, 52348.92 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  40%|████      | 282861/700000 [00:05&lt;00:07, 52465.50 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  41%|████▏     | 288777/700000 [00:05&lt;00:07, 52778.99 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  42%|████▏     | 294818/700000 [00:05&lt;00:07, 53803.81 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  43%|████▎     | 300315/700000 [00:05&lt;00:07, 54127.51 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  44%|████▎     | 306202/700000 [00:05&lt;00:07, 53236.51 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  45%|████▍     | 312032/700000 [00:05&lt;00:07, 52094.17 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  45%|████▌     | 317410/700000 [00:06&lt;00:07, 52554.12 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  46%|████▌     | 322914/700000 [00:06&lt;00:07, 53053.95 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  47%|████▋     | 328800/700000 [00:06&lt;00:07, 51612.07 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  48%|████▊     | 334229/700000 [00:06&lt;00:06, 52358.41 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  49%|████▊     | 339741/700000 [00:06&lt;00:06, 53137.64 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  49%|████▉     | 345630/700000 [00:06&lt;00:06, 53160.65 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  50%|█████     | 351671/700000 [00:06&lt;00:06, 54713.08 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  51%|█████     | 357765/700000 [00:06&lt;00:06, 54312.65 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  52%|█████▏    | 363824/700000 [00:06&lt;00:06, 51637.65 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  53%|█████▎    | 369586/700000 [00:07&lt;00:06, 52197.61 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  54%|█████▎    | 375170/700000 [00:07&lt;00:06, 51839.61 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  54%|█████▍    | 380884/700000 [00:07&lt;00:06, 48836.22 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  55%|█████▌    | 386210/700000 [00:07&lt;00:06, 50003.58 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  56%|█████▌    | 392030/700000 [00:07&lt;00:06, 50554.71 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  57%|█████▋    | 397574/700000 [00:07&lt;00:05, 51885.87 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  58%|█████▊    | 402879/700000 [00:07&lt;00:05, 52210.39 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  58%|█████▊    | 408185/700000 [00:07&lt;00:05, 52341.28 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  59%|█████▉    | 413451/700000 [00:07&lt;00:05, 52426.97 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  60%|█████▉    | 419111/700000 [00:08&lt;00:05, 52272.63 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  61%|██████    | 424508/700000 [00:08&lt;00:05, 52755.97 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  61%|██████▏   | 430240/700000 [00:08&lt;00:05, 51362.10 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  62%|██████▏   | 435629/700000 [00:08&lt;00:05, 52073.54 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  63%|██████▎   | 441144/700000 [00:08&lt;00:04, 52943.98 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  64%|██████▍   | 446891/700000 [00:08&lt;00:04, 51770.58 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  65%|██████▍   | 452284/700000 [00:08&lt;00:04, 51982.45 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  65%|██████▌   | 458462/700000 [00:08&lt;00:04, 52829.72 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  66%|██████▋   | 464457/700000 [00:08&lt;00:04, 53547.54 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  67%|██████▋   | 470233/700000 [00:08&lt;00:04, 53290.05 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  68%|██████▊   | 475868/700000 [00:09&lt;00:04, 51742.49 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  69%|██████▉   | 481590/700000 [00:09&lt;00:05, 40546.52 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  70%|██████▉   | 486788/700000 [00:09&lt;00:04, 42885.74 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  70%|███████   | 492337/700000 [00:09&lt;00:04, 46005.04 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  71%|███████   | 497651/700000 [00:09&lt;00:04, 47441.75 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  72%|███████▏  | 504263/700000 [00:09&lt;00:04, 48926.70 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  73%|███████▎  | 509918/700000 [00:09&lt;00:03, 50320.77 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  74%|███████▎  | 515403/700000 [00:09&lt;00:03, 51540.49 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  74%|███████▍  | 521182/700000 [00:10&lt;00:03, 51102.44 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  75%|███████▌  | 526774/700000 [00:10&lt;00:03, 51442.40 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  76%|███████▌  | 532707/700000 [00:10&lt;00:03, 50341.17 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  77%|███████▋  | 538049/700000 [00:10&lt;00:03, 51174.56 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  78%|███████▊  | 544079/700000 [00:10&lt;00:02, 52733.94 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  79%|███████▊  | 549944/700000 [00:10&lt;00:02, 51179.84 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  79%|███████▉  | 555828/700000 [00:10&lt;00:02, 51855.78 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  80%|████████  | 561299/700000 [00:10&lt;00:02, 52633.20 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  81%|████████  | 566646/700000 [00:10&lt;00:02, 52025.86 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  82%|████████▏ | 571937/700000 [00:11&lt;00:02, 51467.53 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  82%|████████▏ | 577193/700000 [00:11&lt;00:02, 51768.04 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  83%|████████▎ | 582529/700000 [00:11&lt;00:02, 51907.27 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  84%|████████▍ | 588600/700000 [00:11&lt;00:02, 51479.18 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  85%|████████▍ | 593980/700000 [00:11&lt;00:02, 52114.10 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  86%|████████▌ | 599222/700000 [00:11&lt;00:01, 51950.34 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  86%|████████▋ | 604602/700000 [00:11&lt;00:01, 52035.62 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  87%|████████▋ | 609938/700000 [00:11&lt;00:01, 52406.57 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  88%|████████▊ | 615789/700000 [00:11&lt;00:01, 50932.89 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  89%|████████▊ | 621129/700000 [00:12&lt;00:01, 51305.96 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  90%|████████▉ | 627068/700000 [00:12&lt;00:01, 53395.06 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  90%|█████████ | 632566/700000 [00:12&lt;00:01, 53387.55 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  91%|█████████ | 637957/700000 [00:12&lt;00:01, 51607.74 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  92%|█████████▏| 643195/700000 [00:12&lt;00:01, 51811.08 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  93%|█████████▎| 648643/700000 [00:12&lt;00:00, 51554.76 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  93%|█████████▎| 654491/700000 [00:12&lt;00:00, 52237.68 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  94%|█████████▍| 660076/700000 [00:12&lt;00:00, 49920.32 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  95%|█████████▌| 665439/700000 [00:12&lt;00:00, 49262.96 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  96%|█████████▌| 670578/700000 [00:12&lt;00:00, 49841.30 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  97%|█████████▋| 675753/700000 [00:13&lt;00:00, 50372.02 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  97%|█████████▋| 681142/700000 [00:13&lt;00:00, 51368.17 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  98%|█████████▊| 686385/700000 [00:13&lt;00:00, 50708.07 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  99%|█████████▉| 691766/700000 [00:13&lt;00:00, 49409.54 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4): 100%|█████████▉| 697048/700000 [00:13&lt;00:00, 50179.24 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4): 100%|██████████| 700000/700000 [00:14&lt;00:00, 49204.75 examples/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset({
     features: [&#39;label&#39;, &#39;text&#39;, &#39;num_word&#39;],
     num_rows: 700000
 })
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -460,10 +893,48 @@ Dataset({
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>total = 93878307
 samples &gt; 1 word = 355
 average sample length = 134.11186714285714
-has Cheesy-melty-roasted-cauliflower-with-fresh-bread-crumbs-on-top.\nTo-die-for. = 1
 </pre></div>
 </div>
-<img alt="../_images/48dd6197c9ae881cbdda64cebd8ef25959a17f312260d3c1f74ec05003221bb9.png" src="../_images/48dd6197c9ae881cbdda64cebd8ef25959a17f312260d3c1f74ec05003221bb9.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filter (num_proc=4):   0%|          | 0/700000 [00:00&lt;?, ? examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filter (num_proc=4):   6%|▋         | 45000/700000 [00:00&lt;00:01, 358931.33 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filter (num_proc=4):  17%|█▋        | 120000/700000 [00:00&lt;00:01, 560685.65 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filter (num_proc=4):  28%|██▊       | 198000/700000 [00:00&lt;00:00, 640882.57 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filter (num_proc=4):  40%|███▉      | 277000/700000 [00:00&lt;00:00, 681744.27 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filter (num_proc=4):  51%|█████     | 356000/700000 [00:00&lt;00:00, 699086.22 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filter (num_proc=4):  62%|██████▏   | 435000/700000 [00:00&lt;00:00, 717439.00 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filter (num_proc=4):  73%|███████▎  | 514000/700000 [00:00&lt;00:00, 720009.04 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filter (num_proc=4):  84%|████████▍ | 590000/700000 [00:00&lt;00:00, 728616.19 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filter (num_proc=4):  95%|█████████▌| 668000/700000 [00:00&lt;00:00, 732778.86 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filter (num_proc=4): 100%|██████████| 700000/700000 [00:01&lt;00:00, 660997.21 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>has Cheesy-melty-roasted-cauliflower-with-fresh-bread-crumbs-on-top.\nTo-die-for. = 1
+</pre></div>
+</div>
+<img alt="../_images/fa32149215fad88cbf77df03df7f926f2d366c1db562ca5ac5b11621b26c2764.png" src="../_images/fa32149215fad88cbf77df03df7f926f2d366c1db562ca5ac5b11621b26c2764.png" />
 </div>
 </div>
 </section>
@@ -493,6 +964,18 @@ has Cheesy-melty-roasted-cauliflower-with-fresh-bread-crumbs-on-top.\nTo-die-for
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The cache for model files in Transformers v4.22.0 has been updated. Migrating your old cache. This is a one-time only operation. You can interrupt this and resume the migration later on by calling `transformers.utils.move_cache()`.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0it [00:00, ?it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0it [00:00, ?it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BertTokenizerFast(name_or_path=&#39;bert-base-uncased&#39;, vocab_size=30522, model_max_length=512, is_fast=True, padding_side=&#39;right&#39;, truncation_side=&#39;right&#39;, special_tokens={&#39;unk_token&#39;: &#39;[UNK]&#39;, &#39;sep_token&#39;: &#39;[SEP]&#39;, &#39;pad_token&#39;: &#39;[PAD]&#39;, &#39;cls_token&#39;: &#39;[CLS]&#39;, &#39;mask_token&#39;: &#39;[MASK]&#39;}, clean_up_tokenization_spaces=False, added_tokens_decoder={
 	0: AddedToken(&quot;[PAD]&quot;, rstrip=False, lstrip=False, single_word=False, normalized=False, special=True),
 	100: AddedToken(&quot;[UNK]&quot;, rstrip=False, lstrip=False, single_word=False, normalized=False, special=True),
@@ -520,6 +1003,75 @@ B. True
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filter:   0%|          | 0/700000 [00:00&lt;?, ? examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filter:   5%|▍         | 32000/700000 [00:00&lt;00:02, 310838.85 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filter:   9%|▉         | 64000/700000 [00:00&lt;00:02, 308477.92 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filter:  14%|█▎        | 96000/700000 [00:00&lt;00:01, 307399.35 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filter:  18%|█▊        | 128000/700000 [00:00&lt;00:01, 310162.39 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filter:  23%|██▎       | 160000/700000 [00:00&lt;00:01, 310650.29 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filter:  27%|██▋       | 192000/700000 [00:00&lt;00:01, 311086.80 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filter:  32%|███▏      | 224000/700000 [00:00&lt;00:01, 311941.95 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filter:  37%|███▋      | 257000/700000 [00:00&lt;00:01, 313167.07 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filter:  41%|████▏     | 289000/700000 [00:00&lt;00:01, 313561.17 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filter:  46%|████▌     | 321000/700000 [00:01&lt;00:01, 313951.10 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filter:  50%|█████     | 353000/700000 [00:01&lt;00:01, 314190.89 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filter:  55%|█████▌    | 385000/700000 [00:01&lt;00:01, 313878.96 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filter:  60%|█████▉    | 417000/700000 [00:01&lt;00:00, 314069.30 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filter:  64%|██████▍   | 449000/700000 [00:01&lt;00:00, 314739.86 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filter:  71%|███████   | 494000/700000 [00:01&lt;00:00, 307290.99 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filter:  75%|███████▌  | 525000/700000 [00:01&lt;00:00, 306925.41 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filter:  80%|███████▉  | 557000/700000 [00:01&lt;00:00, 309008.09 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filter:  84%|████████▍ | 589000/700000 [00:01&lt;00:00, 310396.89 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filter:  89%|████████▊ | 621000/700000 [00:01&lt;00:00, 308992.97 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filter:  93%|█████████▎| 653000/700000 [00:02&lt;00:00, 311041.71 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filter:  98%|█████████▊| 685000/700000 [00:02&lt;00:00, 311700.07 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filter: 100%|██████████| 700000/700000 [00:02&lt;00:00, 310622.00 examples/s]
+</pre></div>
+</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Token indices sequence length is longer than the specified maximum sequence length for this model (1019 &gt; 512). Running this sequence through the model will result in indexing errors
 </pre></div>
 </div>
@@ -570,6 +1122,12 @@ B. True
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BertForMaskedLM has generative capabilities, as `prepare_inputs_for_generation` is explicitly overwritten. However, it doesn&#39;t directly inherit from `GenerationMixin`. From 👉v4.50👈 onwards, `PreTrainedModel` will NOT inherit from `GenerationMixin`, and this model will lose the ability to call `generate` and other related functions.
+  - If you&#39;re using `trust_remote_code=True`, you can get rid of this warning by loading the model with an auto class. See https://huggingface.co/docs/transformers/en/model_doc/auto#auto-classes
+  - If you are the owner of the model architecture code, please modify your model class such that it inherits from `GenerationMixin` (after `PreTrainedModel`, otherwise you&#39;ll get an exception).
+  - If you are not the owner of the model architecture class, please contact the model code owner to update it.
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BertConfig {
   &quot;attention_probs_dropout_prob&quot;: 0.1,
   &quot;classifier_dropout&quot;: null,
@@ -592,12 +1150,6 @@ B. True
 }
 
 ----------------------------------------------------------------------------------------------------
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BertForMaskedLM has generative capabilities, as `prepare_inputs_for_generation` is explicitly overwritten. However, it doesn&#39;t directly inherit from `GenerationMixin`. From 👉v4.50👈 onwards, `PreTrainedModel` will NOT inherit from `GenerationMixin`, and this model will lose the ability to call `generate` and other related functions.
-  - If you&#39;re using `trust_remote_code=True`, you can get rid of this warning by loading the model with an auto class. See https://huggingface.co/docs/transformers/en/model_doc/auto#auto-classes
-  - If you are the owner of the model architecture code, please modify your model class such that it inherits from `GenerationMixin` (after `PreTrainedModel`, otherwise you&#39;ll get an exception).
-  - If you are not the owner of the model architecture class, please contact the model code owner to update it.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BertForMaskedLM(
@@ -719,6 +1271,504 @@ B. True
 <p>Store the resulting dataset in the variable “ds_chunked”. Enter the total number of samples in the new dataset.
 Note: the batch size should be kept at 1000 while calling “ds.map()” for theanswer to match.
 <b></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">chunk</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">tokenizer</span> <span class="o">=</span> <span class="n">bert_tokenizer</span><span class="p">):</span>
+    <span class="n">samples</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">(</span><span class="n">samples</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
+    <span class="n">concat_inps</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">seq</span> <span class="k">for</span> <span class="n">seq</span> <span class="ow">in</span> <span class="n">samples</span><span class="p">[</span><span class="s1">&#39;input_ids&#39;</span><span class="p">]],[])</span>
+    <span class="n">total_tokens</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">concat_inps</span><span class="p">)</span>
+    <span class="n">num_contx_samples</span> <span class="o">=</span> <span class="n">total_tokens</span> <span class="o">//</span> <span class="mi">512</span>
+
+    <span class="n">inp_id_list</span><span class="p">,</span> <span class="n">att_mask_list</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">num_contx_samples</span><span class="p">):</span>
+        <span class="n">inp_ids</span> <span class="o">=</span> <span class="n">concat_inps</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">512</span><span class="p">:(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mi">512</span><span class="p">]</span>
+        <span class="n">att_masks</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">512</span>
+        <span class="n">inp_id_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">inp_ids</span><span class="p">)</span>
+        <span class="n">att_mask_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">att_masks</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;input_ids&#39;</span><span class="p">:</span> <span class="n">inp_id_list</span><span class="p">,</span> <span class="s1">&#39;attention_mask&#39;</span><span class="p">:</span> <span class="n">att_mask_list</span><span class="p">}</span>
+
+<span class="n">ds_chunked</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">chunk</span><span class="p">,</span>
+    <span class="n">batch_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+    <span class="n">batched</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">num_proc</span> <span class="o">=</span> <span class="n">procs</span><span class="p">,</span>
+    <span class="n">remove_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="s1">&#39;num_word&#39;</span><span class="p">])</span>    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   0%|          | 0/700000 [00:00&lt;?, ? examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   0%|          | 1000/700000 [00:00&lt;10:58, 1061.84 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   1%|          | 4000/700000 [00:01&lt;02:24, 4828.55 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   1%|          | 6000/700000 [00:01&lt;03:18, 3490.81 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   1%|          | 8000/700000 [00:02&lt;02:28, 4667.10 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   1%|▏         | 10000/700000 [00:02&lt;03:01, 3798.87 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   2%|▏         | 12000/700000 [00:02&lt;02:23, 4794.38 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   2%|▏         | 13000/700000 [00:03&lt;03:24, 3361.58 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   2%|▏         | 16000/700000 [00:03&lt;02:12, 5173.20 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   2%|▏         | 17000/700000 [00:04&lt;03:09, 3609.72 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   3%|▎         | 18000/700000 [00:04&lt;02:48, 4053.84 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   3%|▎         | 19000/700000 [00:04&lt;02:33, 4428.41 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   3%|▎         | 21000/700000 [00:05&lt;03:06, 3639.40 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   3%|▎         | 23000/700000 [00:05&lt;02:31, 4470.69 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   3%|▎         | 24000/700000 [00:05&lt;02:18, 4879.07 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   4%|▎         | 25000/700000 [00:06&lt;02:54, 3877.83 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   4%|▍         | 27000/700000 [00:06&lt;02:31, 4428.41 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   4%|▍         | 28000/700000 [00:06&lt;02:15, 4959.57 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   4%|▍         | 29000/700000 [00:07&lt;02:39, 4204.69 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   4%|▍         | 31000/700000 [00:07&lt;02:30, 4455.04 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   5%|▍         | 32000/700000 [00:07&lt;02:28, 4511.07 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   5%|▍         | 33000/700000 [00:07&lt;02:34, 4310.39 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   5%|▍         | 34000/700000 [00:08&lt;02:11, 5045.48 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   5%|▌         | 35000/700000 [00:08&lt;02:52, 3851.08 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   5%|▌         | 37000/700000 [00:08&lt;02:29, 4420.80 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   5%|▌         | 38000/700000 [00:09&lt;02:50, 3874.46 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   6%|▌         | 39000/700000 [00:09&lt;02:44, 4016.54 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   6%|▌         | 41000/700000 [00:09&lt;02:45, 3978.42 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   6%|▌         | 42000/700000 [00:10&lt;03:11, 3436.33 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   6%|▌         | 43000/700000 [00:10&lt;03:19, 3291.23 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   6%|▋         | 45000/700000 [00:10&lt;02:20, 4672.54 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   7%|▋         | 46000/700000 [00:11&lt;02:42, 4014.64 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   7%|▋         | 47000/700000 [00:11&lt;02:45, 3940.63 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   7%|▋         | 49000/700000 [00:11&lt;02:09, 5040.21 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   7%|▋         | 50000/700000 [00:12&lt;02:23, 4514.78 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   7%|▋         | 51000/700000 [00:12&lt;02:34, 4187.69 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   7%|▋         | 52000/700000 [00:12&lt;02:36, 4138.92 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   8%|▊         | 54000/700000 [00:13&lt;02:21, 4571.10 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   8%|▊         | 55000/700000 [00:13&lt;02:26, 4404.70 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   8%|▊         | 56000/700000 [00:13&lt;02:30, 4288.73 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   8%|▊         | 58000/700000 [00:13&lt;02:17, 4675.18 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   8%|▊         | 59000/700000 [00:14&lt;02:20, 4558.14 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   9%|▊         | 60000/700000 [00:14&lt;02:18, 4614.26 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   9%|▊         | 61000/700000 [00:14&lt;02:14, 4744.59 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   9%|▉         | 62000/700000 [00:14&lt;02:33, 4168.04 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   9%|▉         | 63000/700000 [00:15&lt;02:20, 4522.43 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   9%|▉         | 64000/700000 [00:15&lt;02:27, 4315.03 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   9%|▉         | 65000/700000 [00:15&lt;02:36, 4048.58 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):   9%|▉         | 66000/700000 [00:15&lt;02:25, 4345.60 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  10%|▉         | 67000/700000 [00:15&lt;02:12, 4789.36 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  10%|▉         | 68000/700000 [00:16&lt;02:38, 3996.34 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  10%|▉         | 69000/700000 [00:16&lt;02:55, 3602.04 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  10%|█         | 71000/700000 [00:16&lt;02:05, 5005.44 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  10%|█         | 72000/700000 [00:17&lt;02:22, 4402.40 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  10%|█         | 73000/700000 [00:17&lt;02:46, 3770.08 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  11%|█         | 75000/700000 [00:17&lt;02:09, 4819.84 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  11%|█         | 76000/700000 [00:17&lt;02:03, 5060.73 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  11%|█         | 77000/700000 [00:18&lt;02:39, 3911.42 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  11%|█▏        | 79000/700000 [00:18&lt;02:17, 4520.59 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  12%|█▏        | 81000/700000 [00:19&lt;02:23, 4326.43 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  12%|█▏        | 83000/700000 [00:19&lt;02:16, 4534.33 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  12%|█▏        | 84000/700000 [00:19&lt;02:06, 4881.28 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  12%|█▏        | 85000/700000 [00:20&lt;02:23, 4282.81 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  12%|█▏        | 87000/700000 [00:20&lt;02:24, 4253.08 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  13%|█▎        | 89000/700000 [00:21&lt;02:22, 4300.09 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  13%|█▎        | 91000/700000 [00:21&lt;02:17, 4440.45 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  13%|█▎        | 93000/700000 [00:21&lt;02:20, 4321.81 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  13%|█▎        | 94000/700000 [00:22&lt;02:11, 4605.14 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  14%|█▎        | 95000/700000 [00:22&lt;02:15, 4476.73 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  14%|█▍        | 97000/700000 [00:22&lt;02:20, 4281.04 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  14%|█▍        | 98000/700000 [00:23&lt;02:29, 4025.15 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  14%|█▍        | 100000/700000 [00:23&lt;01:55, 5183.27 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  14%|█▍        | 101000/700000 [00:24&lt;02:59, 3328.93 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  15%|█▍        | 104000/700000 [00:24&lt;02:39, 3740.59 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  15%|█▌        | 105000/700000 [00:24&lt;02:24, 4125.00 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  15%|█▌        | 107000/700000 [00:25&lt;01:50, 5379.43 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  15%|█▌        | 108000/700000 [00:25&lt;02:48, 3519.08 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  16%|█▌        | 109000/700000 [00:25&lt;02:33, 3842.30 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  16%|█▌        | 112000/700000 [00:26&lt;02:14, 4368.52 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  16%|█▌        | 113000/700000 [00:26&lt;02:24, 4065.99 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  16%|█▋        | 115000/700000 [00:26&lt;01:44, 5611.97 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  17%|█▋        | 116000/700000 [00:27&lt;02:17, 4241.37 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  17%|█▋        | 117000/700000 [00:27&lt;02:29, 3886.74 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  17%|█▋        | 119000/700000 [00:27&lt;01:52, 5181.90 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  17%|█▋        | 120000/700000 [00:28&lt;02:17, 4232.84 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  17%|█▋        | 121000/700000 [00:28&lt;02:17, 4222.78 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  18%|█▊        | 123000/700000 [00:28&lt;01:52, 5147.90 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  18%|█▊        | 124000/700000 [00:29&lt;02:05, 4595.31 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  18%|█▊        | 125000/700000 [00:29&lt;02:20, 4081.41 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  18%|█▊        | 126000/700000 [00:29&lt;02:04, 4618.41 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  18%|█▊        | 127000/700000 [00:29&lt;01:52, 5093.79 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  18%|█▊        | 128000/700000 [00:29&lt;01:50, 5162.97 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Map (num_proc=4):  18%|█▊        | 128000/700000 [00:30&lt;02:14, 4263.33 examples/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/datasets/utils/py_utils.py:704,</span> in <span class="ni">iflatmap_unordered</span><span class="nt">(pool, func, kwargs_iterable)</span>
+<span class="g g-Whitespace">    </span><span class="mi">703</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">704</span>     <span class="k">yield</span> <span class="n">queue</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">705</span> <span class="k">except</span> <span class="n">Empty</span><span class="p">:</span>
+
+<span class="nn">File &lt;string&gt;:2,</span> in <span class="ni">get</span><span class="nt">(self, *args, **kwds)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/multiprocess/managers.py:821,</span> in <span class="ni">BaseProxy._callmethod</span><span class="nt">(self, methodname, args, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">820</span> <span class="n">conn</span><span class="o">.</span><span class="n">send</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">_id</span><span class="p">,</span> <span class="n">methodname</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwds</span><span class="p">))</span>
+<span class="ne">--&gt; </span><span class="mi">821</span> <span class="n">kind</span><span class="p">,</span> <span class="n">result</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">recv</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">823</span> <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="s1">&#39;#RETURN&#39;</span><span class="p">:</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/multiprocess/connection.py:253,</span> in <span class="ni">_ConnectionBase.recv</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">252</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_readable</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">253</span> <span class="n">buf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_recv_bytes</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">254</span> <span class="k">return</span> <span class="n">_ForkingPickler</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">buf</span><span class="o">.</span><span class="n">getbuffer</span><span class="p">())</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/multiprocess/connection.py:433,</span> in <span class="ni">Connection._recv_bytes</span><span class="nt">(self, maxsize)</span>
+<span class="g g-Whitespace">    </span><span class="mi">432</span> <span class="k">def</span><span class="w"> </span><span class="nf">_recv_bytes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">maxsize</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">433</span>     <span class="n">buf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_recv</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">434</span>     <span class="n">size</span><span class="p">,</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s2">&quot;!i&quot;</span><span class="p">,</span> <span class="n">buf</span><span class="o">.</span><span class="n">getvalue</span><span class="p">())</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/multiprocess/connection.py:398,</span> in <span class="ni">Connection._recv</span><span class="nt">(self, size, read)</span>
+<span class="g g-Whitespace">    </span><span class="mi">397</span> <span class="k">while</span> <span class="n">remaining</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">398</span>     <span class="n">chunk</span> <span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">remaining</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">399</span>     <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">TimeoutError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">16</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>         <span class="n">att_mask_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">att_masks</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;input_ids&#39;</span><span class="p">:</span> <span class="n">inp_id_list</span><span class="p">,</span> <span class="s1">&#39;attention_mask&#39;</span><span class="p">:</span> <span class="n">att_mask_list</span><span class="p">}</span>
+<span class="ne">---&gt; </span><span class="mi">16</span> <span class="n">ds_chunked</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">chunk</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="n">batch_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span>     <span class="n">batched</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span>     <span class="n">num_proc</span> <span class="o">=</span> <span class="n">procs</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span>     <span class="n">remove_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="s1">&#39;num_word&#39;</span><span class="p">])</span>    
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/datasets/arrow_dataset.py:560,</span> in <span class="ni">transmit_format.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">553</span> <span class="n">self_format</span> <span class="o">=</span> <span class="p">{</span>
+<span class="g g-Whitespace">    </span><span class="mi">554</span>     <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format_type</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">555</span>     <span class="s2">&quot;format_kwargs&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format_kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">556</span>     <span class="s2">&quot;columns&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format_columns</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">557</span>     <span class="s2">&quot;output_all_columns&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_output_all_columns</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">558</span> <span class="p">}</span>
+<span class="g g-Whitespace">    </span><span class="mi">559</span> <span class="c1"># apply actual function</span>
+<span class="ne">--&gt; </span><span class="mi">560</span> <span class="n">out</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="s2">&quot;Dataset&quot;</span><span class="p">,</span> <span class="s2">&quot;DatasetDict&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">561</span> <span class="n">datasets</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="s2">&quot;Dataset&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">out</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="k">else</span> <span class="p">[</span><span class="n">out</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">562</span> <span class="c1"># re-apply format to the output</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/datasets/arrow_dataset.py:3165,</span> in <span class="ni">Dataset.map</span><span class="nt">(self, function, with_indices, with_rank, input_columns, batched, batch_size, drop_last_batch, remove_columns, keep_in_memory, load_from_cache_file, cache_file_name, writer_batch_size, features, disable_nullable, fn_kwargs, num_proc, suffix_template, new_fingerprint, desc)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3159</span> <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Spawning </span><span class="si">{</span><span class="n">num_proc</span><span class="si">}</span><span class="s2"> processes&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3160</span> <span class="k">with</span> <span class="n">hf_tqdm</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">3161</span>     <span class="n">unit</span><span class="o">=</span><span class="s2">&quot; examples&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3162</span>     <span class="n">total</span><span class="o">=</span><span class="n">pbar_total</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3163</span>     <span class="n">desc</span><span class="o">=</span><span class="p">(</span><span class="n">desc</span> <span class="ow">or</span> <span class="s2">&quot;Map&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot; (num_proc=</span><span class="si">{</span><span class="n">num_proc</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3164</span> <span class="p">)</span> <span class="k">as</span> <span class="n">pbar</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">3165</span>     <span class="k">for</span> <span class="n">rank</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">content</span> <span class="ow">in</span> <span class="n">iflatmap_unordered</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">3166</span>         <span class="n">pool</span><span class="p">,</span> <span class="n">Dataset</span><span class="o">.</span><span class="n">_map_single</span><span class="p">,</span> <span class="n">kwargs_iterable</span><span class="o">=</span><span class="n">kwargs_per_job</span>
+<span class="g g-Whitespace">   </span><span class="mi">3167</span>     <span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">3168</span>         <span class="k">if</span> <span class="n">done</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">3169</span>             <span class="n">shards_done</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/datasets/utils/py_utils.py:718,</span> in <span class="ni">iflatmap_unordered</span><span class="nt">(pool, func, kwargs_iterable)</span>
+<span class="g g-Whitespace">    </span><span class="mi">715</span> <span class="k">finally</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">716</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">pool_changed</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">717</span>         <span class="c1"># we get the result in case there&#39;s an error to raise</span>
+<span class="ne">--&gt; </span><span class="mi">718</span>         <span class="p">[</span><span class="n">async_result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span> <span class="k">for</span> <span class="n">async_result</span> <span class="ow">in</span> <span class="n">async_results</span><span class="p">]</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/multiprocess/pool.py:770,</span> in <span class="ni">ApplyResult.get</span><span class="nt">(self, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">768</span> <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">769</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">ready</span><span class="p">():</span>
+<span class="ne">--&gt; </span><span class="mi">770</span>     <span class="k">raise</span> <span class="ne">TimeoutError</span>
+<span class="g g-Whitespace">    </span><span class="mi">771</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_success</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">772</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span>
+
+<span class="ne">TimeoutError</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_chunked</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset({
+    features: [&#39;input_ids&#39;, &#39;attention_mask&#39;],
+    num_rows: 246703
+})
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id6">
+<h2>6<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<b>
+<ul class="simple">
+<li><p>Split the new dataset into training and test sets with the test_size=0.05 and seed=42.</p></li>
+<li><p>Use the appropriate data collator function for the MLM objective and set the masking probability to 0.2.</p></li>
+<li><p>Use the data loader from PyTorch to load a batch of samples, and enter the token ID corresponding to the unmasked token
+</b></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataCollatorForLanguageModeling</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">torch.utils.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataLoader</span>
+
+<span class="n">ds_split</span> <span class="o">=</span> <span class="n">ds_chunked</span><span class="o">.</span><span class="n">train_test_split</span><span class="p">(</span><span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">data_collator</span> <span class="o">=</span> <span class="n">DataCollatorForLanguageModeling</span><span class="p">(</span><span class="n">bert_tokenizer</span><span class="p">,</span>
+                <span class="n">mlm</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+                <span class="n">mlm_probability</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">)</span>
+<span class="n">dataloader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">dataset</span> <span class="o">=</span> <span class="n">ds_split</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">],</span>
+                <span class="n">collate_fn</span> <span class="o">=</span> <span class="n">data_collator</span><span class="p">,</span>
+                <span class="n">batch_size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">pprint</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">dataloader</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;attention_mask&#39;: tensor([[1, 1, 1,  ..., 1, 1, 1],
+        [1, 1, 1,  ..., 1, 1, 1]]),
+ &#39;input_ids&#39;: tensor([[ 103, 2070, 2052,  ..., 2015, 1010,  103],
+        [2074,  103, 2001,  ..., 1013, 7479, 1012]]),
+ &#39;labels&#39;: tensor([[3241, -100, -100,  ..., -100, -100, 5404],
+        [-100, 2003, -100,  ..., -100, -100, -100]])}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id7">
+<h2>7<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<p><b>Create a small BERT model by changing the following hyper-parameters and keeping the other hyper-parameters as it is</p>
+<ul class="simple">
+<li><p>num_hidden_layers = 6</p></li>
+<li><p>hidden size: 384</p></li>
+<li><p>intermediate_size: 1536</p></li>
+</ul>
+<p>and start training the model with a batch of size 8 for an epoch. What is the loss value at the end of the training?</p>
+<p>Note: You may optionally save the checkpoints for every N-th step.<b></p>
+<ol class="arabic simple">
+<li><p>Define bert Config</p></li>
+<li><p>load bert</p></li>
+<li><p>tokenize ds</p></li>
+<li><p>Data collator</p></li>
+<li><p>Data Loader</p></li>
+<li><p>Setup (optimize)</p></li>
+<li><p>Train</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># config_small = BertConfig(num_hidden_layers=6,</span>
+<span class="c1">#                             hidden_size = 384,</span>
+<span class="c1">#                             intermediate_size=1536)</span>
+
+<span class="c1"># bert_small = BertForMaskedLM(config_small)</span>
+<span class="c1"># print(bert_small)</span>
+
+<span class="c1"># def tokenize(samples, tokenizer=bert_tokenizer):</span>
+<span class="c1">#     return tokenizer(samples[&#39;text&#39;])</span>
+
+<span class="c1"># train_ds = ds.map(tokenize, batch_size=8, batched=True)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset({
+    features: [&#39;label&#39;, &#39;text&#39;, &#39;num_word&#39;],
+    num_rows: 700000
+})
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -752,6 +1802,15 @@ Note: the batch size should be kept at 1000 while calling “ds.map()” for the
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="DLP_Week_2.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Week 2</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
@@ -774,6 +1833,8 @@ Note: the batch size should be kept at 1000 while calling “ds.map()” for the
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">7</a></li>
 </ul>
   </nav></div>
 
