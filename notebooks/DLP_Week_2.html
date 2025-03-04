@@ -16,33 +16,30 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -67,7 +64,6 @@
     <link rel="prev" title="Week 1" href="DLP_Week_1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -83,8 +79,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -92,6 +99,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -99,8 +107,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -116,8 +124,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -147,11 +154,15 @@
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -174,14 +185,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -325,16 +331,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -363,7 +377,6 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#word-piece-tokenizer">Word-Piece Tokenizer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice">Practice</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-dataset">Load Dataset</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenize">Tokenize</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vocabulary">Vocabulary</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding">Encoding</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-encoding">Batch Encoding</a></li>
@@ -372,7 +385,7 @@
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment">Assignment</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-and-select">Pre and Select</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1) Tokenize</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenize">1) Tokenize</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-vocab-sizes"><strong>Q2:</strong> Vocab Sizes</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q3-pre-trained-tokenizer"><strong>Q3</strong>: Pre-trained tokenizer</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q4-add-tokens"><strong>Q4</strong>: add_tokens()</a></li>
@@ -424,8 +437,806 @@ Encodes language without spaces
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/tqdm/auto.py:21: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages/tqdm/auto.py:21: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
   from .autonotebook import tqdm as notebook_tqdm
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;bookcorpus&#39;</span><span class="p">,</span><span class="n">split</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">trust_remote_code</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span><span class="n">sample</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">6</span><span class="p">][</span><span class="s1">&#39;text&#39;</span><span class="p">]):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">idx</span><span class="si">}</span><span class="s1"> : </span><span class="si">{</span><span class="n">sample</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:   0%|          | 0.00/1.18G [00:00&lt;?, ?B/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:   0%|          | 54.8k/1.18G [00:00&lt;45:12, 435kB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:   0%|          | 130k/1.18G [00:00&lt;33:45, 582kB/s] 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:   0%|          | 264k/1.18G [00:00&lt;22:14, 883kB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:   0%|          | 642k/1.18G [00:00&lt;10:02, 1.96MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:   0%|          | 1.42M/1.18G [00:00&lt;04:57, 3.95MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:   0%|          | 4.18M/1.18G [00:00&lt;01:40, 11.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:   1%|          | 9.04M/1.18G [00:00&lt;00:49, 23.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:   1%|          | 13.6M/1.18G [00:00&lt;00:38, 30.3MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:   2%|▏         | 18.1M/1.18G [00:00&lt;00:33, 34.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:   2%|▏         | 22.7M/1.18G [00:01&lt;00:30, 38.1MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:   2%|▏         | 27.4M/1.18G [00:01&lt;00:28, 40.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:   3%|▎         | 32.0M/1.18G [00:01&lt;00:27, 42.2MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:   3%|▎         | 36.6M/1.18G [00:01&lt;00:26, 43.3MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:   3%|▎         | 41.2M/1.18G [00:01&lt;00:25, 44.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:   4%|▍         | 45.8M/1.18G [00:01&lt;00:25, 44.5MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:   4%|▍         | 50.4M/1.18G [00:01&lt;00:25, 44.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:   5%|▍         | 54.9M/1.18G [00:01&lt;00:24, 45.2MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:   5%|▌         | 59.5M/1.18G [00:01&lt;00:24, 45.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:   5%|▌         | 64.1M/1.18G [00:01&lt;00:24, 45.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:   6%|▌         | 68.7M/1.18G [00:02&lt;00:24, 45.5MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:   6%|▌         | 73.4M/1.18G [00:02&lt;00:24, 45.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:   7%|▋         | 78.0M/1.18G [00:02&lt;00:24, 45.3MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:   7%|▋         | 82.5M/1.18G [00:02&lt;00:24, 45.3MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:   7%|▋         | 87.3M/1.18G [00:02&lt;00:23, 46.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:   8%|▊         | 91.9M/1.18G [00:02&lt;00:23, 45.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:   8%|▊         | 96.5M/1.18G [00:02&lt;00:24, 45.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:   9%|▊         | 101M/1.18G [00:02&lt;00:23, 45.4MB/s] 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:   9%|▉         | 106M/1.18G [00:02&lt;00:23, 45.5MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:   9%|▉         | 110M/1.18G [00:02&lt;00:23, 45.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  10%|▉         | 115M/1.18G [00:03&lt;00:23, 45.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  10%|█         | 120M/1.18G [00:03&lt;00:23, 45.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  11%|█         | 124M/1.18G [00:03&lt;00:23, 45.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  11%|█         | 129M/1.18G [00:03&lt;00:23, 45.3MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  11%|█▏        | 134M/1.18G [00:03&lt;00:22, 46.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  12%|█▏        | 138M/1.18G [00:03&lt;00:22, 46.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  12%|█▏        | 143M/1.18G [00:03&lt;00:22, 45.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  13%|█▎        | 148M/1.18G [00:03&lt;00:22, 46.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  13%|█▎        | 152M/1.18G [00:03&lt;00:22, 46.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  13%|█▎        | 157M/1.18G [00:03&lt;00:22, 45.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  14%|█▎        | 162M/1.18G [00:04&lt;00:22, 45.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  14%|█▍        | 166M/1.18G [00:04&lt;00:22, 45.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  14%|█▍        | 171M/1.18G [00:04&lt;00:24, 41.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  15%|█▍        | 175M/1.18G [00:04&lt;00:28, 34.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  15%|█▌        | 180M/1.18G [00:04&lt;00:25, 39.2MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  16%|█▌        | 185M/1.18G [00:04&lt;00:24, 41.1MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  16%|█▌        | 189M/1.18G [00:04&lt;00:23, 42.3MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  16%|█▋        | 194M/1.18G [00:04&lt;00:22, 43.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  17%|█▋        | 199M/1.18G [00:04&lt;00:22, 44.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  17%|█▋        | 203M/1.18G [00:05&lt;00:21, 44.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  18%|█▊        | 208M/1.18G [00:05&lt;00:21, 45.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  18%|█▊        | 212M/1.18G [00:05&lt;00:21, 45.2MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  18%|█▊        | 217M/1.18G [00:05&lt;00:21, 45.3MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  19%|█▉        | 222M/1.18G [00:05&lt;00:23, 41.3MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  19%|█▉        | 226M/1.18G [00:05&lt;00:28, 33.1MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  20%|█▉        | 230M/1.18G [00:05&lt;00:26, 35.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  20%|█▉        | 235M/1.18G [00:05&lt;00:25, 37.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  20%|██        | 239M/1.18G [00:06&lt;00:23, 39.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  21%|██        | 244M/1.18G [00:06&lt;00:22, 40.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  21%|██        | 248M/1.18G [00:06&lt;00:21, 42.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  21%|██▏       | 253M/1.18G [00:06&lt;00:21, 43.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  22%|██▏       | 258M/1.18G [00:06&lt;00:20, 44.3MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  22%|██▏       | 262M/1.18G [00:06&lt;00:20, 44.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  23%|██▎       | 267M/1.18G [00:06&lt;00:20, 45.2MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  23%|██▎       | 272M/1.18G [00:06&lt;00:20, 45.3MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  23%|██▎       | 276M/1.18G [00:06&lt;00:19, 45.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  24%|██▍       | 281M/1.18G [00:06&lt;00:19, 45.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  24%|██▍       | 285M/1.18G [00:07&lt;00:19, 45.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  25%|██▍       | 290M/1.18G [00:07&lt;00:19, 45.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  25%|██▍       | 295M/1.18G [00:07&lt;00:19, 45.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  25%|██▌       | 299M/1.18G [00:07&lt;00:19, 45.2MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  26%|██▌       | 304M/1.18G [00:07&lt;00:19, 45.1MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  26%|██▌       | 308M/1.18G [00:07&lt;00:19, 45.3MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  27%|██▋       | 313M/1.18G [00:07&lt;00:19, 45.1MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  27%|██▋       | 318M/1.18G [00:07&lt;00:18, 45.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  27%|██▋       | 322M/1.18G [00:07&lt;00:18, 45.3MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  28%|██▊       | 327M/1.18G [00:07&lt;00:18, 45.5MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  28%|██▊       | 331M/1.18G [00:08&lt;00:18, 45.5MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  29%|██▊       | 336M/1.18G [00:08&lt;00:18, 46.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  29%|██▉       | 341M/1.18G [00:08&lt;00:18, 45.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  29%|██▉       | 345M/1.18G [00:08&lt;00:18, 46.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  30%|██▉       | 350M/1.18G [00:08&lt;00:18, 45.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  30%|███       | 355M/1.18G [00:08&lt;00:17, 45.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  30%|███       | 359M/1.18G [00:08&lt;00:17, 45.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  31%|███       | 364M/1.18G [00:08&lt;00:17, 45.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  31%|███       | 368M/1.18G [00:08&lt;00:17, 45.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  32%|███▏      | 373M/1.18G [00:08&lt;00:17, 45.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  32%|███▏      | 378M/1.18G [00:09&lt;00:17, 45.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  32%|███▏      | 382M/1.18G [00:09&lt;00:17, 45.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  33%|███▎      | 387M/1.18G [00:09&lt;00:17, 45.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  33%|███▎      | 392M/1.18G [00:09&lt;00:17, 45.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  34%|███▎      | 396M/1.18G [00:09&lt;00:17, 43.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  34%|███▍      | 401M/1.18G [00:09&lt;00:17, 44.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  34%|███▍      | 405M/1.18G [00:09&lt;00:17, 44.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  35%|███▍      | 410M/1.18G [00:09&lt;00:17, 45.1MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  35%|███▌      | 414M/1.18G [00:09&lt;00:16, 45.1MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  36%|███▌      | 419M/1.18G [00:09&lt;00:16, 45.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  36%|███▌      | 424M/1.18G [00:10&lt;00:16, 45.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  36%|███▋      | 428M/1.18G [00:10&lt;00:17, 43.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  37%|███▋      | 433M/1.18G [00:10&lt;00:17, 42.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  37%|███▋      | 437M/1.18G [00:10&lt;00:17, 43.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  37%|███▋      | 442M/1.18G [00:10&lt;00:16, 44.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  38%|███▊      | 447M/1.18G [00:10&lt;00:16, 44.5MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  38%|███▊      | 451M/1.18G [00:10&lt;00:16, 45.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  39%|███▊      | 456M/1.18G [00:10&lt;00:15, 45.2MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  39%|███▉      | 461M/1.18G [00:10&lt;00:16, 44.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  39%|███▉      | 465M/1.18G [00:11&lt;00:15, 45.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  40%|███▉      | 470M/1.18G [00:11&lt;00:15, 45.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  40%|████      | 475M/1.18G [00:11&lt;00:15, 44.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  41%|████      | 479M/1.18G [00:11&lt;00:17, 40.3MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  41%|████      | 483M/1.18G [00:11&lt;00:20, 33.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  41%|████▏     | 488M/1.18G [00:11&lt;00:18, 36.5MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  42%|████▏     | 492M/1.18G [00:11&lt;00:17, 38.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  42%|████▏     | 497M/1.18G [00:11&lt;00:16, 40.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  43%|████▎     | 502M/1.18G [00:11&lt;00:15, 42.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  43%|████▎     | 506M/1.18G [00:12&lt;00:15, 43.3MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  43%|████▎     | 511M/1.18G [00:12&lt;00:15, 43.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  44%|████▎     | 515M/1.18G [00:12&lt;00:14, 44.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  44%|████▍     | 520M/1.18G [00:12&lt;00:14, 44.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  44%|████▍     | 525M/1.18G [00:12&lt;00:14, 45.1MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  45%|████▍     | 529M/1.18G [00:12&lt;00:14, 45.5MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  45%|████▌     | 534M/1.18G [00:12&lt;00:14, 45.5MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  46%|████▌     | 538M/1.18G [00:12&lt;00:14, 45.3MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  46%|████▌     | 543M/1.18G [00:12&lt;00:13, 45.5MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  46%|████▋     | 548M/1.18G [00:12&lt;00:13, 45.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  47%|████▋     | 552M/1.18G [00:13&lt;00:13, 45.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  47%|████▋     | 557M/1.18G [00:13&lt;00:13, 45.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  48%|████▊     | 561M/1.18G [00:13&lt;00:14, 44.1MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  48%|████▊     | 566M/1.18G [00:13&lt;00:13, 45.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  48%|████▊     | 571M/1.18G [00:13&lt;00:13, 45.2MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  49%|████▉     | 575M/1.18G [00:13&lt;00:13, 45.3MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  49%|████▉     | 580M/1.18G [00:13&lt;00:13, 45.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  50%|████▉     | 585M/1.18G [00:13&lt;00:13, 45.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  50%|████▉     | 589M/1.18G [00:13&lt;00:12, 45.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  50%|█████     | 594M/1.18G [00:13&lt;00:12, 45.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  51%|█████     | 598M/1.18G [00:14&lt;00:12, 45.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  51%|█████     | 603M/1.18G [00:14&lt;00:12, 45.5MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  52%|█████▏    | 608M/1.18G [00:14&lt;00:12, 46.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  52%|█████▏    | 612M/1.18G [00:14&lt;00:12, 46.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  52%|█████▏    | 617M/1.18G [00:14&lt;00:12, 46.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  53%|█████▎    | 622M/1.18G [00:14&lt;00:12, 45.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  53%|█████▎    | 626M/1.18G [00:14&lt;00:12, 45.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  53%|█████▎    | 631M/1.18G [00:14&lt;00:12, 45.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  54%|█████▍    | 636M/1.18G [00:14&lt;00:11, 46.1MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  54%|█████▍    | 640M/1.18G [00:14&lt;00:12, 44.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  55%|█████▍    | 645M/1.18G [00:15&lt;00:12, 43.2MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  55%|█████▌    | 650M/1.18G [00:15&lt;00:12, 44.1MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  55%|█████▌    | 654M/1.18G [00:15&lt;00:11, 44.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  56%|█████▌    | 659M/1.18G [00:15&lt;00:11, 45.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  56%|█████▌    | 663M/1.18G [00:15&lt;00:11, 44.3MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  57%|█████▋    | 668M/1.18G [00:15&lt;00:11, 45.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  57%|█████▋    | 673M/1.18G [00:15&lt;00:11, 45.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  57%|█████▋    | 677M/1.18G [00:15&lt;00:10, 45.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  58%|█████▊    | 682M/1.18G [00:15&lt;00:11, 44.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  58%|█████▊    | 687M/1.18G [00:16&lt;00:10, 45.2MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  59%|█████▊    | 691M/1.18G [00:16&lt;00:10, 46.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  59%|█████▉    | 696M/1.18G [00:16&lt;00:10, 45.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  59%|█████▉    | 701M/1.18G [00:16&lt;00:10, 45.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  60%|█████▉    | 705M/1.18G [00:16&lt;00:10, 45.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  60%|██████    | 710M/1.18G [00:16&lt;00:10, 45.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  61%|██████    | 715M/1.18G [00:16&lt;00:10, 45.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  61%|██████    | 719M/1.18G [00:16&lt;00:10, 45.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  61%|██████▏   | 724M/1.18G [00:16&lt;00:09, 45.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  62%|██████▏   | 728M/1.18G [00:16&lt;00:09, 45.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  62%|██████▏   | 733M/1.18G [00:17&lt;00:09, 45.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  63%|██████▎   | 738M/1.18G [00:17&lt;00:09, 45.5MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  63%|██████▎   | 742M/1.18G [00:17&lt;00:09, 45.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  63%|██████▎   | 747M/1.18G [00:17&lt;00:09, 45.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  64%|██████▎   | 751M/1.18G [00:17&lt;00:09, 45.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  64%|██████▍   | 756M/1.18G [00:17&lt;00:09, 45.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  64%|██████▍   | 761M/1.18G [00:17&lt;00:11, 35.1MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  65%|██████▍   | 765M/1.18G [00:17&lt;00:12, 34.5MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  65%|██████▌   | 769M/1.18G [00:17&lt;00:11, 37.1MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  66%|██████▌   | 774M/1.18G [00:18&lt;00:10, 39.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  66%|██████▌   | 778M/1.18G [00:18&lt;00:09, 41.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  66%|██████▋   | 783M/1.18G [00:18&lt;00:09, 42.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  67%|██████▋   | 788M/1.18G [00:18&lt;00:09, 43.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  67%|██████▋   | 792M/1.18G [00:18&lt;00:08, 44.3MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  68%|██████▊   | 797M/1.18G [00:18&lt;00:08, 44.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  68%|██████▊   | 801M/1.18G [00:18&lt;00:08, 45.1MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  68%|██████▊   | 806M/1.18G [00:18&lt;00:08, 45.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  69%|██████▊   | 811M/1.18G [00:18&lt;00:08, 45.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  69%|██████▉   | 815M/1.18G [00:18&lt;00:08, 44.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  70%|██████▉   | 820M/1.18G [00:19&lt;00:07, 45.1MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  70%|██████▉   | 824M/1.18G [00:19&lt;00:07, 45.3MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  70%|███████   | 829M/1.18G [00:19&lt;00:07, 45.5MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  71%|███████   | 834M/1.18G [00:19&lt;00:07, 45.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  71%|███████   | 838M/1.18G [00:19&lt;00:07, 45.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  71%|███████▏  | 843M/1.18G [00:19&lt;00:07, 45.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  72%|███████▏  | 848M/1.18G [00:19&lt;00:07, 45.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  72%|███████▏  | 852M/1.18G [00:19&lt;00:07, 45.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  73%|███████▎  | 857M/1.18G [00:19&lt;00:07, 45.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  73%|███████▎  | 861M/1.18G [00:19&lt;00:07, 45.2MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  73%|███████▎  | 866M/1.18G [00:20&lt;00:06, 45.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  74%|███████▍  | 870M/1.18G [00:20&lt;00:06, 45.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  74%|███████▍  | 875M/1.18G [00:20&lt;00:06, 45.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  75%|███████▍  | 880M/1.18G [00:20&lt;00:06, 45.5MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  75%|███████▍  | 884M/1.18G [00:20&lt;00:06, 45.5MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  75%|███████▌  | 889M/1.18G [00:20&lt;00:06, 45.2MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  76%|███████▌  | 893M/1.18G [00:20&lt;00:06, 45.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  76%|███████▌  | 898M/1.18G [00:20&lt;00:06, 45.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  77%|███████▋  | 903M/1.18G [00:20&lt;00:06, 45.5MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  77%|███████▋  | 907M/1.18G [00:20&lt;00:06, 45.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  77%|███████▋  | 912M/1.18G [00:21&lt;00:05, 45.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  78%|███████▊  | 917M/1.18G [00:21&lt;00:05, 45.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  78%|███████▊  | 921M/1.18G [00:21&lt;00:05, 45.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  78%|███████▊  | 926M/1.18G [00:21&lt;00:05, 45.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  79%|███████▉  | 930M/1.18G [00:21&lt;00:05, 45.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  79%|███████▉  | 935M/1.18G [00:21&lt;00:05, 46.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  80%|███████▉  | 940M/1.18G [00:21&lt;00:05, 45.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  80%|████████  | 944M/1.18G [00:21&lt;00:05, 45.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  80%|████████  | 949M/1.18G [00:21&lt;00:05, 45.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  81%|████████  | 954M/1.18G [00:21&lt;00:04, 45.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  81%|████████  | 958M/1.18G [00:22&lt;00:04, 45.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  82%|████████▏ | 963M/1.18G [00:22&lt;00:04, 45.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  82%|████████▏ | 967M/1.18G [00:22&lt;00:04, 45.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  82%|████████▏ | 972M/1.18G [00:22&lt;00:04, 45.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  83%|████████▎ | 977M/1.18G [00:22&lt;00:04, 45.5MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  83%|████████▎ | 981M/1.18G [00:22&lt;00:04, 45.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  84%|████████▎ | 986M/1.18G [00:22&lt;00:04, 45.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  84%|████████▍ | 990M/1.18G [00:22&lt;00:04, 45.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  84%|████████▍ | 995M/1.18G [00:22&lt;00:04, 45.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  85%|████████▍ | 1.00G/1.18G [00:23&lt;00:03, 45.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  85%|████████▌ | 1.00G/1.18G [00:23&lt;00:03, 45.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  86%|████████▌ | 1.01G/1.18G [00:23&lt;00:03, 45.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  86%|████████▌ | 1.01G/1.18G [00:23&lt;00:03, 45.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  86%|████████▋ | 1.02G/1.18G [00:23&lt;00:03, 46.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  87%|████████▋ | 1.02G/1.18G [00:23&lt;00:03, 45.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  87%|████████▋ | 1.03G/1.18G [00:23&lt;00:03, 45.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  87%|████████▋ | 1.03G/1.18G [00:23&lt;00:03, 45.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  88%|████████▊ | 1.04G/1.18G [00:23&lt;00:03, 45.3MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  88%|████████▊ | 1.04G/1.18G [00:23&lt;00:03, 45.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  89%|████████▊ | 1.05G/1.18G [00:24&lt;00:02, 45.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  89%|████████▉ | 1.05G/1.18G [00:24&lt;00:02, 45.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  89%|████████▉ | 1.06G/1.18G [00:24&lt;00:02, 45.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  90%|████████▉ | 1.06G/1.18G [00:24&lt;00:02, 45.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  90%|█████████ | 1.06G/1.18G [00:24&lt;00:02, 45.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  91%|█████████ | 1.07G/1.18G [00:24&lt;00:02, 45.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  91%|█████████ | 1.07G/1.18G [00:24&lt;00:02, 45.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  91%|█████████▏| 1.08G/1.18G [00:24&lt;00:02, 45.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  92%|█████████▏| 1.08G/1.18G [00:24&lt;00:02, 45.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  92%|█████████▏| 1.09G/1.18G [00:24&lt;00:02, 41.5MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  93%|█████████▎| 1.09G/1.18G [00:25&lt;00:02, 35.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  93%|█████████▎| 1.10G/1.18G [00:25&lt;00:02, 34.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  93%|█████████▎| 1.10G/1.18G [00:25&lt;00:02, 37.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  94%|█████████▎| 1.10G/1.18G [00:25&lt;00:01, 39.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  94%|█████████▍| 1.11G/1.18G [00:25&lt;00:01, 41.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  94%|█████████▍| 1.11G/1.18G [00:25&lt;00:01, 42.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  95%|█████████▍| 1.12G/1.18G [00:25&lt;00:01, 43.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  95%|█████████▌| 1.12G/1.18G [00:25&lt;00:01, 44.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  96%|█████████▌| 1.13G/1.18G [00:25&lt;00:01, 44.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  96%|█████████▌| 1.13G/1.18G [00:26&lt;00:01, 44.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  96%|█████████▋| 1.14G/1.18G [00:26&lt;00:00, 45.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  97%|█████████▋| 1.14G/1.18G [00:26&lt;00:00, 45.3MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  97%|█████████▋| 1.15G/1.18G [00:26&lt;00:00, 45.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  98%|█████████▊| 1.15G/1.18G [00:26&lt;00:00, 45.5MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  98%|█████████▊| 1.15G/1.18G [00:26&lt;00:00, 45.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  98%|█████████▊| 1.16G/1.18G [00:26&lt;00:00, 45.5MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  99%|█████████▊| 1.16G/1.18G [00:26&lt;00:00, 45.3MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  99%|█████████▉| 1.17G/1.18G [00:26&lt;00:00, 45.3MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data:  99%|█████████▉| 1.17G/1.18G [00:26&lt;00:00, 45.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data: 100%|█████████▉| 1.18G/1.18G [00:27&lt;00:00, 44.6MB/s]
 </pre></div>
 </div>
 </div>
@@ -440,85 +1251,24 @@ Encodes language without spaces
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ds</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;bookcorpus&#39;</span><span class="p">,</span><span class="n">split</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">trust_remote_code</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">disable_progress_bar</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">for</span> <span class="n">idx</span><span class="p">,</span><span class="n">sample</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">6</span><span class="p">][</span><span class="s1">&#39;text&#39;</span><span class="p">]):</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/datasets/load.py:2129,</span> in <span class="ni">load_dataset</span><span class="nt">(path, name, data_dir, data_files, split, cache_dir, features, download_config, download_mode, verification_mode, keep_in_memory, save_infos, revision, token, streaming, num_proc, storage_options, trust_remote_code, **config_kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2124</span> <span class="n">verification_mode</span> <span class="o">=</span> <span class="n">VerificationMode</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">2125</span>     <span class="p">(</span><span class="n">verification_mode</span> <span class="ow">or</span> <span class="n">VerificationMode</span><span class="o">.</span><span class="n">BASIC_CHECKS</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">save_infos</span> <span class="k">else</span> <span class="n">VerificationMode</span><span class="o">.</span><span class="n">ALL_CHECKS</span>
-<span class="g g-Whitespace">   </span><span class="mi">2126</span> <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2128</span> <span class="c1"># Create a dataset builder</span>
-<span class="ne">-&gt; </span><span class="mi">2129</span> <span class="n">builder_instance</span> <span class="o">=</span> <span class="n">load_dataset_builder</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">2130</span>     <span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2131</span>     <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2132</span>     <span class="n">data_dir</span><span class="o">=</span><span class="n">data_dir</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2133</span>     <span class="n">data_files</span><span class="o">=</span><span class="n">data_files</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2134</span>     <span class="n">cache_dir</span><span class="o">=</span><span class="n">cache_dir</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2135</span>     <span class="n">features</span><span class="o">=</span><span class="n">features</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2136</span>     <span class="n">download_config</span><span class="o">=</span><span class="n">download_config</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2137</span>     <span class="n">download_mode</span><span class="o">=</span><span class="n">download_mode</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2138</span>     <span class="n">revision</span><span class="o">=</span><span class="n">revision</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2139</span>     <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2140</span>     <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2141</span>     <span class="n">trust_remote_code</span><span class="o">=</span><span class="n">trust_remote_code</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2142</span>     <span class="n">_require_default_config_name</span><span class="o">=</span><span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2143</span>     <span class="o">**</span><span class="n">config_kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2144</span> <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2146</span> <span class="c1"># Return iterable dataset in case of streaming</span>
-<span class="g g-Whitespace">   </span><span class="mi">2147</span> <span class="k">if</span> <span class="n">streaming</span><span class="p">:</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/datasets/load.py:1886,</span> in <span class="ni">load_dataset_builder</span><span class="nt">(path, name, data_dir, data_files, cache_dir, features, download_config, download_mode, revision, token, storage_options, trust_remote_code, _require_default_config_name, **config_kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1884</span> <span class="n">builder_cls</span> <span class="o">=</span> <span class="n">get_dataset_builder_class</span><span class="p">(</span><span class="n">dataset_module</span><span class="p">,</span> <span class="n">dataset_name</span><span class="o">=</span><span class="n">dataset_name</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1885</span> <span class="c1"># Instantiate the dataset builder</span>
-<span class="ne">-&gt; </span><span class="mi">1886</span> <span class="n">builder_instance</span><span class="p">:</span> <span class="n">DatasetBuilder</span> <span class="o">=</span> <span class="n">builder_cls</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1887</span>     <span class="n">cache_dir</span><span class="o">=</span><span class="n">cache_dir</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1888</span>     <span class="n">dataset_name</span><span class="o">=</span><span class="n">dataset_name</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1889</span>     <span class="n">config_name</span><span class="o">=</span><span class="n">config_name</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1890</span>     <span class="n">data_dir</span><span class="o">=</span><span class="n">data_dir</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1891</span>     <span class="n">data_files</span><span class="o">=</span><span class="n">data_files</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1892</span>     <span class="nb">hash</span><span class="o">=</span><span class="n">dataset_module</span><span class="o">.</span><span class="n">hash</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1893</span>     <span class="n">info</span><span class="o">=</span><span class="n">info</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1894</span>     <span class="n">features</span><span class="o">=</span><span class="n">features</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1895</span>     <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1896</span>     <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1897</span>     <span class="o">**</span><span class="n">builder_kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1898</span>     <span class="o">**</span><span class="n">config_kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1899</span> <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1900</span> <span class="n">builder_instance</span><span class="o">.</span><span class="n">_use_legacy_cache_dir_if_possible</span><span class="p">(</span><span class="n">dataset_module</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1902</span> <span class="k">return</span> <span class="n">builder_instance</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/datasets/builder.py:342,</span> in <span class="ni">DatasetBuilder.__init__</span><span class="nt">(self, cache_dir, dataset_name, config_name, hash, base_path, info, features, token, repo_id, data_files, data_dir, storage_options, writer_batch_size, **config_kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">340</span>     <span class="n">config_kwargs</span><span class="p">[</span><span class="s2">&quot;data_dir&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_dir</span>
-<span class="g g-Whitespace">    </span><span class="mi">341</span> <span class="bp">self</span><span class="o">.</span><span class="n">config_kwargs</span> <span class="o">=</span> <span class="n">config_kwargs</span>
-<span class="ne">--&gt; </span><span class="mi">342</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">config_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_builder_config</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">343</span>     <span class="n">config_name</span><span class="o">=</span><span class="n">config_name</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">344</span>     <span class="n">custom_features</span><span class="o">=</span><span class="n">features</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">345</span>     <span class="o">**</span><span class="n">config_kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">346</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">348</span> <span class="c1"># prepare info: DatasetInfo are a standardized dataclass across all datasets</span>
-<span class="g g-Whitespace">    </span><span class="mi">349</span> <span class="c1"># Prefill datasetinfo</span>
-<span class="g g-Whitespace">    </span><span class="mi">350</span> <span class="k">if</span> <span class="n">info</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">351</span>     <span class="c1"># TODO FOR PACKAGED MODULES IT IMPORTS DATA FROM src/packaged_modules which doesn&#39;t make sense</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.1/x64/lib/python3.13/site-packages/datasets/builder.py:590,</span> in <span class="ni">DatasetBuilder._create_builder_config</span><span class="nt">(self, config_name, custom_features, **config_kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">588</span>         <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">589</span>             <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">builder_config</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">590</span>                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;BuilderConfig </span><span class="si">{</span><span class="n">builder_config</span><span class="si">}</span><span class="s2"> doesn&#39;t have a &#39;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&#39; key.&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">591</span>             <span class="nb">setattr</span><span class="p">(</span><span class="n">builder_config</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">593</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">builder_config</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>
-
-<span class="ne">ValueError</span>: BuilderConfig BookcorpusConfig(name=&#39;plain_text&#39;, version=1.0.0, data_dir=None, data_files=None, description=&#39;Plain text&#39;) doesn&#39;t have a &#39;disable_progress_bar&#39; key.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data: 100%|██████████| 1.18G/1.18G [03:46&lt;00:00, 5.21MB/s]  
+Generating train split: 100%|██████████| 74004228/74004228 [14:07&lt;00:00, 87321.80 examples/s] 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset({
+    features: [&#39;text&#39;],
+    num_rows: 74004228
+})
+0 : usually , he would be tearing around the living room , playing with his toys .
+1 : but just one look at a minion sent him practically catatonic .
+2 : that had been megan &#39;s plan when she got him dressed earlier .
+3 : he &#39;d seen the movie almost by mistake , considering he was a little young for the pg cartoon , but with older cousins , along with her brothers , mason was often exposed to things that were older .
+4 : she liked to think being surrounded by adults and older kids was one reason why he was a such a good talker for his age .
+5 : `` are n&#39;t you being a good boy ? &#39;&#39;
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="tokenize">
-<h3>Tokenize<a class="headerlink" href="#tokenize" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">tokenizers</span><span class="w"> </span><span class="kn">import</span> <span class="n">Tokenizer</span>
@@ -1313,7 +2063,7 @@ instead we apply even and odd class at generation time and color them that way
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dataset</span>
 <span class="k">try</span><span class="p">:</span>
-    <span class="n">all_ds</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;bookcorpus&#39;</span><span class="p">,</span><span class="n">split</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">disable_progress_bar</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">all_ds</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;bookcorpus&#39;</span><span class="p">,</span><span class="n">split</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">all_ds</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ERROR: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -1335,8 +2085,12 @@ instead we apply even and odd class at generation time and color them that way
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">all_ds</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">all_ds</span><span class="o">.</span><span class="n">num_rows</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
-<span class="n">ds</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dataset</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">all_ds</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;bookcorpus&#39;</span><span class="p">,</span><span class="n">split</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">disable_progress_bar</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">all_ds</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ERROR: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1383,8 +2137,8 @@ instead we apply even and odd class at generation time and color them that way
 </div>
 </div>
 </section>
-<section id="id1">
-<h3>1) Tokenize<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<section id="tokenize">
+<h3>1) Tokenize<a class="headerlink" href="#tokenize" title="Link to this heading">#</a></h3>
 <p>Keep the vocabulary size at 5000 and tokenize the input text using the learned vocabulary. Choose the number of tokens returned by the tokenizer.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2607,8 +3361,7 @@ Generating unsupervised split: 100%|██████████| 50000/50000 
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -2622,7 +3375,6 @@ Generating unsupervised split: 100%|██████████| 50000/50000 
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#word-piece-tokenizer">Word-Piece Tokenizer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice">Practice</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-dataset">Load Dataset</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenize">Tokenize</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vocabulary">Vocabulary</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding">Encoding</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-encoding">Batch Encoding</a></li>
@@ -2631,7 +3383,7 @@ Generating unsupervised split: 100%|██████████| 50000/50000 
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment">Assignment</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-and-select">Pre and Select</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1) Tokenize</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenize">1) Tokenize</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-vocab-sizes"><strong>Q2:</strong> Vocab Sizes</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q3-pre-trained-tokenizer"><strong>Q3</strong>: Pre-trained tokenizer</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q4-add-tokens"><strong>Q4</strong>: add_tokens()</a></li>
@@ -2687,8 +3439,8 @@ By Yash Mishra
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
