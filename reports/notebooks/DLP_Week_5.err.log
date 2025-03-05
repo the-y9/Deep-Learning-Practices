@@ -1,0 +1,110 @@
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+    ~~~~~~~~~^
+        nb,
+        ^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages/nbclient/client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "/opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+subset = []
+for i, example in enumerate(dataset):
+  if i>=50:
+    break
+  subset.append(example)
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mModuleNotFoundError[39m                       Traceback (most recent call last)
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages/datasets/features/audio.py:88[39m, in [36mAudio.encode_example[39m[34m(self, value)[39m
+[32m     87[39m [38;5;28;01mtry[39;00m:
+[32m---> [39m[32m88[39m     [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01msoundfile[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01msf[39;00m  [38;5;66;03m# soundfile is a dependency of librosa, needed to decode audio files.[39;00m
+[32m     89[39m [38;5;28;01mexcept[39;00m [38;5;167;01mImportError[39;00m [38;5;28;01mas[39;00m err:
+
+[31mModuleNotFoundError[39m: No module named 'soundfile'
+
+The above exception was the direct cause of the following exception:
+
+[31mImportError[39m                               Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[3][39m[32m, line 2[39m
+[32m      1[39m subset = []
+[32m----> [39m[32m2[39m [38;5;28;43;01mfor[39;49;00m[43m [49m[43mi[49m[43m,[49m[43m [49m[43mexample[49m[43m [49m[38;5;129;43;01min[39;49;00m[43m [49m[38;5;28;43menumerate[39;49m[43m([49m[43mdataset[49m[43m)[49m[43m:[49m
+[32m      3[39m [43m  [49m[38;5;28;43;01mif[39;49;00m[43m [49m[43mi[49m[43m>[49m[43m=[49m[32;43m50[39;49m[43m:[49m
+[32m      4[39m [43m    [49m[38;5;28;43;01mbreak[39;49;00m
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages/datasets/iterable_dataset.py:2230[39m, in [36mIterableDataset.__iter__[39m[34m(self)[39m
+[32m   2226[39m [38;5;28;01mfor[39;00m key, example [38;5;129;01min[39;00m ex_iterable:
+[32m   2227[39m     [38;5;28;01mif[39;00m [38;5;28mself[39m.features [38;5;129;01mand[39;00m [38;5;129;01mnot[39;00m ex_iterable.is_typed:
+[32m   2228[39m         [38;5;66;03m# `IterableDataset` automatically fills missing columns with None.[39;00m
+[32m   2229[39m         [38;5;66;03m# This is done with `_apply_feature_types_on_example`.[39;00m
+[32m-> [39m[32m2230[39m         example = [43m_apply_feature_types_on_example[49m[43m([49m
+[32m   2231[39m [43m            [49m[43mexample[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[43m.[49m[43mfeatures[49m[43m,[49m[43m [49m[43mtoken_per_repo_id[49m[43m=[49m[38;5;28;43mself[39;49m[43m.[49m[43m_token_per_repo_id[49m
+[32m   2232[39m [43m        [49m[43m)[49m
+[32m   2233[39m     [38;5;28;01myield[39;00m format_dict(example) [38;5;28;01mif[39;00m format_dict [38;5;28;01melse[39;00m example
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages/datasets/iterable_dataset.py:1734[39m, in [36m_apply_feature_types_on_example[39m[34m(example, features, token_per_repo_id)[39m
+[32m   1732[39m         example[column_name] = [38;5;28;01mNone[39;00m
+[32m   1733[39m [38;5;66;03m# we encode the example for ClassLabel feature types for example[39;00m
+[32m-> [39m[32m1734[39m encoded_example = [43mfeatures[49m[43m.[49m[43mencode_example[49m[43m([49m[43mexample[49m[43m)[49m
+[32m   1735[39m [38;5;66;03m# Decode example for Audio feature, e.g.[39;00m
+[32m   1736[39m decoded_example = features.decode_example(encoded_example, token_per_repo_id=token_per_repo_id)
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages/datasets/features/features.py:1997[39m, in [36mFeatures.encode_example[39m[34m(self, example)[39m
+[32m   1986[39m [38;5;250m[39m[33;03m"""[39;00m
+[32m   1987[39m [33;03mEncode example into a format for Arrow.[39;00m
+[32m   1988[39m 
+[32m   (...)[39m[32m   1994[39m [33;03m    `dict[str, Any]`[39;00m
+[32m   1995[39m [33;03m"""[39;00m
+[32m   1996[39m example = cast_to_python_objects(example)
+[32m-> [39m[32m1997[39m [38;5;28;01mreturn[39;00m [43mencode_nested_example[49m[43m([49m[38;5;28;43mself[39;49m[43m,[49m[43m [49m[43mexample[49m[43m)[49m
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages/datasets/features/features.py:1285[39m, in [36mencode_nested_example[39m[34m(schema, obj, level)[39m
+[32m   1282[39m     [38;5;28;01mif[39;00m level == [32m0[39m [38;5;129;01mand[39;00m obj [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[32m   1283[39m         [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([33m"[39m[33mGot None but expected a dictionary instead[39m[33m"[39m)
+[32m   1284[39m     [38;5;28;01mreturn[39;00m (
+[32m-> [39m[32m1285[39m         {k: [43mencode_nested_example[49m[43m([49m[43mschema[49m[43m[[49m[43mk[49m[43m][49m[43m,[49m[43m [49m[43mobj[49m[43m.[49m[43mget[49m[43m([49m[43mk[49m[43m)[49m[43m,[49m[43m [49m[43mlevel[49m[43m=[49m[43mlevel[49m[43m [49m[43m+[49m[43m [49m[32;43m1[39;49m[43m)[49m [38;5;28;01mfor[39;00m k [38;5;129;01min[39;00m schema}
+[32m   1286[39m         [38;5;28;01mif[39;00m obj [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m
+[32m   1287[39m         [38;5;28;01melse[39;00m [38;5;28;01mNone[39;00m
+[32m   1288[39m     )
+[32m   1290[39m [38;5;28;01melif[39;00m [38;5;28misinstance[39m(schema, ([38;5;28mlist[39m, [38;5;28mtuple[39m)):
+[32m   1291[39m     sub_schema = schema[[32m0[39m]
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages/datasets/features/features.py:1355[39m, in [36mencode_nested_example[39m[34m(schema, obj, level)[39m
+[32m   1352[39m [38;5;66;03m# Object with special encoding:[39;00m
+[32m   1353[39m [38;5;66;03m# ClassLabel will convert from string to int, TranslationVariableLanguages does some checks[39;00m
+[32m   1354[39m [38;5;28;01melif[39;00m [38;5;28mhasattr[39m(schema, [33m"[39m[33mencode_example[39m[33m"[39m):
+[32m-> [39m[32m1355[39m     [38;5;28;01mreturn[39;00m [43mschema[49m[43m.[49m[43mencode_example[49m[43m([49m[43mobj[49m[43m)[49m [38;5;28;01mif[39;00m obj [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m [38;5;28;01melse[39;00m [38;5;28;01mNone[39;00m
+[32m   1356[39m [38;5;66;03m# Other object should be directly convertible to a native Arrow type (like Translation and Translation)[39;00m
+[32m   1357[39m [38;5;28;01mreturn[39;00m obj
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages/datasets/features/audio.py:90[39m, in [36mAudio.encode_example[39m[34m(self, value)[39m
+[32m     88[39m     [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01msoundfile[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01msf[39;00m  [38;5;66;03m# soundfile is a dependency of librosa, needed to decode audio files.[39;00m
+[32m     89[39m [38;5;28;01mexcept[39;00m [38;5;167;01mImportError[39;00m [38;5;28;01mas[39;00m err:
+[32m---> [39m[32m90[39m     [38;5;28;01mraise[39;00m [38;5;167;01mImportError[39;00m([33m"[39m[33mTo support encoding audio data, please install [39m[33m'[39m[33msoundfile[39m[33m'[39m[33m.[39m[33m"[39m) [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01merr[39;00m
+[32m     91[39m [38;5;28;01mif[39;00m [38;5;28misinstance[39m(value, [38;5;28mstr[39m):
+[32m     92[39m     [38;5;28;01mreturn[39;00m {[33m"[39m[33mbytes[39m[33m"[39m: [38;5;28;01mNone[39;00m, [33m"[39m[33mpath[39m[33m"[39m: value}
+
+[31mImportError[39m: To support encoding audio data, please install 'soundfile'.
+
